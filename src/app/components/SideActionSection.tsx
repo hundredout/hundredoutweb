@@ -1,9 +1,9 @@
-import beersImg from "../../imports/BEERS.png";
-import cashImg from "../../imports/CASH.png";
-import pushupsImg from "../../imports/PUSHUPS.png";
-import daresImg from "../../imports/DARES.png";
-import braggingImg from "../../imports/BRAGGING.png";
-import whateverImg from "../../imports/WHATEVER.png";
+import beersImg from "../../imports/SCREENSHOTS/BEERS_LR.jpg";
+import cashImg from "../../imports/SCREENSHOTS/CASH_LR.jpg";
+import pushupsImg from "../../imports/SCREENSHOTS/PUSHUPS_LR.jpg";
+import daresImg from "../../imports/SCREENSHOTS/DARES_LR.jpg";
+import braggingImg from "../../imports/SCREENSHOTS/BRAGGING_LR.jpg";
+import whateverImg from "../../imports/SCREENSHOTS/WHATEVER_LR.jpg";
 
 export function SideActionSection() {
   const stakes = [

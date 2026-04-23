@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import gearImg from "../../imports/mainCover_LATEST_v2.png";
+import gearImg from "../../imports/mainCover_WEB_v2.jpg";
 
 export function GearTeaser() {
   return (

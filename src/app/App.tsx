@@ -8,6 +8,7 @@ import { ClubPage } from "./pages/ClubPage";
 import { AboutPage } from "./pages/AboutPage";
 import { ContentPage } from "./pages/ContentPage";
 import { CampaignsPage } from "./pages/CampaignsPage";
+import { DownloadPage } from "./pages/DownloadPage";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/gear" element={<GearPage />} />
           <Route path="/club" element={<ClubPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/download" element={<DownloadPage />} />
           <Route path="/content" element={<ContentPage />} />
           <Route path="/campaigns" element={<CampaignsPage />} />
         </Routes>

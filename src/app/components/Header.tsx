@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import circleMarkImg from "../../imports/HundredOut_circleMark_Final.png";
 
 export function Header() {
   return (
@@ -9,9 +10,11 @@ export function Header() {
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <div className="relative">
               <div className="absolute inset-0 bg-[#EE455F] blur-lg opacity-30"></div>
-              <div className="relative w-10 h-10 bg-[#0d1b28] rounded flex items-center justify-center">
-                <span className="text-white font-['Proxima_Nova'] text-xl tracking-wider">100</span>
-              </div>
+              <img
+                src={circleMarkImg}
+                alt="HundredOut circle mark"
+                className="relative h-10 w-10 object-contain"
+              />
             </div>
             <span className="font-['Proxima_Nova'] text-2xl tracking-tight uppercase">HundredOut</span>
           </Link>
@@ -21,15 +24,13 @@ export function Header() {
             <Link to="/app" className="text-sm uppercase tracking-wide hover:text-[#EE455F] transition-colors">App</Link>
             <Link to="/gear" className="text-sm uppercase tracking-wide hover:text-[#EE455F] transition-colors">Gear</Link>
             <Link to="/club" className="text-sm uppercase tracking-wide hover:text-[#EE455F] transition-colors">Club</Link>
-            <Link to="/content" className="text-sm uppercase tracking-wide hover:text-[#EE455F] transition-colors">Content</Link>
-            <Link to="/campaigns" className="text-sm uppercase tracking-wide hover:text-[#EE455F] transition-colors">Campaigns</Link>
             <Link to="/about" className="text-sm uppercase tracking-wide hover:text-[#EE455F] transition-colors">About</Link>
           </nav>
 
           {/* CTA */}
           <div className="flex items-center gap-4">
-            <Link to="/app" className="hidden md:block px-6 py-2.5 bg-[#EE455F] text-white uppercase tracking-wide text-sm hover:bg-[#d63d54] transition-all hover:scale-105 active:scale-95">
-              Get Started
+            <Link to="/download" className="hidden md:block px-6 py-2.5 bg-[#EE455F] text-white uppercase tracking-wide text-sm hover:bg-[#d63d54] transition-all hover:scale-105 active:scale-95">
+              Download App
             </Link>
             <button className="md:hidden">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
