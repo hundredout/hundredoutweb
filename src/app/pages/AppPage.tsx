@@ -177,7 +177,7 @@ export function AppPage() {
                 <div className="h-2 w-2 rounded-full bg-[#EE455F]"></div>
                 The App
               </div>
-              <h1 className="max-w-[960px] font-['Proxima_Nova'] text-[clamp(3rem,7.4vw,6.15rem)] leading-[0.9] tracking-tight uppercase">
+              <h1 className="max-w-[960px] font-[var(--font-display)] text-[clamp(3rem,7.4vw,6.15rem)] leading-[0.9] tracking-tight uppercase">
                 This app has
                 <br />
                 <span className="whitespace-nowrap">a personality.</span>
@@ -222,7 +222,7 @@ export function AppPage() {
             <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]">
               Everything In One Round
             </div>
-            <h2 className="font-['Proxima_Nova'] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
+            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
               Personality. Pressure.
               <br />
               <span className="text-[#45B9ED]">Crew energy.</span>
@@ -242,7 +242,7 @@ export function AppPage() {
                   >
                     {feature.label}
                   </div>
-                  <h3 className="font-['Proxima_Nova'] text-5xl uppercase tracking-tight text-[#0d1b28]">
+                  <h3 className="font-[var(--font-display)] text-5xl uppercase tracking-tight text-[#0d1b28]">
                     {feature.title}
                   </h3>
                   <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#0d1b28]/68">{feature.copy}</p>
@@ -273,7 +273,7 @@ export function AppPage() {
             <div className="mb-5 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-wider text-white/75">
               Join the HundredOut Club
             </div>
-            <h2 className="font-['Proxima_Nova'] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
+            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
               Gear. Perks.
               <br />
               <span className="text-[#EE455F]">Identity.</span>
@@ -291,7 +291,7 @@ export function AppPage() {
                   <div className="mb-3 text-xs uppercase tracking-[0.24em]" style={{ color: tier.accent }}>
                     {tier.price}
                   </div>
-                  <h3 className="font-['Proxima_Nova'] text-4xl uppercase tracking-tight">{tier.name}</h3>
+                  <h3 className="font-[var(--font-display)] text-4xl uppercase tracking-tight">{tier.name}</h3>
                   <p className="mt-4 text-lg leading-relaxed text-white/72">{tier.tagline}</p>
                   <p className="mt-4 text-sm uppercase tracking-[0.18em] text-white/45">{tier.line}</p>
 
@@ -332,7 +332,7 @@ export function AppPage() {
           <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]">
             Download HundredOut
           </div>
-          <h2 className="font-['Proxima_Nova'] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
+          <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
             It's free
             <br />
             <span className="text-[#EE455F]">to start.</span>

@@ -61,7 +61,7 @@ export function ClubPage() {
                 <div className="h-2 w-2 rounded-full bg-[#EE455F]"></div>
                 HundredOut Club
               </div>
-              <h1 className="font-['Proxima_Nova'] text-[clamp(3rem,10vw,7rem)] leading-[0.9] tracking-tight uppercase">
+              <h1 className="font-[var(--font-display)] text-[clamp(3rem,10vw,7rem)] leading-[0.9] tracking-tight uppercase">
                 Support the
                 <br />
                 app. Join the
@@ -79,15 +79,15 @@ export function ClubPage() {
             <div className="grid gap-4 self-end">
               <div className="border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
                 <div className="text-xs uppercase tracking-[0.28em] text-white/45">What It Is</div>
-                <div className="mt-3 font-['Proxima_Nova'] text-3xl uppercase tracking-tight">Supporter program</div>
+                <div className="mt-3 font-[var(--font-display)] text-3xl uppercase tracking-tight">Supporter program</div>
               </div>
               <div className="border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
                 <div className="text-xs uppercase tracking-[0.28em] text-white/45">What It Is Not</div>
-                <div className="mt-3 font-['Proxima_Nova'] text-3xl uppercase tracking-tight">Not a paywall</div>
+                <div className="mt-3 font-[var(--font-display)] text-3xl uppercase tracking-tight">Not a paywall</div>
               </div>
               <div className="border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
                 <div className="text-xs uppercase tracking-[0.28em] text-white/45">Why Join</div>
-                <div className="mt-3 font-['Proxima_Nova'] text-3xl uppercase tracking-tight">Gear, status, first access</div>
+                <div className="mt-3 font-[var(--font-display)] text-3xl uppercase tracking-tight">Gear, status, first access</div>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ export function ClubPage() {
             <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]">
               Two Tiers
             </div>
-            <h2 className="font-['Proxima_Nova'] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
+            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
               Join the crew
               <br />
               <span className="text-[#45B9ED]">or go core.</span>
@@ -119,7 +119,7 @@ export function ClubPage() {
                   </div>
                   <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
                     <div>
-                      <h3 className="font-['Proxima_Nova'] text-4xl uppercase tracking-tight text-[#0d1b28]">
+                      <h3 className="font-[var(--font-display)] text-4xl uppercase tracking-tight text-[#0d1b28]">
                         {tier.name}
                       </h3>
                       <div className="mt-4 text-3xl uppercase tracking-tight text-[#0d1b28]/70">{tier.price}</div>
@@ -173,7 +173,7 @@ export function ClubPage() {
               <div className="mb-5 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-wider text-white/75">
                 Founding Member Angle
               </div>
-              <h2 className="font-['Proxima_Nova'] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
+              <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
                 Core Crew
                 <br />
                 <span className="text-[#EE455F]">since '26</span>
@@ -211,7 +211,7 @@ export function ClubPage() {
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
             <div className="border border-[#0d1b28]/10 bg-[#f6f8fb] p-8 md:p-10">
               <div className="mb-4 text-xs uppercase tracking-[0.28em] text-[#0d1b28]/45">HUNNIDs</div>
-              <h2 className="font-['Proxima_Nova'] text-4xl uppercase tracking-tight text-[#0d1b28]">
+              <h2 className="font-[var(--font-display)] text-4xl uppercase tracking-tight text-[#0d1b28]">
                 Play rounds.
                 <br />
                 Stack currency.
@@ -226,7 +226,7 @@ export function ClubPage() {
                 {hunnids.map((item) => (
                   <div key={item.action} className="flex items-center justify-between border border-[#0d1b28]/10 bg-white p-4">
                     <span className="text-base text-[#0d1b28]/72">{item.action}</span>
-                    <span className="font-['Proxima_Nova'] text-2xl uppercase tracking-tight text-[#EE455F]">
+                    <span className="font-[var(--font-display)] text-2xl uppercase tracking-tight text-[#EE455F]">
                       {item.value}
                     </span>
                   </div>
@@ -236,7 +236,7 @@ export function ClubPage() {
 
             <div className="border border-[#0d1b28]/10 bg-white p-8 shadow-[0_24px_60px_rgba(13,27,40,0.08)] md:p-10">
               <div className="mb-4 text-xs uppercase tracking-[0.28em] text-[#0d1b28]/45">How To Join</div>
-              <h2 className="font-['Proxima_Nova'] text-4xl uppercase tracking-tight text-[#0d1b28]">
+              <h2 className="font-[var(--font-display)] text-4xl uppercase tracking-tight text-[#0d1b28]">
                 Inside the app.
                 <br />
                 Straight to the point.

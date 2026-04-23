@@ -16,7 +16,7 @@ export function Header() {
                 className="relative h-10 w-10 object-contain"
               />
             </div>
-            <span className="font-['Proxima_Nova'] text-2xl tracking-tight uppercase">HundredOut</span>
+            <span className="font-[var(--font-display)] text-2xl tracking-tight uppercase">HundredOut</span>
           </Link>
 
           {/* Navigation */}

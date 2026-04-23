@@ -22,7 +22,7 @@ export function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-['Proxima_Nova'] font-black text-[clamp(3rem,10vw,8.8rem)] leading-[0.9] tracking-tight uppercase mb-8">
+            <h1 className="font-[var(--font-display)] font-black text-[clamp(3rem,10vw,8.8rem)] leading-[0.9] tracking-tight uppercase mb-8">
               Golf with
               <br />
               <span className="text-[#EE455F]">More Action</span>
@@ -64,7 +64,7 @@ export function Hero() {
                     <div className="absolute inset-0 border-2 border-[#EE455F] rotate-45"></div>
                     <div className="absolute inset-2 border-2 border-[#EE455F] rotate-45"></div>
                   </div>
-                  <div className="font-['Proxima_Nova'] text-5xl text-[#EE455F]">Earn</div>
+                  <div className="font-[var(--font-display)] text-5xl text-[#EE455F]">Earn</div>
                 </div>
                 <div className="text-sm text-white/60 uppercase tracking-wide">Trophies & HUNNIDs</div>
               </div>
@@ -76,7 +76,7 @@ export function Hero() {
                       <div className="w-4 h-4 rounded-full border-2 border-[#45B9ED] -ml-2 mt-1"></div>
                     </div>
                   </div>
-                  <div className="font-['Proxima_Nova'] text-5xl text-[#45B9ED]">Bet</div>
+                  <div className="font-[var(--font-display)] text-5xl text-[#45B9ED]">Bet</div>
                 </div>
                 <div className="text-sm text-white/60 uppercase tracking-wide">Anything You Want</div>
               </div>
@@ -91,7 +91,7 @@ export function Hero() {
                       </div>
                     </div>
                   </div>
-                  <div className="font-['Proxima_Nova'] text-5xl text-white">Own</div>
+                  <div className="font-[var(--font-display)] text-5xl text-white">Own</div>
                 </div>
                 <div className="text-sm text-white/60 uppercase tracking-wide">The Crew Board</div>
               </div>

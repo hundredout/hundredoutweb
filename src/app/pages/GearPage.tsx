@@ -61,7 +61,7 @@ export function GearPage() {
                   <div className="relative flex h-full items-end p-6">
                     <div className="text-white">
                       <div className="mb-2 text-xs uppercase tracking-[0.3em] text-white/60">Drop Tease</div>
-                      <div className="font-['Proxima_Nova'] text-4xl uppercase tracking-tight">
+                      <div className="font-[var(--font-display)] text-4xl uppercase tracking-tight">
                         100
                         <br />
                         Headwear
@@ -79,7 +79,7 @@ export function GearPage() {
                 <img src={gearImg} alt="HundredOut apparel preview" className="h-full w-full object-cover" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0d1b28] to-transparent p-8 text-white">
                   <div className="text-sm uppercase tracking-[0.28em] text-white/55">Concept Only</div>
-                  <div className="mt-2 font-['Proxima_Nova'] text-5xl uppercase tracking-tight">
+                  <div className="mt-2 font-[var(--font-display)] text-5xl uppercase tracking-tight">
                     In Development
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export function GearPage() {
                     <div className="text-xs uppercase tracking-[0.3em] text-white/0">.</div>
                     <div className="max-w-[15rem] border border-white/15 bg-white/90 p-4 backdrop-blur-sm">
                       <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45">Pattern Preview</div>
-                      <div className="mt-2 font-['Proxima_Nova'] text-3xl uppercase tracking-tight text-[#0d1b28]">
+                      <div className="mt-2 font-[var(--font-display)] text-3xl uppercase tracking-tight text-[#0d1b28]">
                         100 Polo
                       </div>
                       <p className="mt-3 text-sm leading-relaxed text-[#0d1b28]/55">
@@ -107,7 +107,7 @@ export function GearPage() {
                   <div className="absolute -right-10 -top-8 h-36 w-36 rounded-full bg-[#EE455F] opacity-20 blur-3xl"></div>
                   <div className="relative p-6">
                     <div className="text-xs uppercase tracking-[0.3em] text-white/45">In Development</div>
-                    <div className="mt-3 font-['Proxima_Nova'] text-3xl uppercase tracking-tight">
+                    <div className="mt-3 font-[var(--font-display)] text-3xl uppercase tracking-tight">
                       Built for
                       <br />
                       the moments
@@ -122,7 +122,7 @@ export function GearPage() {
                 <div className="mb-8 text-sm uppercase tracking-[0.28em] text-[#0d1b28]/50">
                   HundredOut // Gear In Development
                 </div>
-                <h1 className="font-['Proxima_Nova'] text-[clamp(3.4rem,9vw,7rem)] leading-[0.88] tracking-tight uppercase text-[#EE455F]">
+                <h1 className="font-[var(--font-display)] text-[clamp(3.4rem,9vw,7rem)] leading-[0.88] tracking-tight uppercase text-[#EE455F]">
                   Keep It
                   <br />
                   100
@@ -172,7 +172,7 @@ export function GearPage() {
               <div className="mb-5 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-wider text-white/75">
                 The Gear Direction
               </div>
-              <h2 className="font-['Proxima_Nova'] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
+              <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
                 More heat.
                 <br />
                 <span className="text-[#EE455F]">Less catalog.</span>
@@ -196,7 +196,7 @@ export function GearPage() {
             <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]">
               Potential Drop Board
             </div>
-            <h2 className="font-['Proxima_Nova'] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
+            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
               Slots for
               <br />
               <span className="text-[#45B9ED]">future product</span>
@@ -223,7 +223,7 @@ export function GearPage() {
 
                   <div className="absolute bottom-5 left-5 right-5 border border-[#0d1b28]/10 bg-white/90 p-4 backdrop-blur-sm">
                     <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45">{product.type}</div>
-                    <div className="mt-2 font-['Proxima_Nova'] text-2xl uppercase tracking-tight text-[#0d1b28]">
+                    <div className="mt-2 font-[var(--font-display)] text-2xl uppercase tracking-tight text-[#0d1b28]">
                       {product.name}
                     </div>
                   </div>
@@ -246,7 +246,7 @@ export function GearPage() {
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
             <div className="border border-[#0d1b28]/10 bg-white p-8 shadow-[0_24px_60px_rgba(13,27,40,0.08)] md:p-10">
               <div className="mb-4 text-xs uppercase tracking-[0.28em] text-[#0d1b28]/45">What Is Coming</div>
-              <h2 className="font-['Proxima_Nova'] text-4xl uppercase tracking-tight text-[#0d1b28]">
+              <h2 className="font-[var(--font-display)] text-4xl uppercase tracking-tight text-[#0d1b28]">
                 Small, sharp, and
                 <br />
                 worth waiting for

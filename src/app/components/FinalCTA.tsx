@@ -12,7 +12,7 @@ export function FinalCTA() {
       <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 text-center">
         {/* Main Headline */}
         <div className="mb-12">
-          <h2 className="font-['Proxima_Nova'] text-[clamp(3rem,10vw,8rem)] leading-[0.9] tracking-tight uppercase mb-8">
+          <h2 className="font-[var(--font-display)] text-[clamp(3rem,10vw,8rem)] leading-[0.9] tracking-tight uppercase mb-8">
             Make Your
             <br />
             <span className="text-[#EE455F]">Next Round</span>

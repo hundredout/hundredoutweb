@@ -1,2 +1,23 @@
-/* Proxima Nova font family - assuming font files are provided or using system fallback */
-/* If you have Proxima Nova font files, add @font-face declarations here */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/ProximaNova-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/ProximaNova-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/ProximaNova-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

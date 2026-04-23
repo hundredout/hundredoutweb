@@ -12,7 +12,7 @@ export function SocialSection() {
           <div className="inline-block px-4 py-1.5 bg-white/5 text-white text-xs uppercase tracking-wider rounded-full mb-6">
             Your Crew, Your Way
           </div>
-          <h2 className="font-['Proxima_Nova'] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
+          <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
             Set The
             <br />
             <span className="text-[#45B9ED]">Tone</span>
@@ -36,7 +36,7 @@ export function SocialSection() {
                     <path d="M14 20h4M14 24h8"/>
                   </svg>
                 </div>
-                <h3 className="font-['Proxima_Nova'] text-2xl uppercase tracking-tight mb-3">
+                <h3 className="font-[var(--font-display)] text-2xl uppercase tracking-tight mb-3">
                   Choose Your Vibe
                 </h3>
                 <p className="text-white/60 text-sm">
@@ -56,7 +56,7 @@ export function SocialSection() {
                     <path d="M20 8L24 16L32 20L24 24L20 32L16 24L8 20L16 16L20 8Z" strokeLinejoin="miter"/>
                   </svg>
                 </div>
-                <h3 className="font-['Proxima_Nova'] text-2xl uppercase tracking-tight mb-3">
+                <h3 className="font-[var(--font-display)] text-2xl uppercase tracking-tight mb-3">
                   Live Reactions
                 </h3>
                 <p className="text-white/60 text-sm">
@@ -78,7 +78,7 @@ export function SocialSection() {
                     <path d="M21 16l-5 8"/>
                   </svg>
                 </div>
-                <h3 className="font-['Proxima_Nova'] text-2xl uppercase tracking-tight mb-3">
+                <h3 className="font-[var(--font-display)] text-2xl uppercase tracking-tight mb-3">
                   Auto Bet Settling
                 </h3>
                 <p className="text-white/60 text-sm">
@@ -94,7 +94,7 @@ export function SocialSection() {
           <div className="relative bg-gradient-to-r from-[#EE455F]/10 via-transparent to-[#45B9ED]/10 p-12 border border-white/5">
             <div className="absolute top-0 left-0 w-2 h-full bg-[#EE455F]"></div>
 
-            <p className="font-['Proxima_Nova'] text-3xl md:text-4xl leading-tight tracking-tight mb-6">
+            <p className="font-[var(--font-display)] text-3xl md:text-4xl leading-tight tracking-tight mb-6">
               "We've been playing the same course for years. HundredOut turned it into a competition. Now there's always something on the line and someone talking trash."
             </p>
 

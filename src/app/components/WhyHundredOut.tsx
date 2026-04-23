@@ -11,7 +11,7 @@ export function WhyHundredOut() {
           <div className="inline-block px-4 py-1.5 bg-[#0d1b28]/5 text-[#0d1b28] text-xs uppercase tracking-wider rounded-full mb-6">
             Your Crew, Your Style
           </div>
-          <h2 className="font-['Proxima_Nova'] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
+          <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
             Pick the Vibe.
             <br />
             <span className="text-[#EE455F]">Play Your Way.</span>
@@ -56,7 +56,7 @@ export function WhyHundredOut() {
                     <img src={setToneImg} alt="Set the Tone" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="font-['Proxima_Nova'] text-3xl uppercase tracking-tight mb-3">Set the Tone</h3>
+                    <h3 className="font-[var(--font-display)] text-3xl uppercase tracking-tight mb-3">Set the Tone</h3>
                     <p className="text-[#0d1b28]/70 leading-relaxed text-lg">
                       From edgy to easygoing, HundredOut lets you tailor the app's language to match your crew's style.
                     </p>
@@ -73,7 +73,7 @@ export function WhyHundredOut() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-['Proxima_Nova'] text-2xl uppercase tracking-tight mb-2">Live Competition</h3>
+                  <h3 className="font-[var(--font-display)] text-2xl uppercase tracking-tight mb-2">Live Competition</h3>
                   <p className="text-[#0d1b28]/60 leading-relaxed">
                     Real-time scoring and instant momentum shifts. See who's making moves and who's starting to slide.
                   </p>
@@ -90,7 +90,7 @@ export function WhyHundredOut() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-['Proxima_Nova'] text-2xl uppercase tracking-tight mb-2">Crew Leaderboards</h3>
+                  <h3 className="font-[var(--font-display)] text-2xl uppercase tracking-tight mb-2">Crew Leaderboards</h3>
                   <p className="text-[#0d1b28]/60 leading-relaxed">
                     Track rivalries, settle debates, and know exactly who's been owning the group.
                   </p>
@@ -106,7 +106,7 @@ export function WhyHundredOut() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-['Proxima_Nova'] text-2xl uppercase tracking-tight mb-2">Trophies & HUNNIDs</h3>
+                  <h3 className="font-[var(--font-display)] text-2xl uppercase tracking-tight mb-2">Trophies & HUNNIDs</h3>
                   <p className="text-[#0d1b28]/60 leading-relaxed">
                     Earn trophies for clutch moments and stack HUNNIDs every round. Build your collection and your status over time.
                   </p>
@@ -127,7 +127,7 @@ export function WhyHundredOut() {
 
           <div className="relative">
             <div className="text-center mb-10">
-              <h3 className="font-['Proxima_Nova'] text-4xl md:text-5xl uppercase tracking-tight mb-4">
+              <h3 className="font-[var(--font-display)] text-4xl md:text-5xl uppercase tracking-tight mb-4">
                 More to Play For
               </h3>
               <p className="text-white/60 text-lg max-w-2xl mx-auto">
@@ -144,7 +144,7 @@ export function WhyHundredOut() {
                     <div className="absolute top-1/2 left-1/2 w-3 h-3 border-2 border-[#EE455F] rotate-45 -translate-x-1/2 -translate-y-1/2"></div>
                   </div>
                 </div>
-                <h4 className="font-['Proxima_Nova'] text-xl uppercase tracking-tight mb-2">Collectible Trophies</h4>
+                <h4 className="font-[var(--font-display)] text-xl uppercase tracking-tight mb-2">Collectible Trophies</h4>
                 <p className="text-white/60 text-sm leading-relaxed">
                   Rare drops for clutch moments. Build your collection. Show them off.
                 </p>
@@ -158,7 +158,7 @@ export function WhyHundredOut() {
                     <div className="w-5 h-5 rounded-full border-2 border-[#45B9ED] -ml-3 mt-1"></div>
                   </div>
                 </div>
-                <h4 className="font-['Proxima_Nova'] text-xl uppercase tracking-tight mb-2">Stack HUNNIDs</h4>
+                <h4 className="font-[var(--font-display)] text-xl uppercase tracking-tight mb-2">Stack HUNNIDs</h4>
                 <p className="text-white/60 text-sm leading-relaxed">
                   Earn tokens every round. Unlock exclusive rewards. More coming soon.
                 </p>
@@ -175,7 +175,7 @@ export function WhyHundredOut() {
                     </div>
                   </div>
                 </div>
-                <h4 className="font-['Proxima_Nova'] text-xl uppercase tracking-tight mb-2">Own The Board</h4>
+                <h4 className="font-[var(--font-display)] text-xl uppercase tracking-tight mb-2">Own The Board</h4>
                 <p className="text-white/60 text-sm leading-relaxed">
                   All-time records. Lifetime stats. Eternal bragging rights over your crew.
                 </p>

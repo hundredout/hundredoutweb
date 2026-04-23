@@ -9,9 +9,9 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-[#EE455F] rounded flex items-center justify-center">
-                <span className="text-white font-['Proxima_Nova'] text-xl tracking-wider">100</span>
+                <span className="text-white font-[var(--font-display)] text-xl tracking-wider">100</span>
               </div>
-              <span className="font-['Proxima_Nova'] text-2xl tracking-tight uppercase">HundredOut</span>
+              <span className="font-[var(--font-display)] text-2xl tracking-tight uppercase">HundredOut</span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Golf with more action, more banter, and more to play for.
@@ -50,7 +50,7 @@ export function Footer() {
 
           {/* Product Column */}
           <div>
-            <h4 className="font-['Proxima_Nova'] text-lg uppercase tracking-tight mb-4">Product</h4>
+            <h4 className="font-[var(--font-display)] text-lg uppercase tracking-tight mb-4">Product</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">App Features</a>
@@ -69,7 +69,7 @@ export function Footer() {
 
           {/* Company Column */}
           <div>
-            <h4 className="font-['Proxima_Nova'] text-lg uppercase tracking-tight mb-4">Company</h4>
+            <h4 className="font-[var(--font-display)] text-lg uppercase tracking-tight mb-4">Company</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">About</a>
@@ -88,7 +88,7 @@ export function Footer() {
 
           {/* Support Column */}
           <div>
-            <h4 className="font-['Proxima_Nova'] text-lg uppercase tracking-tight mb-4">Support</h4>
+            <h4 className="font-[var(--font-display)] text-lg uppercase tracking-tight mb-4">Support</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Help Center</a>

@@ -32,7 +32,7 @@ export function AppFeatures() {
           <div className="inline-block px-4 py-1.5 bg-[#EE455F]/10 text-[#EE455F] text-xs uppercase tracking-wider rounded-full mb-6">
             How It Works
           </div>
-          <h2 className="font-['Proxima_Nova'] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
+          <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
             Finally, An App
             <br />
             <span className="text-[#0d1b28]/40">That Gets It</span>
@@ -64,7 +64,7 @@ export function AppFeatures() {
                 </div>
 
                 {/* Content */}
-                <h3 className="font-['Proxima_Nova'] text-2xl uppercase tracking-tight mb-3">
+                <h3 className="font-[var(--font-display)] text-2xl uppercase tracking-tight mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-white/70 group-hover:text-white/90 text-sm leading-relaxed transition-colors">
@@ -90,7 +90,7 @@ export function AppFeatures() {
           {/* Content */}
           <div className="relative grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="font-['Proxima_Nova'] text-[clamp(2rem,6vw,4rem)] leading-[0.95] tracking-tight uppercase text-white mb-6">
+              <h3 className="font-[var(--font-display)] text-[clamp(2rem,6vw,4rem)] leading-[0.95] tracking-tight uppercase text-white mb-6">
                 Built for
                 <br />
                 <span className="text-[#EE455F]">The Group Chat</span>
@@ -119,7 +119,7 @@ export function AppFeatures() {
                   <div className="px-6 py-4">
                     <div className="text-white/40 text-xs uppercase tracking-wider mb-2">Hole 7 • Par 4 • Live</div>
                     <div className="flex items-baseline gap-2 mb-6">
-                      <div className="font-['Proxima_Nova'] text-6xl text-white">-2</div>
+                      <div className="font-[var(--font-display)] text-6xl text-white">-2</div>
                       <div className="text-[#EE455F] text-xs uppercase tracking-wider">You're Up</div>
                     </div>
 
@@ -129,21 +129,21 @@ export function AppFeatures() {
                           <span className="text-white text-sm block">You</span>
                           <span className="text-white/60 text-xs">On fire 🔥</span>
                         </div>
-                        <span className="font-['Proxima_Nova'] text-2xl text-[#EE455F]">32</span>
+                        <span className="font-[var(--font-display)] text-2xl text-[#EE455F]">32</span>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-white/5 rounded">
                         <div>
                           <span className="text-white/60 text-sm block">Mike</span>
                           <span className="text-white/40 text-xs">Choking</span>
                         </div>
-                        <span className="font-['Proxima_Nova'] text-2xl text-white/60">34</span>
+                        <span className="font-[var(--font-display)] text-2xl text-white/60">34</span>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-white/5 rounded">
                         <div>
                           <span className="text-white/60 text-sm block">Sarah</span>
                           <span className="text-white/40 text-xs">Solid</span>
                         </div>
-                        <span className="font-['Proxima_Nova'] text-2xl text-white/60">33</span>
+                        <span className="font-[var(--font-display)] text-2xl text-white/60">33</span>
                       </div>
                     </div>
 
@@ -156,7 +156,7 @@ export function AppFeatures() {
                       <div className="flex gap-2">
                         <div className="flex-1 p-2 bg-[#45B9ED]/20 border border-[#45B9ED]/40 rounded text-center">
                           <div className="text-xs text-white/60">HUNNIDs</div>
-                          <div className="font-['Proxima_Nova'] text-xl text-[#45B9ED]">+120</div>
+                          <div className="font-[var(--font-display)] text-xl text-[#45B9ED]">+120</div>
                         </div>
                         <div className="flex-1 p-2 bg-[#EE455F]/20 border border-[#EE455F]/40 rounded text-center">
                           <div className="text-xs text-white/60">Trophy</div>
