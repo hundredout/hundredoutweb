@@ -31,7 +31,7 @@ export function GearSection() {
             <div className="inline-block px-4 py-1.5 bg-[#0d1b28]/5 text-[#0d1b28] text-xs uppercase tracking-wider rounded-full mb-6">
               Wear the Brand
             </div>
-            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase">
+            <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase">
               Look Good
               <br />
               <span className="text-[#0d1b28]/40">Play Better</span>
@@ -60,7 +60,7 @@ export function GearSection() {
                       className="w-20 h-20 mx-auto mb-4 flex items-center justify-center"
                       style={{ backgroundColor: product.color + '20', border: `2px solid ${product.color}40` }}
                     >
-                      <span className="font-[var(--font-display)] text-3xl" style={{ color: product.color }}>
+                      <span className="font-[var(--font-display)] font-semibold text-3xl" style={{ color: product.color }}>
                         100
                       </span>
                     </div>
@@ -86,12 +86,12 @@ export function GearSection() {
               {/* Product Info */}
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="font-[var(--font-display)] text-xl uppercase tracking-tight mb-1">
+                  <h3 className="font-[var(--font-display)] font-semibold text-xl uppercase tracking-tight mb-1">
                     {product.name}
                   </h3>
                   <p className="text-sm text-[#0d1b28]/40 uppercase tracking-wide">{product.category}</p>
                 </div>
-                <div className="font-[var(--font-display)] text-2xl">{product.price}</div>
+                <div className="font-[var(--font-display)] font-semibold text-2xl">{product.price}</div>
               </div>
             </div>
           ))}
@@ -103,7 +103,7 @@ export function GearSection() {
           <div className="relative aspect-[4/5] bg-gradient-to-br from-black to-[#1a1a1a] overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white/20">
-                <div className="font-[var(--font-display)] text-[8rem] leading-none">100</div>
+                <div className="font-[var(--font-display)] font-semibold text-[8rem] leading-none">100</div>
                 <div className="text-sm uppercase tracking-[0.3em]">HundredOut</div>
               </div>
             </div>
@@ -112,7 +112,7 @@ export function GearSection() {
 
           {/* Right: Content */}
           <div className="flex flex-col justify-center">
-            <h3 className="font-[var(--font-display)] text-[clamp(2rem,6vw,4rem)] leading-[0.95] tracking-tight uppercase mb-6">
+            <h3 className="font-[var(--font-display)] font-semibold text-[clamp(2rem,6vw,4rem)] leading-[0.95] tracking-tight uppercase mb-6">
               Apparel for
               <br />
               <span className="text-[#EE455F]">People Who Play</span>

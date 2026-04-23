@@ -83,7 +83,7 @@ export function SideActionSection() {
             <div className="inline-block px-4 py-1.5 bg-[#0d1b28]/5 text-[#0d1b28] text-xs uppercase tracking-wider rounded-full mb-6">
               Side Action
             </div>
-            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
+            <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
               Always More
               <br />
               <span className="text-[#EE455F]">On The Line</span>
@@ -159,7 +159,7 @@ export function SideActionSection() {
 
                   {/* Content */}
                   <div className="relative z-10 mb-3 group-hover:scale-110 transition-transform">{stake.icon}</div>
-                  <div className="relative z-10 font-[var(--font-display)] text-lg uppercase tracking-tight">{stake.label}</div>
+                  <div className="relative z-10 font-[var(--font-display)] font-semibold text-lg uppercase tracking-tight">{stake.label}</div>
 
                   {/* Hover accent */}
                   <div className="absolute bottom-0 left-0 w-full h-0 bg-white group-hover:h-1 transition-all duration-300 z-10"></div>
@@ -170,7 +170,7 @@ export function SideActionSection() {
             {/* Bottom note */}
             <div className="mt-8 p-6 bg-[#0d1b28]/5 border-l-4 border-[#EE455F]">
               <p className="text-sm text-[#0d1b28]/60 leading-relaxed">
-                <span className="font-[var(--font-display)] text-lg text-[#0d1b28] uppercase tracking-tight block mb-2">
+                <span className="font-[var(--font-display)] font-semibold text-lg text-[#0d1b28] uppercase tracking-tight block mb-2">
                   You Handle the Settling
                 </span>
                 HundredOut tracks the action. You settle up however you want. Cash via Venmo. Beers at the 19th hole. Or just pure, unfiltered bragging rights.

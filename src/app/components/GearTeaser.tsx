@@ -14,7 +14,7 @@ export function GearTeaser() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Content */}
           <div>
-            <h2 className="font-[var(--font-display)] text-4xl md:text-5xl uppercase tracking-tight mb-4">
+            <h2 className="font-[var(--font-display)] font-semibold text-4xl md:text-5xl uppercase tracking-tight mb-4">
               Rep The Movement
             </h2>
             <p className="text-lg text-white/60 mb-6 leading-relaxed">

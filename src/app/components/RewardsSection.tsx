@@ -16,7 +16,7 @@ export function RewardsSection() {
           <div className="inline-block px-4 py-1.5 bg-white/5 backdrop-blur-sm border border-white/10 text-white text-xs uppercase tracking-wider rounded-full mb-6">
             Rewards & Status
           </div>
-          <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
+          <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
             More Ways to
             <br />
             <span className="text-[#EE455F]">Flex</span>
@@ -36,7 +36,7 @@ export function RewardsSection() {
               <Trophy className="w-8 h-8 text-[#EE455F]" />
             </div>
 
-            <h3 className="font-[var(--font-display)] text-3xl uppercase tracking-tight mb-4">
+            <h3 className="font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight mb-4">
               Trophies
             </h3>
 
@@ -68,7 +68,7 @@ export function RewardsSection() {
               <Coins className="w-8 h-8 text-[#45B9ED]" />
             </div>
 
-            <h3 className="font-[var(--font-display)] text-3xl uppercase tracking-tight mb-4">
+            <h3 className="font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight mb-4">
               HUNNIDs
             </h3>
 
@@ -100,7 +100,7 @@ export function RewardsSection() {
               <Users className="w-8 h-8 text-[#2D5016]" />
             </div>
 
-            <h3 className="font-[var(--font-display)] text-3xl uppercase tracking-tight mb-4">
+            <h3 className="font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight mb-4">
               Crew Leaderboards
             </h3>
 
@@ -130,7 +130,7 @@ export function RewardsSection() {
           <div className="inline-block relative">
             <div className="absolute -inset-4 bg-[#EE455F] blur-2xl opacity-20"></div>
             <div className="relative">
-              <div className="font-[var(--font-display)] text-4xl md:text-5xl uppercase tracking-tight mb-4">
+              <div className="font-[var(--font-display)] font-semibold text-4xl md:text-5xl uppercase tracking-tight mb-4">
                 More to Play For
               </div>
               <p className="text-white/60 mb-8">

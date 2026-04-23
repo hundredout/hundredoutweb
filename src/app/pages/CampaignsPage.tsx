@@ -29,7 +29,7 @@ export function CampaignsPage() {
       <section className="py-32 bg-white">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
           <div className="text-center">
-            <h2 className="font-[var(--font-display)] text-5xl uppercase tracking-tight mb-6">
+            <h2 className="font-[var(--font-display)] font-semibold text-5xl uppercase tracking-tight mb-6">
               Stay Tuned
             </h2>
             <p className="text-xl text-[#0d1b28]/60 max-w-2xl mx-auto">

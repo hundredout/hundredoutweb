@@ -28,7 +28,7 @@ export function HowItWorks() {
           <div className="inline-block px-4 py-1.5 bg-[#0d1b28]/5 text-[#0d1b28] text-xs uppercase tracking-wider rounded-full mb-6">
             How It Works
           </div>
-          <h2 className="font-[var(--font-display)] text-4xl md:text-5xl uppercase tracking-tight mb-4">
+          <h2 className="font-[var(--font-display)] font-semibold text-4xl md:text-5xl uppercase tracking-tight mb-4">
             How It Goes Down
           </h2>
           <p className="text-[#0d1b28]/60 text-lg">Simple setup. Live action. Instant bragging rights.</p>
@@ -49,13 +49,13 @@ export function HowItWorks() {
                   className="w-24 h-24 mx-auto mb-6 border-4 flex items-center justify-center relative z-10 bg-white"
                   style={{ borderColor: step.color }}
                 >
-                  <span className="font-[var(--font-display)] text-5xl" style={{ color: step.color }}>
+                  <span className="font-[var(--font-display)] font-semibold text-5xl" style={{ color: step.color }}>
                     {step.number}
                   </span>
                 </div>
 
                 {/* Content */}
-                <h3 className="font-[var(--font-display)] text-2xl uppercase tracking-tight mb-3">
+                <h3 className="font-[var(--font-display)] font-semibold text-2xl uppercase tracking-tight mb-3">
                   {step.title}
                 </h3>
                 <p className="text-[#0d1b28]/60">

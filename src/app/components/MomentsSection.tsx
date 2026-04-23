@@ -43,7 +43,7 @@ export function MomentsSection() {
           <div className="inline-block px-4 py-1.5 bg-[#0d1b28]/5 text-[#0d1b28] text-xs uppercase tracking-wider rounded-full mb-6">
             The Real Game
           </div>
-          <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
+          <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
             It's About
             <br />
             <span className="text-[#0d1b28]/40">The Moments</span>
@@ -68,7 +68,7 @@ export function MomentsSection() {
 
               <div className="relative">
                 <div className="mb-6" style={{ color: moment.color }}>{moment.icon}</div>
-                <h3 className="font-[var(--font-display)] text-3xl uppercase tracking-tight mb-4" style={{ color: moment.color }}>
+                <h3 className="font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight mb-4" style={{ color: moment.color }}>
                   {moment.title}
                 </h3>
                 <p className="text-white/70 leading-relaxed">
@@ -93,7 +93,7 @@ export function MomentsSection() {
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#45B9ED] rounded-full blur-[100px] opacity-20"></div>
 
             <div className="relative">
-              <div className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] leading-tight tracking-tight mb-8">
+              <div className="font-[var(--font-display)] font-semibold text-[clamp(2rem,5vw,3.5rem)] leading-tight tracking-tight mb-8">
                 "The best rounds aren't about shooting your best score.
                 <br />
                 <span className="text-[#EE455F]">They're about the crew, the chaos, and what you're playing for."</span>

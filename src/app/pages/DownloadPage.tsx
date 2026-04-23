@@ -38,7 +38,7 @@ export function DownloadPage() {
               <div className="h-2 w-2 rounded-full bg-[#EE455F]"></div>
               Download HundredOut
             </div>
-            <h1 className="font-[var(--font-display)] text-[clamp(3rem,10vw,7rem)] leading-[0.9] tracking-tight uppercase">
+            <h1 className="font-[var(--font-display)] font-semibold text-[clamp(3rem,10vw,7rem)] leading-[0.9] tracking-tight uppercase">
               Pick your
               <br />
               <span className="text-[#EE455F]">platform.</span>
@@ -57,7 +57,7 @@ export function DownloadPage() {
             <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]">
               Choose Your Platform
             </div>
-            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
+            <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
               Official store links.
               <br />
               <span className="text-[#45B9ED]">No extra noise.</span>
@@ -91,7 +91,7 @@ export function DownloadPage() {
                         <div className="text-[10px] uppercase tracking-[0.22em] text-white/55">
                           {platform.name === "iOS" ? "Download on the" : "Get it on"}
                         </div>
-                        <div className="font-[var(--font-display)] text-2xl uppercase tracking-tight">
+                        <div className="font-[var(--font-display)] font-semibold text-2xl uppercase tracking-tight">
                           {platform.short}
                         </div>
                       </div>
@@ -101,7 +101,7 @@ export function DownloadPage() {
                     </p>
                   </div>
 
-                  <h3 className="mt-8 font-[var(--font-display)] text-4xl uppercase tracking-tight text-[#0d1b28]">
+                  <h3 className="mt-8 font-[var(--font-display)] font-semibold text-4xl uppercase tracking-tight text-[#0d1b28]">
                     {platform.title}
                   </h3>
                   <p className="mt-5 text-lg leading-relaxed text-[#0d1b28]/68">{platform.note}</p>

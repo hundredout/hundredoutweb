@@ -72,7 +72,7 @@ export function AboutPage() {
               <div className="h-2 w-2 rounded-full bg-[#EE455F]"></div>
               The Team Behind HundredOut
             </div>
-            <h1 className="mb-8 font-[var(--font-display)] text-[clamp(3rem,10vw,7rem)] leading-[0.9] tracking-tight uppercase">
+            <h1 className="mb-8 font-[var(--font-display)] font-semibold text-[clamp(3rem,10vw,7rem)] leading-[0.9] tracking-tight uppercase">
               Building
               <br />
               <span className="text-[#EE455F]">More Than</span>
@@ -95,7 +95,7 @@ export function AboutPage() {
               <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]">
                 About HundredOut
               </div>
-              <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
+              <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
                 A Tech Lifestyle
                 <br />
                 <span className="text-[#EE455F]">Brand In Motion</span>
@@ -135,7 +135,7 @@ export function AboutPage() {
             <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]">
               The Lead off Group
             </div>
-            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
+            <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
               Founders with
               <br />
               <span className="text-[#EE455F]">Real Range</span>
@@ -159,7 +159,7 @@ export function AboutPage() {
                 <div className="p-8 md:p-10 lg:p-12">
                   <div className="mb-6 border-b border-[#0d1b28]/10 pb-6">
                     <div className="mb-2 text-sm uppercase tracking-[0.25em] text-[#0d1b28]/45">{founder.role}</div>
-                    <h3 className="font-[var(--font-display)] text-4xl uppercase tracking-tight text-[#0d1b28]">
+                    <h3 className="font-[var(--font-display)] font-semibold text-4xl uppercase tracking-tight text-[#0d1b28]">
                       {founder.name}
                     </h3>
                   </div>
@@ -185,7 +185,7 @@ export function AboutPage() {
             <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]">
               Advisory Board
             </div>
-            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
+            <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
               Built with
               <br />
               <span className="text-[#45B9ED]">Heavy Hitters</span>
@@ -206,7 +206,7 @@ export function AboutPage() {
                   <img src={advisor.image} alt={advisor.name} className="h-full w-full object-cover" />
                 </div>
                 <div className="p-8">
-                  <h3 className="font-[var(--font-display)] text-3xl uppercase tracking-tight text-[#0d1b28]">
+                  <h3 className="font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight text-[#0d1b28]">
                     {advisor.name}
                   </h3>
                   <div className="mt-3 text-sm uppercase tracking-[0.22em] text-[#EE455F]">{advisor.role}</div>
@@ -231,7 +231,7 @@ export function AboutPage() {
               <div className="mb-4 inline-block rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs uppercase tracking-wider text-white/80">
                 More Than Golf
               </div>
-              <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] tracking-tight uppercase">
+              <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] tracking-tight uppercase">
                 It's About
                 <br />
                 <span className="text-[#EE455F]">The Moments</span>
@@ -244,7 +244,7 @@ export function AboutPage() {
               <div className="mb-3 text-sm uppercase tracking-[0.22em] text-[#0d1b28]/45">Contact</div>
               <a
                 href="mailto:info@hundredout.com"
-                className="font-[var(--font-display)] text-3xl uppercase tracking-tight text-[#0d1b28] hover:text-[#EE455F] transition-colors"
+                className="font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight text-[#0d1b28] hover:text-[#EE455F] transition-colors"
               >
                 info@hundredout.com
               </a>

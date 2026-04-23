@@ -25,7 +25,7 @@ export function ClubSection() {
           <div className="inline-block px-4 py-1.5 bg-white/5 backdrop-blur-sm border border-white/10 text-white text-xs uppercase tracking-wider rounded-full mb-6">
             HundredOut Club
           </div>
-          <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
+          <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight uppercase mb-6">
             Go
             <br />
             <span className="text-[#EE455F]">All In</span>
@@ -41,7 +41,7 @@ export function ClubSection() {
           <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 p-8">
             <div className="mb-6">
               <div className="text-white/40 text-xs uppercase tracking-wider mb-2">Free</div>
-              <div className="font-[var(--font-display)] text-5xl mb-2">$0</div>
+              <div className="font-[var(--font-display)] font-semibold text-5xl mb-2">$0</div>
               <div className="text-white/40 text-sm">Start here</div>
             </div>
 
@@ -73,7 +73,7 @@ export function ClubSection() {
 
             <div className="mb-6">
               <div className="text-white/90 text-xs uppercase tracking-wider mb-2">Club</div>
-              <div className="font-[var(--font-display)] text-5xl mb-2">$10</div>
+              <div className="font-[var(--font-display)] font-semibold text-5xl mb-2">$10</div>
               <div className="text-white/90 text-sm">per month</div>
             </div>
 
@@ -95,7 +95,7 @@ export function ClubSection() {
           <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 p-8">
             <div className="mb-6">
               <div className="text-white/40 text-xs uppercase tracking-wider mb-2">Founding Member</div>
-              <div className="font-[var(--font-display)] text-5xl mb-2">$99</div>
+              <div className="font-[var(--font-display)] font-semibold text-5xl mb-2">$99</div>
               <div className="text-white/40 text-sm">per year</div>
             </div>
 
