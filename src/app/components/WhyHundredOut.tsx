@@ -30,7 +30,7 @@ export function WhyHundredOut() {
               <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/35">1 / 2</div>
             </div>
 
-            <div className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-scroll overscroll-x-contain px-6 pb-4 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] touch-pan-x [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-row sm:justify-center sm:overflow-visible sm:px-0">
+            <div className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-visible px-6 pb-4 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-row sm:justify-center sm:overflow-visible sm:px-0">
               {/* Phone 1 */}
               <div className="relative w-[min(84vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]">
                 <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
