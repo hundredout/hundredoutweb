@@ -1,8 +1,25 @@
+import { useRef } from "react";
 import setToneImg from "../../imports/puttCommentary_(1).jpg";
 import phoneScreen1 from "../../imports/Screenshot_2026-04-15_at_2.55.57 PM.png";
 import phoneScreen2 from "../../imports/Screenshot_2026-04-15_at_2.55.06 PM.png";
 
 export function WhyHundredOut() {
+  const mobileRailRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollScreens = (direction: "prev" | "next") => {
+    const rail = mobileRailRef.current;
+    if (!rail) return;
+
+    const card = rail.querySelector<HTMLElement>("[data-phone-card]");
+    const gap = 20;
+    const amount = (card?.offsetWidth ?? rail.clientWidth * 0.84) + gap;
+
+    rail.scrollBy({
+      left: direction === "next" ? amount : -amount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="relative py-32 bg-white overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
@@ -30,16 +47,25 @@ export function WhyHundredOut() {
               <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/35">1 / 2</div>
             </div>
 
-            <div className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-visible px-6 pb-4 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-row sm:justify-center sm:overflow-visible sm:px-0">
+            <div
+              ref={mobileRailRef}
+              className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-visible px-6 pb-4 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-row sm:justify-center sm:overflow-visible sm:px-0"
+            >
               {/* Phone 1 */}
-              <div className="relative w-[min(84vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]">
+              <div
+                data-phone-card
+                className="relative w-[min(84vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]"
+              >
                 <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
                   <img src={phoneScreen1} alt="App stats and rewards" className="aspect-[280/580] w-full object-cover object-top" />
                 </div>
               </div>
 
               {/* Phone 2 */}
-              <div className="relative w-[min(84vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]">
+              <div
+                data-phone-card
+                className="relative w-[min(84vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]"
+              >
                 <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
                   <img src={phoneScreen2} alt="Crew leaderboard" className="aspect-[280/580] w-full object-cover object-top" />
                 </div>
@@ -54,6 +80,23 @@ export function WhyHundredOut() {
                 <span>→</span>
               </div>
               <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
+            </div>
+
+            <div className="mt-4 flex items-center justify-center gap-3 sm:hidden">
+              <button
+                type="button"
+                onClick={() => scrollScreens("prev")}
+                className="inline-flex min-w-24 items-center justify-center border border-[#0d1b28]/10 bg-white px-4 py-3 text-xs uppercase tracking-[0.24em] text-[#0d1b28] shadow-[0_12px_30px_rgba(13,27,40,0.08)]"
+              >
+                Prev
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollScreens("next")}
+                className="inline-flex min-w-24 items-center justify-center bg-[#EE455F] px-4 py-3 text-xs uppercase tracking-[0.24em] text-white shadow-[0_12px_30px_rgba(238,69,95,0.22)]"
+              >
+                Next
+              </button>
             </div>
 
             {/* Floating accent elements */}
