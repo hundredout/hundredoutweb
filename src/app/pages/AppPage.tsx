@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import coreCrewBadgeImg from "../../imports/CC_2026_Badge@4x.png";
 import appPageBgImg from "../../imports/appPageBG.jpg";
 import languagePreferenceImg from "../../imports/SCREENSHOTS/LanguagePreference_screenshot.png";
@@ -136,6 +137,103 @@ function PhonePlaceholder({
   );
 }
 
+function MobileFeatureCarousel({
+  images,
+  text,
+  accent,
+}: {
+  images: string[];
+  text: string;
+  accent: string;
+}) {
+  const [mobileIndex, setMobileIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchCurrentX = useRef<number | null>(null);
+
+  const showPrev = () => setMobileIndex((current) => (current === 0 ? images.length - 1 : current - 1));
+  const showNext = () => setMobileIndex((current) => (current === images.length - 1 ? 0 : current + 1));
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+    touchCurrentX.current = touchStartX.current;
+  };
+
+  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchCurrentX.current = event.touches[0]?.clientX ?? null;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current == null || touchCurrentX.current == null) return;
+
+    const delta = touchCurrentX.current - touchStartX.current;
+    if (Math.abs(delta) > 40) {
+      if (delta < 0) showNext();
+      if (delta > 0) showPrev();
+    }
+
+    touchStartX.current = null;
+    touchCurrentX.current = null;
+  };
+
+  return (
+    <>
+      <div className="sm:hidden">
+        <div
+          className="overflow-hidden"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div
+            className="flex w-full transition-transform duration-300 ease-out"
+            style={{ transform: `translateX(-${mobileIndex * 100}%)` }}
+          >
+            {images.map((image, index) => (
+              <div key={image} className="w-full shrink-0 px-4">
+                <PhonePlaceholder image={image} text={`${text} ${index + 1}`} accent={accent} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-4 flex items-center justify-center gap-4">
+          <button
+            type="button"
+            aria-label="Previous screen"
+            onClick={showPrev}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#0d1b28]/10 bg-white text-[#0d1b28] shadow-[0_12px_30px_rgba(13,27,40,0.08)]"
+          >
+            <span className="text-xl leading-none">←</span>
+          </button>
+          {images.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              aria-label={`Show screen ${index + 1}`}
+              onClick={() => setMobileIndex(index)}
+              className={`h-2.5 rounded-full transition-all ${index === mobileIndex ? "w-8 bg-[#EE455F]" : "w-2.5 bg-[#0d1b28]/18"}`}
+            />
+          ))}
+          <button
+            type="button"
+            aria-label="Next screen"
+            onClick={showNext}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#EE455F] text-white shadow-[0_12px_30px_rgba(238,69,95,0.22)]"
+          >
+            <span className="text-xl leading-none">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div className="mx-auto hidden max-w-[620px] gap-6 sm:grid sm:grid-cols-2">
+        {images.map((image, index) => (
+          <PhonePlaceholder key={image} image={image} text={`${text} ${index + 1}`} accent={accent} />
+        ))}
+      </div>
+    </>
+  );
+}
+
 function FeatureScreens({
   images,
   text,
@@ -146,13 +244,7 @@ function FeatureScreens({
   accent: string;
 }) {
   if (images && images.length > 1) {
-    return (
-      <div className="mx-auto grid max-w-[620px] gap-6 sm:grid-cols-2">
-        {images.map((image, index) => (
-          <PhonePlaceholder key={image} image={image} text={`${text} ${index + 1}`} accent={accent} />
-        ))}
-      </div>
-    );
+    return <MobileFeatureCarousel images={images} text={text} accent={accent} />;
   }
 
   return <PhonePlaceholder image={images?.[0]} text={text} accent={accent} />;
