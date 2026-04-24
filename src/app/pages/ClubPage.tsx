@@ -1,4 +1,5 @@
 import coreCrewBadgeImg from "../../imports/CC_2026_Badge@4x.png";
+import { EarlyAccessSignup } from "../components/EarlyAccessSignup";
 
 const tiers = [
   {
@@ -96,6 +97,17 @@ export function ClubPage() {
 
       <section className="bg-white py-24">
         <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
+          <div className="mb-16">
+            <EarlyAccessSignup
+              theme="light"
+              eyebrow="Club Early Access"
+              title="Get first shot at founding-member access."
+              description="If the Club angle is what pulls you in, get on the list now. You’ll be first to hear when access expands, new perks land, and the next member-only moves are ready."
+              ctaLabel="Join the Founding List"
+              footnote="Built for people who want the identity, the gear, and the first access before anything goes public."
+            />
+          </div>
+
           <div className="mb-14 max-w-3xl">
             <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]">
               Two Tiers

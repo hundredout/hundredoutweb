@@ -7,6 +7,7 @@ import circleMarkEssentialsImg from "../../imports/SCREENSHOTS/CircleMarkEssenti
 import lifestyleShotImg from "../../imports/GEAR/LifeStyleShot.png";
 import heroTwoImg from "../../imports/GEAR/hero-2.png";
 import keepIt100HoodieImg from "../../imports/GEAR/keepit100_hoodie.png";
+import { EarlyAccessSignup } from "../components/EarlyAccessSignup";
 
 const dropProducts = [
   {
@@ -167,6 +168,16 @@ export function GearPage() {
         </div>
 
         <div className="relative mx-auto max-w-[1600px] px-6 lg:px-12">
+          <div className="mb-16">
+            <EarlyAccessSignup
+              eyebrow="Drop List"
+              title="Be first in line when the first drop lands."
+              description="The gear is still taking shape, which is exactly why the list matters. Join now for early access to launch timing, first-look product drops, and the pieces that go live before the public sees them."
+              ctaLabel="Join the Drop List"
+              footnote="For people who want the first hat, the first polo, and the first real shot before the drop opens up."
+            />
+          </div>
+
           <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
               <div className="mb-5 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-wider text-white/75">

@@ -2,3 +2,4 @@ node_modules
 dist
 .DS_Store
 src/imports/REMOVE
+.env.local
