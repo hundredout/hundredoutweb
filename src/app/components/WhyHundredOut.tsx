@@ -26,24 +26,34 @@ export function WhyHundredOut() {
           {/* Left: Phone Mockups */}
           <div className="relative order-2 lg:order-1">
             <div className="mb-4 flex items-center justify-between sm:hidden">
-              <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45">Swipe Screens</div>
-              <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/35">1 of 2</div>
+              <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45">Slide to View Screens</div>
+              <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/35">1 / 2</div>
             </div>
 
-            <div className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 sm:mx-0 sm:flex-row sm:justify-center sm:overflow-visible sm:px-0">
+            <div className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-scroll overscroll-x-contain px-6 pb-4 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] touch-pan-x [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-row sm:justify-center sm:overflow-visible sm:px-0">
               {/* Phone 1 */}
-              <div className="relative w-[min(82vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]">
+              <div className="relative w-[min(84vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]">
                 <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
                   <img src={phoneScreen1} alt="App stats and rewards" className="aspect-[280/580] w-full object-cover object-top" />
                 </div>
               </div>
 
               {/* Phone 2 */}
-              <div className="relative w-[min(82vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]">
+              <div className="relative w-[min(84vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]">
                 <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
                   <img src={phoneScreen2} alt="Crew leaderboard" className="aspect-[280/580] w-full object-cover object-top" />
                 </div>
               </div>
+            </div>
+
+            <div className="mt-2 flex items-center justify-center gap-3 sm:hidden">
+              <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
+              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-[#0d1b28]/38">
+                <span>←</span>
+                <span>Slide</span>
+                <span>→</span>
+              </div>
+              <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
             </div>
 
             {/* Floating accent elements */}
