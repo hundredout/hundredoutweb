@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import setToneImg from "../../imports/puttCommentary_(1).jpg";
 import phoneScreen1 from "../../imports/Screenshot_2026-04-15_at_2.55.57 PM.png";
 import phoneScreen2 from "../../imports/Screenshot_2026-04-15_at_2.55.06 PM.png";
@@ -10,27 +10,11 @@ const mobileScreens = [
 
 export function WhyHundredOut() {
   const [mobileIndex, setMobileIndex] = useState(0);
-  const viewportRef = useRef<HTMLDivElement | null>(null);
   const touchStartX = useRef<number | null>(null);
   const touchCurrentX = useRef<number | null>(null);
-  const [viewportWidth, setViewportWidth] = useState(0);
 
   const showPrev = () => setMobileIndex((current) => (current === 0 ? mobileScreens.length - 1 : current - 1));
   const showNext = () => setMobileIndex((current) => (current === mobileScreens.length - 1 ? 0 : current + 1));
-
-  useEffect(() => {
-    const updateWidth = () => {
-      setViewportWidth(viewportRef.current?.offsetWidth ?? 0);
-    };
-
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
-  }, []);
-
-  const slideWidth = viewportWidth ? Math.min(280, Math.max(220, viewportWidth - 96)) : 280;
-  const slideGap = 20;
-  const sidePadding = viewportWidth ? Math.max((viewportWidth - slideWidth) / 2, 24) : 48;
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     touchStartX.current = event.touches[0]?.clientX ?? null;
@@ -78,29 +62,21 @@ export function WhyHundredOut() {
           <div className="relative order-2 lg:order-1">
             <div className="relative sm:hidden">
               <div
-                ref={viewportRef}
                 className="overflow-hidden pb-4"
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
               >
-                <div
-                  className="flex gap-5 transition-transform duration-500 ease-out"
-                  style={{
-                    gap: `${slideGap}px`,
-                    paddingLeft: `${sidePadding}px`,
-                    paddingRight: `${sidePadding}px`,
-                    transform: `translateX(-${mobileIndex * (slideWidth + slideGap)}px)`,
-                  }}
-                >
+                <div className="flex w-full transition-transform duration-300 ease-out" style={{ transform: `translateX(-${mobileIndex * 100}%)` }}>
                   {mobileScreens.map((screen) => (
                     <div
                       key={screen.alt}
-                      className="relative shrink-0 rounded-[3rem] border-4 border-[#0d1b28] bg-[#0d1b28] p-3 shadow-2xl"
-                      style={{ width: `${slideWidth}px` }}
+                      className="w-full shrink-0 px-4"
                     >
-                      <div className="h-full w-full overflow-hidden rounded-[2.5rem] bg-white">
-                        <img src={screen.image} alt={screen.alt} className="aspect-[280/580] w-full object-cover object-top" />
+                      <div className="mx-auto w-full max-w-[280px] rounded-[3rem] border-4 border-[#0d1b28] bg-[#0d1b28] p-3 shadow-2xl">
+                        <div className="h-full w-full overflow-hidden rounded-[2.5rem] bg-white">
+                          <img src={screen.image} alt={screen.alt} className="aspect-[280/580] w-full object-cover object-top" />
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -122,7 +98,7 @@ export function WhyHundredOut() {
               ))}
             </div>
 
-            <div className="relative z-10 mt-2 flex items-center justify-center gap-3 sm:hidden">
+            <div className="relative z-10 mt-2 flex items-center justify-center gap-4 sm:hidden">
               <button
                 type="button"
                 aria-label="Previous screen"
@@ -150,14 +126,10 @@ export function WhyHundredOut() {
               </button>
             </div>
 
-            <div className="relative z-10 mt-2 flex items-center justify-center gap-3 sm:hidden">
-              <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
-              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-[#0d1b28]/38">
-                <span>←</span>
-                <span>Swipe or Tap</span>
-                <span>→</span>
+            <div className="relative z-10 mt-3 text-center sm:hidden">
+              <div className="text-[11px] uppercase tracking-[0.24em] text-[#0d1b28]/38">
+                Swipe or tap arrows
               </div>
-              <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
             </div>
 
             {/* Floating accent elements */}
