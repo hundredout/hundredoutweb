@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import setToneImg from "../../imports/puttCommentary_(1).jpg";
 import phoneScreen1 from "../../imports/Screenshot_2026-04-15_at_2.55.57 PM.png";
 import phoneScreen2 from "../../imports/Screenshot_2026-04-15_at_2.55.06 PM.png";
@@ -10,9 +10,49 @@ const mobileScreens = [
 
 export function WhyHundredOut() {
   const [mobileIndex, setMobileIndex] = useState(0);
+  const viewportRef = useRef<HTMLDivElement | null>(null);
+  const touchStartX = useRef<number | null>(null);
+  const touchCurrentX = useRef<number | null>(null);
+  const [viewportWidth, setViewportWidth] = useState(0);
 
   const showPrev = () => setMobileIndex((current) => (current === 0 ? mobileScreens.length - 1 : current - 1));
   const showNext = () => setMobileIndex((current) => (current === mobileScreens.length - 1 ? 0 : current + 1));
+
+  useEffect(() => {
+    const updateWidth = () => {
+      setViewportWidth(viewportRef.current?.offsetWidth ?? 0);
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  const slideWidth = viewportWidth ? Math.min(280, Math.max(220, viewportWidth - 96)) : 280;
+  const slideGap = 20;
+  const sidePadding = viewportWidth ? Math.max((viewportWidth - slideWidth) / 2, 24) : 48;
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+    touchCurrentX.current = touchStartX.current;
+  };
+
+  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchCurrentX.current = event.touches[0]?.clientX ?? null;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current == null || touchCurrentX.current == null) return;
+
+    const delta = touchCurrentX.current - touchStartX.current;
+    if (Math.abs(delta) > 40) {
+      if (delta < 0) showNext();
+      if (delta > 0) showPrev();
+    }
+
+    touchStartX.current = null;
+    touchCurrentX.current = null;
+  };
 
   return (
     <section className="relative py-32 bg-white overflow-hidden">
@@ -36,23 +76,28 @@ export function WhyHundredOut() {
         <div className="mb-20 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: Phone Mockups */}
           <div className="relative order-2 lg:order-1">
-            <div className="mb-4 flex items-center justify-between sm:hidden">
-              <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45">Slide to View Screens</div>
-              <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/35">
-                {mobileIndex + 1} / {mobileScreens.length}
-              </div>
-            </div>
-
             <div className="relative sm:hidden">
-              <div className="overflow-hidden px-2 pb-4">
+              <div
+                ref={viewportRef}
+                className="overflow-hidden pb-4"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
                 <div
                   className="flex gap-5 transition-transform duration-500 ease-out"
-                  style={{ transform: `translateX(calc(-${mobileIndex} * 84vw - ${mobileIndex} * 1.25rem))` }}
+                  style={{
+                    gap: `${slideGap}px`,
+                    paddingLeft: `${sidePadding}px`,
+                    paddingRight: `${sidePadding}px`,
+                    transform: `translateX(-${mobileIndex * (slideWidth + slideGap)}px)`,
+                  }}
                 >
                   {mobileScreens.map((screen) => (
                     <div
                       key={screen.alt}
-                      className="relative w-[84vw] max-w-[280px] shrink-0 bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl"
+                      className="relative shrink-0 rounded-[3rem] border-4 border-[#0d1b28] bg-[#0d1b28] p-3 shadow-2xl"
+                      style={{ width: `${slideWidth}px` }}
                     >
                       <div className="h-full w-full overflow-hidden rounded-[2.5rem] bg-white">
                         <img src={screen.image} alt={screen.alt} className="aspect-[280/580] w-full object-cover object-top" />
@@ -62,8 +107,6 @@ export function WhyHundredOut() {
                 </div>
               </div>
 
-              <div className="pointer-events-none absolute inset-y-8 right-0 w-10 bg-gradient-to-l from-white via-white/85 to-transparent"></div>
-              <div className="pointer-events-none absolute inset-y-8 left-0 w-10 bg-gradient-to-r from-white via-white/85 to-transparent"></div>
             </div>
 
             <div className="hidden items-center justify-center gap-6 sm:flex">
@@ -80,6 +123,14 @@ export function WhyHundredOut() {
             </div>
 
             <div className="relative z-10 mt-2 flex items-center justify-center gap-3 sm:hidden">
+              <button
+                type="button"
+                aria-label="Previous screen"
+                onClick={showPrev}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#0d1b28]/10 bg-white text-[#0d1b28] shadow-[0_12px_30px_rgba(13,27,40,0.08)]"
+              >
+                <span className="text-xl leading-none">←</span>
+              </button>
               {mobileScreens.map((_, index) => (
                 <button
                   key={index}
@@ -89,22 +140,13 @@ export function WhyHundredOut() {
                   className={`h-2.5 rounded-full transition-all ${index === mobileIndex ? "w-8 bg-[#EE455F]" : "w-2.5 bg-[#0d1b28]/18"}`}
                 />
               ))}
-            </div>
-
-            <div className="relative z-10 mx-auto mt-4 flex w-full max-w-[260px] items-center justify-center gap-3 sm:hidden">
               <button
                 type="button"
-                onClick={showPrev}
-                className="inline-flex min-w-24 items-center justify-center border border-[#0d1b28]/10 bg-white px-4 py-3 text-xs uppercase tracking-[0.24em] text-[#0d1b28] shadow-[0_12px_30px_rgba(13,27,40,0.08)]"
-              >
-                Prev
-              </button>
-              <button
-                type="button"
+                aria-label="Next screen"
                 onClick={showNext}
-                className="inline-flex min-w-24 items-center justify-center bg-[#EE455F] px-4 py-3 text-xs uppercase tracking-[0.24em] text-white shadow-[0_12px_30px_rgba(238,69,95,0.22)]"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#EE455F] text-white shadow-[0_12px_30px_rgba(238,69,95,0.22)]"
               >
-                Next
+                <span className="text-xl leading-none">→</span>
               </button>
             </div>
 
@@ -112,7 +154,7 @@ export function WhyHundredOut() {
               <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
               <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-[#0d1b28]/38">
                 <span>←</span>
-                <span>More Screens</span>
+                <span>Swipe or Tap</span>
                 <span>→</span>
               </div>
               <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
