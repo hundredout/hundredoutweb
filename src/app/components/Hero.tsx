@@ -3,7 +3,7 @@ import languagePreferenceImg from "../../imports/SCREENSHOTS/LanguagePreference_
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0d1b28] text-white pt-20">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0d1b28] pt-20 text-white">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-[#EE455F] rounded-full blur-[150px] opacity-10"></div>
@@ -12,17 +12,17 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-[1600px] mx-auto px-6 lg:px-12 py-20">
+      <div className="relative mx-auto max-w-[1600px] px-6 py-16 lg:px-12 lg:py-20">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.62fr]">
           <div className="max-w-5xl">
             {/* Overline */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8">
+            <div className="mb-8 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
               <div className="w-2 h-2 bg-[#EE455F] rounded-full animate-pulse"></div>
               <span className="text-sm uppercase tracking-wider">Your Crew • Your Game • Your Chaos</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-[var(--font-display)] font-black text-[clamp(3rem,10vw,8.8rem)] leading-[0.9] tracking-tight uppercase mb-8">
+            <h1 className="mb-8 font-[var(--font-display)] font-black text-[clamp(3rem,10vw,8.8rem)] leading-[0.9] tracking-tight uppercase">
               Golf with
               <br />
               <span className="text-[#EE455F]">More Action</span>
@@ -31,15 +31,15 @@ export function Hero() {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-white/70 max-w-2xl mb-12">
+            <p className="mb-10 max-w-2xl text-xl text-white/70 md:mb-12 md:text-2xl">
               Side bets. Live pressure. Instant trash talk. The app for golf rounds you'll actually remember.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4 items-center">
-              <Link to="/download" className="group relative px-8 py-4 bg-[#EE455F] text-white uppercase tracking-wide overflow-hidden transition-all hover:scale-105 active:scale-95">
+            <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+              <Link to="/download" className="group relative inline-flex justify-center overflow-hidden bg-[#EE455F] px-8 py-4 text-white transition-all hover:scale-105 active:scale-95 sm:inline-flex">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#d63d54] to-[#EE455F] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
-                <span className="relative flex items-center gap-2">
+                <span className="relative flex items-center justify-center gap-2 text-center uppercase tracking-wide">
                   Download Free
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="group-hover:translate-x-1 transition-transform">
                     <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -47,24 +47,24 @@ export function Hero() {
                 </span>
               </Link>
 
-              <Link to="/app" className="px-8 py-4 border-2 border-white/20 text-white uppercase tracking-wide hover:bg-white/5 hover:border-white/40 transition-all">
+              <Link to="/app" className="inline-flex justify-center border-2 border-white/20 px-8 py-4 text-center uppercase tracking-wide text-white transition-all hover:border-white/40 hover:bg-white/5">
                 See How It Works
               </Link>
 
-              <Link to="/download" className="text-white/40 text-sm ml-4 hover:text-white/70 transition-colors">
+              <Link to="/download" className="text-sm text-white/40 transition-colors hover:text-white/70 sm:ml-4">
                 iOS & Android
               </Link>
             </div>
 
             {/* Moments */}
-            <div className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-white/10">
+            <div className="mt-14 grid gap-6 border-t border-white/10 pt-10 sm:grid-cols-3 sm:gap-8 sm:pt-12 lg:mt-20">
               <div>
                 <div className="flex items-center gap-3 mb-1">
                   <div className="w-9 h-9 relative">
                     <div className="absolute inset-0 border-2 border-[#EE455F] rotate-45"></div>
                     <div className="absolute inset-2 border-2 border-[#EE455F] rotate-45"></div>
                   </div>
-                  <div className="font-[var(--font-display)] font-semibold text-5xl text-[#EE455F]">Earn</div>
+                  <div className="font-[var(--font-display)] font-semibold text-4xl text-[#EE455F] sm:text-5xl">Earn</div>
                 </div>
                 <div className="text-sm text-white/60 uppercase tracking-wide">Trophies & HUNNIDs</div>
               </div>
@@ -76,7 +76,7 @@ export function Hero() {
                       <div className="w-4 h-4 rounded-full border-2 border-[#45B9ED] -ml-2 mt-1"></div>
                     </div>
                   </div>
-                  <div className="font-[var(--font-display)] font-semibold text-5xl text-[#45B9ED]">Bet</div>
+                  <div className="font-[var(--font-display)] font-semibold text-4xl text-[#45B9ED] sm:text-5xl">Bet</div>
                 </div>
                 <div className="text-sm text-white/60 uppercase tracking-wide">Anything You Want</div>
               </div>
@@ -91,7 +91,7 @@ export function Hero() {
                       </div>
                     </div>
                   </div>
-                  <div className="font-[var(--font-display)] font-semibold text-5xl text-white">Own</div>
+                  <div className="font-[var(--font-display)] font-semibold text-4xl text-white sm:text-5xl">Own</div>
                 </div>
                 <div className="text-sm text-white/60 uppercase tracking-wide">The Crew Board</div>
               </div>

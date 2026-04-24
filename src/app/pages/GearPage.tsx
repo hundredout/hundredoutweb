@@ -53,8 +53,8 @@ export function GearPage() {
 
         <div className="relative mx-auto max-w-[1650px] px-6 lg:px-12">
           <div className="grid gap-10 lg:grid-cols-[1.55fr_0.9fr]">
-            <div className="grid min-h-[720px] grid-cols-[0.72fr_1fr_0.82fr] gap-4">
-              <div className="grid gap-4 pt-10">
+            <div className="grid gap-4 sm:grid-cols-2 lg:min-h-[720px] lg:grid-cols-[0.72fr_1fr_0.82fr]">
+              <div className="grid gap-4 lg:pt-10">
                 <div className="relative min-h-[220px] overflow-hidden border-[10px] border-white bg-[#0d1b28]/5 shadow-[0_30px_80px_rgba(13,27,40,0.12)]">
                   <img src={headwearImg} alt="100 headwear preview" className="h-full w-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b28]/55 to-transparent"></div>
@@ -70,12 +70,12 @@ export function GearPage() {
                   </div>
                 </div>
 
-                <div className="relative min-h-[280px] overflow-hidden border-[10px] border-white shadow-[0_30px_80px_rgba(13,27,40,0.12)]">
+                <div className="relative min-h-[240px] overflow-hidden border-[10px] border-white shadow-[0_30px_80px_rgba(13,27,40,0.12)] lg:min-h-[280px]">
                   <img src={poloCollageHeroImg} alt="HundredOut polo lifestyle preview" className="h-full w-full object-cover" />
                 </div>
               </div>
 
-              <div className="relative overflow-hidden border-[12px] border-white shadow-[0_30px_80px_rgba(13,27,40,0.15)]">
+              <div className="relative overflow-hidden border-[12px] border-white shadow-[0_30px_80px_rgba(13,27,40,0.15)] sm:col-span-2 lg:col-span-1">
                 <img src={gearImg} alt="HundredOut apparel preview" className="h-full w-full object-cover" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0d1b28] to-transparent p-8 text-white">
                   <div className="text-sm uppercase tracking-[0.28em] text-white/55">Concept Only</div>
@@ -85,7 +85,7 @@ export function GearPage() {
                 </div>
               </div>
 
-              <div className="grid gap-4 pt-14">
+              <div className="grid gap-4 sm:grid-cols-2 sm:col-span-2 lg:grid-cols-1 lg:pt-14 lg:sm:col-span-1">
                 <div className="relative min-h-[360px] overflow-hidden border-[10px] border-white bg-[#f3f5f8] shadow-[0_30px_80px_rgba(13,27,40,0.12)]">
                   <img src={poloProductConceptsImg} alt="HundredOut polo concept preview" className="h-full w-full object-cover object-[35%_center]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b28]/12 to-transparent"></div>
@@ -117,12 +117,12 @@ export function GearPage() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between border-t border-[#0d1b28]/10 pt-2 lg:pt-0">
+              <div className="flex flex-col justify-between border-t border-[#0d1b28]/10 pt-6 lg:pt-0">
               <div>
                 <div className="mb-8 text-sm uppercase tracking-[0.28em] text-[#0d1b28]/50">
                   HundredOut // Gear In Development
                 </div>
-                <h1 className="font-[var(--font-display)] font-semibold text-[clamp(3.4rem,9vw,7rem)] leading-[0.88] tracking-tight uppercase text-[#EE455F]">
+                <h1 className="font-[var(--font-display)] font-semibold text-[clamp(3rem,9vw,7rem)] leading-[0.88] tracking-tight uppercase text-[#EE455F]">
                   Keep It
                   <br />
                   100

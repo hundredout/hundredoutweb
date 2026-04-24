@@ -22,21 +22,26 @@ export function WhyHundredOut() {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="mb-20 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: Phone Mockups */}
           <div className="relative order-2 lg:order-1">
-            <div className="flex gap-6 justify-center items-center">
+            <div className="mb-4 flex items-center justify-between sm:hidden">
+              <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45">Swipe Screens</div>
+              <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/35">1 of 2</div>
+            </div>
+
+            <div className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 sm:mx-0 sm:flex-row sm:justify-center sm:overflow-visible sm:px-0">
               {/* Phone 1 */}
-              <div className="relative w-[280px] h-[580px] bg-[#0d1b28] rounded-[3rem] p-3 border-4 border-[#0d1b28] shadow-2xl">
+              <div className="relative w-[min(82vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]">
                 <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
-                  <img src={phoneScreen1} alt="App stats and rewards" className="w-full h-full object-cover object-top" />
+                  <img src={phoneScreen1} alt="App stats and rewards" className="aspect-[280/580] w-full object-cover object-top" />
                 </div>
               </div>
 
               {/* Phone 2 */}
-              <div className="relative w-[280px] h-[580px] bg-[#0d1b28] rounded-[3rem] p-3 border-4 border-[#0d1b28] shadow-2xl">
+              <div className="relative w-[min(82vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]">
                 <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
-                  <img src={phoneScreen2} alt="Crew leaderboard" className="w-full h-full object-cover object-top" />
+                  <img src={phoneScreen2} alt="Crew leaderboard" className="aspect-[280/580] w-full object-cover object-top" />
                 </div>
               </div>
             </div>
@@ -51,8 +56,8 @@ export function WhyHundredOut() {
             <div className="space-y-10">
               {/* Set the Tone - Hero Feature */}
               <div className="pb-10 border-b-2 border-[#0d1b28]/10">
-                <div className="flex gap-6">
-                  <div className="flex-shrink-0 w-[104px] h-[104px] rounded-full overflow-hidden">
+                <div className="flex flex-col gap-5 sm:flex-row sm:gap-6">
+                  <div className="h-[104px] w-[104px] flex-shrink-0 overflow-hidden rounded-full">
                     <img src={setToneImg} alt="Set the Tone" className="w-full h-full object-cover" />
                   </div>
                   <div>
@@ -117,7 +122,7 @@ export function WhyHundredOut() {
         </div>
 
         {/* Bottom Rewards Banner */}
-        <div className="relative bg-gradient-to-br from-[#0d1b28] via-[#0d1b28] to-[#0d1b28] p-12 lg:p-16 text-white overflow-hidden">
+        <div className="relative overflow-hidden bg-gradient-to-br from-[#0d1b28] via-[#0d1b28] to-[#0d1b28] p-8 text-white sm:p-10 lg:p-16">
           {/* Background elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#EE455F] rounded-full blur-[120px] opacity-10"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#45B9ED] rounded-full blur-[100px] opacity-8"></div>
@@ -135,7 +140,7 @@ export function WhyHundredOut() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid gap-8 md:grid-cols-3">
               {/* Trophies */}
               <div className="text-center">
                 <div className="w-16 h-16 bg-[#EE455F]/20 border border-[#EE455F]/40 flex items-center justify-center mx-auto mb-4 relative">

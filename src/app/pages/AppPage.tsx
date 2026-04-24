@@ -113,11 +113,11 @@ function PhonePlaceholder({
   image?: string;
 }) {
   return (
-    <div className="relative mx-auto w-[280px] rounded-[2.8rem] bg-[#0d1b28] p-3 shadow-[0_30px_80px_rgba(13,27,40,0.22)]">
+    <div className="relative mx-auto w-[min(100%,280px)] rounded-[2.5rem] bg-[#0d1b28] p-2.5 shadow-[0_30px_80px_rgba(13,27,40,0.22)] sm:rounded-[2.8rem] sm:p-3">
       <div className="absolute left-1/2 top-3 h-6 w-28 -translate-x-1/2 rounded-b-2xl bg-[#0d1b28]"></div>
-      <div className="h-[570px] overflow-hidden rounded-[2.2rem] bg-white">
+      <div className="overflow-hidden rounded-[2rem] bg-white sm:rounded-[2.2rem]">
         {image ? (
-          <img src={image} alt={text} className="h-full w-full object-cover object-top" />
+          <img src={image} alt={text} className="aspect-[280/570] w-full object-cover object-top" />
         ) : (
           <div className="p-6">
             <div
@@ -161,7 +161,7 @@ function FeatureScreens({
 export function AppPage() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative overflow-hidden bg-[#0d1b28] py-32 text-white lg:min-h-[860px]">
+      <section className="relative overflow-hidden bg-[#0d1b28] py-24 text-white lg:min-h-[860px] lg:py-32">
         <div className="absolute inset-0">
           <img src={appPageBgImg} alt="" className="h-full w-full object-cover opacity-75" />
           <div className="absolute inset-0 bg-[#0d1b28]/38"></div>
@@ -173,7 +173,7 @@ export function AppPage() {
         <div className="relative mx-auto max-w-[1600px] px-6 lg:px-12">
           <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="max-w-5xl">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm uppercase tracking-wider">
+              <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm uppercase tracking-wider">
                 <div className="h-2 w-2 rounded-full bg-[#EE455F]"></div>
                 The App
               </div>
@@ -242,7 +242,7 @@ export function AppPage() {
                   >
                     {feature.label}
                   </div>
-                  <h3 className="font-[var(--font-display)] font-semibold text-5xl uppercase tracking-tight text-[#0d1b28]">
+                  <h3 className="font-[var(--font-display)] font-semibold text-4xl uppercase tracking-tight text-[#0d1b28] sm:text-5xl">
                     {feature.title}
                   </h3>
                   <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#0d1b28]/68">{feature.copy}</p>
@@ -287,11 +287,11 @@ export function AppPage() {
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="grid gap-8 md:grid-cols-2">
               {clubTiers.map((tier) => (
-                <article key={tier.name} className="border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+                <article key={tier.name} className="border border-white/10 bg-white/5 p-6 backdrop-blur-sm sm:p-8">
                   <div className="mb-3 text-xs uppercase tracking-[0.24em]" style={{ color: tier.accent }}>
                     {tier.price}
                   </div>
-                  <h3 className="font-[var(--font-display)] font-semibold text-4xl uppercase tracking-tight">{tier.name}</h3>
+                  <h3 className="font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight sm:text-4xl">{tier.name}</h3>
                   <p className="mt-4 text-lg leading-relaxed text-white/72">{tier.tagline}</p>
                   <p className="mt-4 text-sm uppercase tracking-[0.18em] text-white/45">{tier.line}</p>
 
@@ -306,12 +306,12 @@ export function AppPage() {
               ))}
             </div>
 
-            <div className="border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+            <div className="border border-white/10 bg-white/5 p-6 backdrop-blur-sm sm:p-8">
               <div className="mb-4 text-xs uppercase tracking-[0.28em] text-white/45">Core Crew Badge</div>
               <img
                 src={coreCrewBadgeImg}
                 alt="Core Crew badge"
-                className="mx-auto h-56 w-56 object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.35)]"
+                className="mx-auto h-44 w-44 object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.35)] sm:h-56 sm:w-56"
               />
               <p className="mt-8 text-lg leading-relaxed text-white/72">
                 The Core Crew badge is a real identity marker inside the app. It shows on your Home
