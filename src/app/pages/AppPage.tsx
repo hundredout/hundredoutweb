@@ -115,7 +115,6 @@ function PhonePlaceholder({
 }) {
   return (
     <div className="relative mx-auto w-[min(100%,280px)] rounded-[2.5rem] bg-[#0d1b28] p-2.5 shadow-[0_30px_80px_rgba(13,27,40,0.22)] sm:rounded-[2.8rem] sm:p-3">
-      <div className="absolute left-1/2 top-3 h-6 w-28 -translate-x-1/2 rounded-b-2xl bg-[#0d1b28]"></div>
       <div className="overflow-hidden rounded-[2rem] bg-white sm:rounded-[2.2rem]">
         {image ? (
           <img src={image} alt={text} className="aspect-[280/570] w-full object-cover object-top" />
