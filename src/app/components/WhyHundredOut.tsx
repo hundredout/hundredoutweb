@@ -1,24 +1,18 @@
-import { useRef } from "react";
+import { useState } from "react";
 import setToneImg from "../../imports/puttCommentary_(1).jpg";
 import phoneScreen1 from "../../imports/Screenshot_2026-04-15_at_2.55.57 PM.png";
 import phoneScreen2 from "../../imports/Screenshot_2026-04-15_at_2.55.06 PM.png";
 
+const mobileScreens = [
+  { image: phoneScreen1, alt: "App stats and rewards" },
+  { image: phoneScreen2, alt: "Crew leaderboard" },
+];
+
 export function WhyHundredOut() {
-  const mobileRailRef = useRef<HTMLDivElement | null>(null);
+  const [mobileIndex, setMobileIndex] = useState(0);
 
-  const scrollScreens = (direction: "prev" | "next") => {
-    const rail = mobileRailRef.current;
-    if (!rail) return;
-
-    const card = rail.querySelector<HTMLElement>("[data-phone-card]");
-    const gap = 20;
-    const amount = (card?.offsetWidth ?? rail.clientWidth * 0.84) + gap;
-
-    rail.scrollBy({
-      left: direction === "next" ? amount : -amount,
-      behavior: "smooth",
-    });
-  };
+  const showPrev = () => setMobileIndex((current) => (current === 0 ? mobileScreens.length - 1 : current - 1));
+  const showNext = () => setMobileIndex((current) => (current === mobileScreens.length - 1 ? 0 : current + 1));
 
   return (
     <section className="relative py-32 bg-white overflow-hidden">
@@ -44,59 +38,84 @@ export function WhyHundredOut() {
           <div className="relative order-2 lg:order-1">
             <div className="mb-4 flex items-center justify-between sm:hidden">
               <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45">Slide to View Screens</div>
-              <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/35">1 / 2</div>
+              <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/35">
+                {mobileIndex + 1} / {mobileScreens.length}
+              </div>
             </div>
 
-            <div
-              ref={mobileRailRef}
-              className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-visible px-6 pb-4 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] sm:mx-0 sm:flex-row sm:justify-center sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
-            >
-              {/* Phone 1 */}
-              <div
-                data-phone-card
-                className="relative w-[min(84vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]"
-              >
-                <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
-                  <img src={phoneScreen1} alt="App stats and rewards" className="aspect-[280/580] w-full object-cover object-top" />
+            <div className="relative sm:hidden">
+              <div className="overflow-hidden px-2 pb-4">
+                <div
+                  className="flex gap-5 transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(calc(-${mobileIndex} * 84vw - ${mobileIndex} * 1.25rem))` }}
+                >
+                  {mobileScreens.map((screen) => (
+                    <div
+                      key={screen.alt}
+                      className="relative w-[84vw] max-w-[280px] shrink-0 bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl"
+                    >
+                      <div className="h-full w-full overflow-hidden rounded-[2.5rem] bg-white">
+                        <img src={screen.image} alt={screen.alt} className="aspect-[280/580] w-full object-cover object-top" />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Phone 2 */}
-              <div
-                data-phone-card
-                className="relative w-[min(84vw,280px)] shrink-0 snap-center bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl sm:w-[min(100%,280px)]"
-              >
-                <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
-                  <img src={phoneScreen2} alt="Crew leaderboard" className="aspect-[280/580] w-full object-cover object-top" />
+              <div className="pointer-events-none absolute inset-y-8 right-0 w-10 bg-gradient-to-l from-white via-white/85 to-transparent"></div>
+              <div className="pointer-events-none absolute inset-y-8 left-0 w-10 bg-gradient-to-r from-white via-white/85 to-transparent"></div>
+            </div>
+
+            <div className="hidden items-center justify-center gap-6 sm:flex">
+              {mobileScreens.map((screen) => (
+                <div
+                  key={screen.alt}
+                  className="relative w-[min(100%,280px)] bg-[#0d1b28] rounded-[3rem] border-4 border-[#0d1b28] p-3 shadow-2xl"
+                >
+                  <div className="h-full w-full overflow-hidden rounded-[2.5rem] bg-white">
+                    <img src={screen.image} alt={screen.alt} className="aspect-[280/580] w-full object-cover object-top" />
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
 
             <div className="relative z-10 mt-2 flex items-center justify-center gap-3 sm:hidden">
-              <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
-              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-[#0d1b28]/38">
-                <span>←</span>
-                <span>Slide</span>
-                <span>→</span>
-              </div>
-              <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
+              {mobileScreens.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  aria-label={`Show screen ${index + 1}`}
+                  onClick={() => setMobileIndex(index)}
+                  className={`h-2.5 rounded-full transition-all ${index === mobileIndex ? "w-8 bg-[#EE455F]" : "w-2.5 bg-[#0d1b28]/18"}`}
+                />
+              ))}
             </div>
 
             <div className="relative z-10 mx-auto mt-4 flex w-full max-w-[260px] items-center justify-center gap-3 sm:hidden">
               <button
                 type="button"
-                onClick={() => scrollScreens("prev")}
+                onClick={showPrev}
                 className="inline-flex min-w-24 items-center justify-center border border-[#0d1b28]/10 bg-white px-4 py-3 text-xs uppercase tracking-[0.24em] text-[#0d1b28] shadow-[0_12px_30px_rgba(13,27,40,0.08)]"
               >
                 Prev
               </button>
               <button
                 type="button"
-                onClick={() => scrollScreens("next")}
+                onClick={showNext}
                 className="inline-flex min-w-24 items-center justify-center bg-[#EE455F] px-4 py-3 text-xs uppercase tracking-[0.24em] text-white shadow-[0_12px_30px_rgba(238,69,95,0.22)]"
               >
                 Next
               </button>
+            </div>
+
+            <div className="relative z-10 mt-2 flex items-center justify-center gap-3 sm:hidden">
+              <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
+              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-[#0d1b28]/38">
+                <span>←</span>
+                <span>More Screens</span>
+                <span>→</span>
+              </div>
+              <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
             </div>
 
             {/* Floating accent elements */}
