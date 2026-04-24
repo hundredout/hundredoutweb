@@ -49,7 +49,7 @@ export function WhyHundredOut() {
 
             <div
               ref={mobileRailRef}
-              className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-visible px-6 pb-4 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-row sm:justify-center sm:overflow-visible sm:px-0"
+              className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-visible px-6 pb-4 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] sm:mx-0 sm:flex-row sm:justify-center sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
             >
               {/* Phone 1 */}
               <div
@@ -72,7 +72,7 @@ export function WhyHundredOut() {
               </div>
             </div>
 
-            <div className="mt-2 flex items-center justify-center gap-3 sm:hidden">
+            <div className="relative z-10 mt-2 flex items-center justify-center gap-3 sm:hidden">
               <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
               <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-[#0d1b28]/38">
                 <span>←</span>
@@ -82,7 +82,7 @@ export function WhyHundredOut() {
               <div className="h-[2px] w-10 rounded-full bg-[#0d1b28]/18"></div>
             </div>
 
-            <div className="mt-4 flex items-center justify-center gap-3 sm:hidden">
+            <div className="relative z-10 mx-auto mt-4 flex w-full max-w-[260px] items-center justify-center gap-3 sm:hidden">
               <button
                 type="button"
                 onClick={() => scrollScreens("prev")}
@@ -100,8 +100,8 @@ export function WhyHundredOut() {
             </div>
 
             {/* Floating accent elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#45B9ED] rounded-full blur-2xl opacity-40"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#EE455F] rounded-full blur-2xl opacity-30"></div>
+            <div className="pointer-events-none absolute -top-6 -right-6 h-24 w-24 rounded-full bg-[#45B9ED] opacity-40 blur-2xl"></div>
+            <div className="pointer-events-none absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-[#EE455F] opacity-30 blur-2xl"></div>
           </div>
 
           {/* Right: Key Features */}
