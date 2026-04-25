@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import languagePreferenceImg from "../../imports/SCREENSHOTS/LanguagePreference_screenshot.png";
+import scriptLogoImg from "../../imports/HundredOut_LOGO_red_white.png";
 
 export function Hero() {
   return (
@@ -14,7 +15,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative mx-auto max-w-[1600px] px-6 py-16 lg:px-12 lg:py-20">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.62fr]">
-          <div className="max-w-5xl">
+          <div className="relative max-w-5xl">
             {/* Overline */}
             <div className="mb-8 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
               <div className="w-2 h-2 bg-[#EE455F] rounded-full animate-pulse"></div>
@@ -101,7 +102,15 @@ export function Hero() {
           <div className="relative hidden min-h-[690px] items-center justify-center lg:flex">
             <div className="absolute right-4 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-[#EE455F]/18 blur-[120px]"></div>
             <div className="absolute left-8 bottom-16 h-[320px] w-[320px] rounded-full bg-[#45B9ED]/14 blur-[110px]"></div>
-            <div className="relative rounded-[3rem] bg-[#07131d] p-3 shadow-[0_45px_120px_rgba(0,0,0,0.45)]">
+            <div className="relative">
+              <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-[82%]">
+                <img
+                  src={scriptLogoImg}
+                  alt="HundredOut script logo"
+                  className="h-auto w-[510px] max-w-none drop-shadow-[0_22px_50px_rgba(0,0,0,0.25)]"
+                />
+              </div>
+              <div className="relative rounded-[3rem] bg-[#07131d] p-3 shadow-[0_45px_120px_rgba(0,0,0,0.45)]">
               <div className="h-[620px] w-[305px] overflow-hidden rounded-[2.35rem] bg-white">
                 <img
                   src={languagePreferenceImg}
@@ -109,6 +118,7 @@ export function Hero() {
                   className="h-full w-full object-cover object-top"
                 />
               </div>
+            </div>
             </div>
           </div>
         </div>
