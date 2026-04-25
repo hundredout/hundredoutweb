@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import coreCrewBadgeImg from "../../imports/CC_2026_Badge@4x.png";
+import { Link } from "react-router-dom";
 import appPageBgImg from "../../imports/appPageBG.jpg";
 import languagePreferenceImg from "../../imports/SCREENSHOTS/LanguagePreference_screenshot.png";
 import gpsImg from "../../imports/SCREENSHOTS/GPS_FMB_screenshot.png";
@@ -67,40 +67,6 @@ const features = [
     screen: "Put GPS yardage / FMB-style screen here with front, center, and back distances.",
     images: [gpsImg, mapViewImg],
     accent: "#45B9ED",
-  },
-];
-
-const clubTiers = [
-  {
-    name: "Crew",
-    price: "$49.99/year",
-    tagline: "Gear. Perks. The HundredOut Club.",
-    line: "Hat, ball marker, ad-free, and early access. All in.",
-    items: [
-      "HundredOut original logo hat",
-      "HundredOut metal ball marker",
-      "Ad-free experience",
-      "Member pricing on every drop",
-      "Early access before anything goes public",
-      "Redeemable HUNNIDs earned",
-    ],
-    accent: "#45B9ED",
-  },
-  {
-    name: "Core Crew",
-    price: "$99.99/year",
-    tagline: "The exclusive tier. The annual hat. The badge.",
-    line: "First dibs, VIP access, and 100 HUNNIDs on join.",
-    items: [
-      "Exclusive 2026 Core Crew hat — annual edition",
-      "Core Crew metal ball marker",
-      "Core Crew in-app badge",
-      "Ad-free experience",
-      "First dibs on every drop we make",
-      "VIP access — events + member pricing",
-      "+100 HUNNIDs on join — Core Crew exclusive",
-    ],
-    accent: "#EE455F",
   },
 ];
 
@@ -360,7 +326,8 @@ export function AppPage() {
         </div>
 
         <div className="relative mx-auto max-w-[1600px] px-6 lg:px-12">
-          <div className="mb-16 max-w-4xl">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+            <div className="max-w-4xl">
             <div className="mb-5 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-wider text-white/75">
               Join the HundredOut Club
             </div>
@@ -370,49 +337,38 @@ export function AppPage() {
               <span className="text-[#EE455F]">Identity.</span>
             </h2>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/70">
-              Two tiers. Both annual. Both worth it. The Club is optional, but it is where the gear,
-              early access, ad-free experience, and status start to stack up.
+              Club membership is optional, but it is where gear, early access, ad-free experience, and
+              supporter identity start to stack up. Subscribe inside the app, then head to the Club page
+              for the full membership breakdown.
             </p>
-          </div>
-
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="grid gap-8 md:grid-cols-2">
-              {clubTiers.map((tier) => (
-                <article key={tier.name} className="border border-white/10 bg-white/5 p-6 backdrop-blur-sm sm:p-8">
-                  <div className="mb-3 text-xs uppercase tracking-[0.24em]" style={{ color: tier.accent }}>
-                    {tier.price}
-                  </div>
-                  <h3 className="font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight sm:text-4xl">{tier.name}</h3>
-                  <p className="mt-4 text-lg leading-relaxed text-white/72">{tier.tagline}</p>
-                  <p className="mt-4 text-sm uppercase tracking-[0.18em] text-white/45">{tier.line}</p>
-
-                  <div className="mt-8 space-y-3">
-                    {tier.items.map((item) => (
-                      <div key={item} className="border border-white/10 bg-white/5 p-4 text-base leading-relaxed text-white/75">
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </article>
-              ))}
+            <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap">
+              <Link
+                to="/club"
+                className="inline-flex items-center justify-center bg-[#EE455F] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#d63d54]"
+              >
+                Explore Club Membership
+              </Link>
+              <a
+                href={appStoreUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center border border-white/15 px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-white/5"
+              >
+                Subscribe in the App
+              </a>
+            </div>
             </div>
 
-            <div className="border border-white/10 bg-white/5 p-6 backdrop-blur-sm sm:p-8">
-              <div className="mb-4 text-xs uppercase tracking-[0.28em] text-white/45">Core Crew Badge</div>
-              <img
-                src={coreCrewBadgeImg}
-                alt="Core Crew badge"
-                className="mx-auto h-44 w-44 object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.35)] sm:h-56 sm:w-56"
-              />
-              <p className="mt-8 text-lg leading-relaxed text-white/72">
-                The Core Crew badge is a real identity marker inside the app. It shows on your Home
-                screen and profile, and it is visible to your crew. 2026 is year one.
-              </p>
-              <div className="mt-8 flex min-h-[220px] items-center justify-center border border-dashed border-white/15 bg-[#122232] p-6 text-center">
-                <p className="max-w-[18rem] text-base leading-relaxed text-white/55">
-                  Put SupporterScreen or ClubInfoSheet screenshot here showing the in-app tier comparison cards.
-                </p>
-              </div>
+            <div className="grid gap-4">
+              {[
+                "Optional membership. Core scoring, GPS, and crew play stay free.",
+                "Physical gear, early access, and supporter identity all live under Club.",
+                "Pricing, tiers, and the full founding-member angle now live on the Club page.",
+              ].map((item) => (
+                <div key={item} className="border border-white/10 bg-white/5 p-6 text-base leading-relaxed text-white/75 backdrop-blur-sm">
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
         </div>
