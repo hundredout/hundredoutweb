@@ -57,6 +57,14 @@ export function Hero() {
               </Link>
             </div>
 
+            <div className="mt-8 flex justify-center lg:hidden">
+              <img
+                src={scriptLogoImg}
+                alt="HundredOut script logo"
+                className="h-auto w-[260px] max-w-full drop-shadow-[0_22px_50px_rgba(0,0,0,0.25)]"
+              />
+            </div>
+
             {/* Moments */}
             <div className="mt-14 grid gap-6 border-t border-white/10 pt-10 sm:grid-cols-3 sm:gap-8 sm:pt-12 lg:mt-20">
               <div>
