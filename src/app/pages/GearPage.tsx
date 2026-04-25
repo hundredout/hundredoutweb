@@ -79,9 +79,9 @@ export function GearPage() {
               <div className="relative overflow-hidden border-[12px] border-white shadow-[0_30px_80px_rgba(13,27,40,0.15)] sm:col-span-2 lg:col-span-1">
                 <img src={gearImg} alt="HundredOut apparel preview" className="h-full w-full object-cover" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0d1b28] to-transparent p-8 text-white">
-                  <div className="text-sm uppercase tracking-[0.28em] text-white/55">Concept Only</div>
+                  <div className="text-sm uppercase tracking-[0.28em] text-white/55">First Look</div>
                   <div className="mt-2 font-[var(--font-display)] font-semibold text-5xl uppercase tracking-tight">
-                    In Development
+                    Coming Soon
                   </div>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export function GearPage() {
                 <div className="relative min-h-[140px] overflow-hidden border-[10px] border-white bg-[#0d1b28] text-white shadow-[0_30px_80px_rgba(13,27,40,0.12)]">
                   <div className="absolute -right-10 -top-8 h-36 w-36 rounded-full bg-[#EE455F] opacity-20 blur-3xl"></div>
                   <div className="relative p-6">
-                    <div className="text-xs uppercase tracking-[0.3em] text-white/45">In Development</div>
+                    <div className="text-xs uppercase tracking-[0.3em] text-white/45">Worth The Wait</div>
                     <div className="mt-3 font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight">
                       Built for
                       <br />
@@ -121,7 +121,7 @@ export function GearPage() {
               <div className="flex flex-col justify-between border-t border-[#0d1b28]/10 pt-6 lg:pt-0">
               <div>
                 <div className="mb-8 text-sm uppercase tracking-[0.28em] text-[#0d1b28]/50">
-                  HundredOut // Gear In Development
+                  HundredOut // First Gear Drop
                 </div>
                 <h1 className="font-[var(--font-display)] font-semibold text-[clamp(3rem,9vw,7rem)] leading-[0.88] tracking-tight uppercase text-[#EE455F]">
                   Keep It
@@ -153,7 +153,7 @@ export function GearPage() {
 
               <div className="mt-12 border-t border-[#0d1b28]/10 pt-8">
                 <p className="max-w-sm text-lg leading-relaxed text-[#0d1b28]/55">
-                  Concept only. Built for the moments. In development as the first HundredOut gear direction takes shape.
+                  Built for the moments. The first HundredOut pieces are on the way, with the kind of drop energy worth showing up early for.
                 </p>
               </div>
             </div>
@@ -205,17 +205,16 @@ export function GearPage() {
         <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
           <div className="mb-14 max-w-3xl">
             <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]">
-              Potential Drop Board
+              Drop Board
             </div>
             <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase text-[#0d1b28]">
-              Slots for
+              First looks at
               <br />
-              <span className="text-[#45B9ED]">future product</span>
+              <span className="text-[#45B9ED]">what is coming</span>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-[#0d1b28]/65">
-              These are placeholder slots for where future pieces can land. The point is to make the page
-              feel active and directional now, then let real product, photography, and final release info drop in
-              cleanly as the line comes together.
+              This is the early look at where the first HundredOut pieces are headed. Expect cleaner marks,
+              tighter drops, and gear that feels like part of the brand from the second it lands.
             </p>
           </div>
 
@@ -229,7 +228,7 @@ export function GearPage() {
                   <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
 
                   <div className="absolute left-5 top-5 px-3 py-1 text-xs uppercase tracking-[0.24em] text-white" style={{ backgroundColor: product.accent }}>
-                    Concept Only
+                    First Look
                   </div>
 
                   <div className="absolute bottom-5 left-5 right-5 border border-[#0d1b28]/10 bg-white/90 p-4 backdrop-blur-sm">

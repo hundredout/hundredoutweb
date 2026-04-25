@@ -3,7 +3,7 @@ export function HowItWorks() {
     {
       number: "1",
       title: "Set It Up",
-      description: "Create your crew. Pick the format. Set the stakes. Choose your vibe. Takes 30 seconds.",
+      description: "Play with your crew. Play solo. Create a quick game. Add your buddies if you want. Choose your vibe. Takes 30 seconds.",
       color: "#EE455F"
     },
     {

@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import setToneImg from "../../imports/puttCommentary_(1).jpg";
-import phoneScreen1 from "../../imports/Screenshot_2026-04-15_at_2.55.57 PM.png";
+import phoneScreen1 from "../../imports/SCREENSHOTS/HomePage_screenshot.png";
 import phoneScreen2 from "../../imports/Screenshot_2026-04-15_at_2.55.06 PM.png";
 
 const mobileScreens = [

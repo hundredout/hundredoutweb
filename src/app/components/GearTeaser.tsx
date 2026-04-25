@@ -15,13 +15,13 @@ export function GearTeaser() {
           {/* Left: Content */}
           <div>
             <h2 className="font-[var(--font-display)] font-semibold text-4xl md:text-5xl uppercase tracking-tight mb-4">
-              Rep The Movement
+              Gear Is Coming
             </h2>
             <p className="text-lg text-white/60 mb-6 leading-relaxed">
-              Golf gear that doesn't take itself too seriously but performs when it counts.
+              The first HundredOut pieces are in development now. Hats, polos, and performance layers built to feel sharp, ownable, and worth the wait.
             </p>
             <Link to="/gear" className="group inline-flex items-center gap-2 text-sm uppercase tracking-wide text-white/80 hover:text-[#EE455F] transition-colors">
-              Shop Gear
+              See The Gear Direction
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:translate-x-1 transition-transform">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="miter"/>
               </svg>
