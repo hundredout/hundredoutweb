@@ -1,24 +1,29 @@
+import iosBadgeImg from "../../imports/STORE_BADGES/IOS_Badge.svg";
+import googlePlayBadgeImg from "../../imports/STORE_BADGES/GooglePlay_Badge.svg";
+
 const appStoreUrl = "https://apps.apple.com/us/app/hundredout-golf-games-and-gps/id6478035673";
 const playStoreUrl = "https://play.google.com/store/apps/details?hl=en_US&id=com.hundredout";
 
 const platformCards = [
   {
     name: "iOS",
-    badgeText: "Official App Store badge",
     title: "Download on the App Store",
     href: appStoreUrl,
     accent: "#EE455F",
     note: "iPhone, Apple Watch, and the full HundredOut experience.",
     short: "App Store",
+    badgeImage: iosBadgeImg,
+    badgeAlt: "Download on the App Store",
   },
   {
     name: "Android",
-    badgeText: "Official Google Play badge",
     title: "Get it on Google Play",
     href: playStoreUrl,
     accent: "#45B9ED",
     note: "Google Play install for the Android build.",
     short: "Google Play",
+    badgeImage: googlePlayBadgeImg,
+    badgeAlt: "Get it on Google Play",
   },
 ];
 
@@ -83,22 +88,13 @@ export function DownloadPage() {
 
                   <div className="border border-[#0d1b28]/10 bg-[#f6f8fb] p-6">
                     <div className="text-xs uppercase tracking-[0.28em] text-[#0d1b28]/45">{platform.name} Badge</div>
-                    <div className="mt-5 inline-flex items-center rounded-xl bg-black px-5 py-3 text-white shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
-                      <div className="mr-4 flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-lg font-bold">
-                        {platform.name === "iOS" ? "A" : "▶"}
-                      </div>
-                      <div>
-                        <div className="text-[10px] uppercase tracking-[0.22em] text-white/55">
-                          {platform.name === "iOS" ? "Download on the" : "Get it on"}
-                        </div>
-                        <div className="font-[var(--font-display)] font-semibold text-2xl uppercase tracking-tight">
-                          {platform.short}
-                        </div>
-                      </div>
+                    <div className="mt-5">
+                      <img
+                        src={platform.badgeImage}
+                        alt={platform.badgeAlt}
+                        className="h-auto w-[220px] max-w-full"
+                      />
                     </div>
-                    <p className="mt-4 text-sm leading-relaxed text-[#0d1b28]/55">
-                      Replace this with the official {platform.badgeText.toLowerCase()} asset when added to the repo.
-                    </p>
                   </div>
 
                   <h3 className="mt-8 font-[var(--font-display)] font-semibold text-4xl uppercase tracking-tight text-[#0d1b28]">
