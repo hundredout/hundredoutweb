@@ -142,6 +142,31 @@ export function PartnershipsPage() {
         </div>
       </section>
 
+      <section className="relative overflow-hidden bg-[#0d1b28] py-24 text-white">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-[12%] h-72 w-72 -translate-y-1/2 rounded-full bg-[#EE455F] opacity-10 blur-[120px]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+        </div>
+
+        <div className="relative mx-auto max-w-[1600px] px-6 lg:px-12">
+          <div className="max-w-4xl">
+            <div className="mb-5 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-wider text-white/75">
+              Strategic Opportunities
+            </div>
+            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] font-semibold uppercase leading-[0.95] tracking-tight">
+              HundredOut is currently
+              <br />
+              <span className="text-[#EE455F]">in strategic conversations.</span>
+            </h2>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/72">
+              HundredOut is currently in strategic partnership and investment conversations as we grow
+              the brand across golf technology, entertainment, and lifestyle. If you see alignment in
+              what we are building, we are open to the conversation.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden bg-[#f6f8fb] py-24">
         <div className="absolute top-0 right-0 h-80 w-80 rounded-full bg-[#EE455F]/8 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-[#45B9ED]/10 blur-3xl"></div>
