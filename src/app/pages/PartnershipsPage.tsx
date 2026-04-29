@@ -1,6 +1,7 @@
 import { FormEvent, useMemo, useState } from "react";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
+import circleMarkImg from "../../imports/HundredOut_circleMark_Final.png";
 
 type InquiryType =
   | "Creator / Influencer"
@@ -149,23 +150,60 @@ export function PartnershipsPage() {
         </div>
 
         <div className="relative mx-auto max-w-[1600px] px-6 lg:px-12">
-          <div className="max-w-3xl">
-            <div className="mb-5 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-wider text-white/75">
-              Strategic Opportunities
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div className="max-w-3xl">
+              <div className="mb-5 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-wider text-white/75">
+                Strategic Opportunities
+              </div>
+              <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] font-semibold uppercase leading-[0.95] tracking-tight">
+                HundredOut is
+                <br />
+                <span className="text-[#EE455F]">seeking strategic partners.</span>
+              </h2>
+              <p className="mt-5 text-sm uppercase tracking-[0.24em] text-white/42">
+                Partnerships. Investment. Brand expansion.
+              </p>
+              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/72">
+                HundredOut is currently working within strategic relationships and looking to expand them
+                as we grow across golf technology, entertainment, and lifestyle. If you see alignment in
+                what we are building, we are open to the conversation.
+              </p>
             </div>
-            <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] font-semibold uppercase leading-[0.95] tracking-tight">
-              HundredOut is
-              <br />
-              <span className="text-[#EE455F]">seeking strategic partners.</span>
-            </h2>
-            <p className="mt-5 text-sm uppercase tracking-[0.24em] text-white/42">
-              Partnerships. Investment. Brand expansion.
-            </p>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/72">
-              HundredOut is currently working within strategic relationships and looking to expand them
-              as we grow across golf technology, entertainment, and lifestyle. If you see alignment in
-              what we are building, we are open to the conversation.
-            </p>
+
+            <div className="relative mx-auto flex w-full max-w-[620px] items-center justify-center py-10">
+              <div className="absolute h-[420px] w-[420px] rounded-full border border-white/8"></div>
+              <div className="absolute h-[300px] w-[300px] rounded-full border border-white/8"></div>
+              <div className="absolute h-[200px] w-[200px] rounded-full border border-white/8"></div>
+
+              <div className="absolute left-1/2 top-[10%] h-[22%] w-px -translate-x-1/2 bg-gradient-to-b from-white/5 to-white/30"></div>
+              <div className="absolute bottom-[12%] left-[18%] h-px w-[27%] rotate-[28deg] bg-gradient-to-r from-white/5 to-white/30"></div>
+              <div className="absolute bottom-[12%] right-[18%] h-px w-[27%] -rotate-[28deg] bg-gradient-to-l from-white/5 to-white/30"></div>
+              <div className="absolute left-[10%] top-1/2 h-px w-[24%] -translate-y-1/2 bg-gradient-to-r from-white/5 to-white/30"></div>
+              <div className="absolute right-[10%] top-1/2 h-px w-[24%] -translate-y-1/2 bg-gradient-to-l from-white/5 to-white/30"></div>
+
+              <div className="relative z-10 flex h-40 w-40 flex-col items-center justify-center rounded-full border border-white/12 bg-[#122232] text-center shadow-[0_24px_60px_rgba(0,0,0,0.3)]">
+                <div className="absolute inset-0 rounded-full bg-[#EE455F]/10 blur-2xl"></div>
+                <img src={circleMarkImg} alt="HundredOut circle mark" className="relative h-16 w-16 object-contain" />
+                <div className="relative mt-3 font-[var(--font-display)] text-xl font-semibold uppercase tracking-tight">
+                  HundredOut
+                </div>
+              </div>
+
+              {[
+                { label: "Creators", position: "left-[50%] top-0 -translate-x-1/2" },
+                { label: "Emerging Brands", position: "left-0 top-1/2 -translate-y-1/2" },
+                { label: "Events", position: "bottom-0 left-[20%]" },
+                { label: "Strategic Partners", position: "bottom-0 right-[20%]" },
+                { label: "Investment Interest", position: "right-0 top-1/2 -translate-y-1/2" },
+              ].map((node) => (
+                <div
+                  key={node.label}
+                  className={`absolute ${node.position} rounded-full border border-white/10 bg-white/5 px-5 py-3 text-center text-sm uppercase tracking-[0.18em] text-white/80 backdrop-blur-sm`}
+                >
+                  {node.label}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
