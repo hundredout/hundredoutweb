@@ -154,16 +154,16 @@ export function PartnershipsPage() {
               Strategic Opportunities
             </div>
             <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] font-semibold uppercase leading-[0.95] tracking-tight">
-              HundredOut is already
+              HundredOut is
               <br />
-              <span className="text-[#EE455F]">in serious conversations.</span>
+              <span className="text-[#EE455F]">seeking strategic partners.</span>
             </h2>
             <p className="mt-5 text-sm uppercase tracking-[0.24em] text-white/42">
               Partnerships. Investment. Brand expansion.
             </p>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/72">
-              We are currently exploring select partnership and investment relationships as HundredOut
-              grows across golf technology, entertainment, and lifestyle. If you see real alignment in
+              HundredOut is currently working within strategic relationships and looking to expand them
+              as we grow across golf technology, entertainment, and lifestyle. If you see alignment in
               what we are building, we are open to the conversation.
             </p>
           </div>
