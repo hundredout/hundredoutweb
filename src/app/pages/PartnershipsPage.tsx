@@ -20,12 +20,12 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkoywrga";
 
 const focusAreas = [
   {
-    title: "Creators & Influencers",
-    body: "Content, campaigns, social storytelling, appearances, and collaborations that feel authentic to the game.",
-  },
-  {
     title: "Brands & Product Collabs",
     body: "Emerging golf brands, co-branded ideas, limited drops, and product stories that bring fresh energy into the space.",
+  },
+  {
+    title: "Creators & Influencers",
+    body: "Content, campaigns, social storytelling, appearances, and collaborations that feel authentic to the game.",
   },
   {
     title: "Events & Strategic Opportunities",
