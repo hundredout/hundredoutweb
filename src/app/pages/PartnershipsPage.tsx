@@ -175,12 +175,6 @@ export function PartnershipsPage() {
               <div className="absolute h-[300px] w-[300px] rounded-full border border-white/8"></div>
               <div className="absolute h-[200px] w-[200px] rounded-full border border-white/8"></div>
 
-              <div className="absolute left-1/2 top-[10%] h-[22%] w-px -translate-x-1/2 bg-gradient-to-b from-white/5 to-white/30"></div>
-              <div className="absolute bottom-[12%] left-[18%] h-px w-[27%] rotate-[28deg] bg-gradient-to-r from-white/5 to-white/30"></div>
-              <div className="absolute bottom-[12%] right-[18%] h-px w-[27%] -rotate-[28deg] bg-gradient-to-l from-white/5 to-white/30"></div>
-              <div className="absolute left-[10%] top-1/2 h-px w-[24%] -translate-y-1/2 bg-gradient-to-r from-white/5 to-white/30"></div>
-              <div className="absolute right-[10%] top-1/2 h-px w-[24%] -translate-y-1/2 bg-gradient-to-l from-white/5 to-white/30"></div>
-
               <div className="relative z-10 flex h-40 w-40 items-center justify-center rounded-full border border-white/12 bg-[#122232] text-center shadow-[0_24px_60px_rgba(0,0,0,0.3)]">
                 <div className="absolute inset-0 rounded-full bg-[#EE455F]/10 blur-2xl"></div>
                 <img src={circleMarkImg} alt="HundredOut circle mark" className="relative h-20 w-20 object-contain" />
