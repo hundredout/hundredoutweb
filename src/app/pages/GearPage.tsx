@@ -15,27 +15,31 @@ const dropProducts = [
     type: "Headwear",
     note: "Structured front, clean 100 mark, everyday course-to-anywhere fit.",
     accent: "#EE455F",
+    status: "Development",
     image: headwearImg,
   },
   {
     name: "HundredOut Polo",
     type: "Performance",
     note: "Built for rounds, range sessions, and everything after the card is signed.",
-    accent: "#45B9ED",
+    accent: "#EE455F",
+    status: "Development",
     image: poloProductConceptsImg,
   },
   {
     name: "Keep It 100 Hoodie",
     type: "Layering",
     note: "A lightweight performance layer built for cool starts, range sessions, and easy movement throughout the round.",
-    accent: "#2D5016",
+    accent: "#EE455F",
+    status: "Development",
     image: keepIt100HoodieImg,
   },
   {
-    name: "Circle Mark Essentials",
+    name: "100 Accessories",
     type: "Accessories",
     note: "Small branded pieces that make the drop feel collectible, not just merch.",
-    accent: "#0d1b28",
+    accent: "#EE455F",
+    status: "Concept",
     image: circleMarkEssentialsImg,
   },
 ];
@@ -79,9 +83,9 @@ export function GearPage() {
               <div className="relative overflow-hidden border-[12px] border-white shadow-[0_30px_80px_rgba(13,27,40,0.15)] sm:col-span-2 lg:col-span-1">
                 <img src={gearImg} alt="HundredOut apparel preview" className="h-full w-full object-cover" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0d1b28] to-transparent p-8 text-white">
-                  <div className="text-sm uppercase tracking-[0.28em] text-white/55">First Look</div>
+                  <div className="text-sm uppercase tracking-[0.28em] text-white/55">Concept</div>
                   <div className="mt-2 font-[var(--font-display)] font-semibold text-5xl uppercase tracking-tight">
-                    Coming Soon
+                    Concepts
                   </div>
                 </div>
               </div>
@@ -93,7 +97,7 @@ export function GearPage() {
                   <div className="relative flex h-full flex-col justify-between p-6">
                     <div className="text-xs uppercase tracking-[0.3em] text-white/0">.</div>
                     <div className="max-w-[15rem] border border-white/15 bg-white/90 p-4 backdrop-blur-sm">
-                      <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45">Pattern Preview</div>
+                      <div className="text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45">Concept</div>
                       <div className="mt-2 font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight text-[#0d1b28]">
                         100 Polo
                       </div>
@@ -107,7 +111,7 @@ export function GearPage() {
                 <div className="relative min-h-[140px] overflow-hidden border-[10px] border-white bg-[#0d1b28] text-white shadow-[0_30px_80px_rgba(13,27,40,0.12)]">
                   <div className="absolute -right-10 -top-8 h-36 w-36 rounded-full bg-[#EE455F] opacity-20 blur-3xl"></div>
                   <div className="relative p-6">
-                    <div className="text-xs uppercase tracking-[0.3em] text-white/45">Worth The Wait</div>
+                    <div className="text-xs uppercase tracking-[0.3em] text-white/45">Concept</div>
                     <div className="mt-3 font-[var(--font-display)] font-semibold text-3xl uppercase tracking-tight">
                       Built for
                       <br />
@@ -228,7 +232,7 @@ export function GearPage() {
                   <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
 
                   <div className="absolute left-5 top-5 px-3 py-1 text-xs uppercase tracking-[0.24em] text-white" style={{ backgroundColor: product.accent }}>
-                    First Look
+                    {product.status}
                   </div>
 
                   <div className="absolute bottom-5 left-5 right-5 border border-[#0d1b28]/10 bg-white/90 p-4 backdrop-blur-sm">
