@@ -124,61 +124,93 @@ export function EarlyAccessSignup({
         </div>
 
         <div className={cn("border p-5 md:p-6", isDark ? "border-white/10 bg-white/5" : "border-[#0d1b28]/10 bg-[#f6f8fb]")}>
-          <form
-            action={MAILCHIMP_ACTION || undefined}
-            method="post"
-            target={iframeId}
-            noValidate
-            onSubmit={handleSubmit}
-            className="space-y-4"
-          >
-            <label htmlFor={emailId} className={cn("block text-xs uppercase tracking-[0.24em]", isDark ? "text-white/45" : "text-[#0d1b28]/45")}>
-              Email Address
-            </label>
-            <Input
-              id={emailId}
-              name="EMAIL"
-              type="email"
-              inputMode="email"
-              autoComplete="email"
-              placeholder="you@clubhouse.com"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              required
+          {status === "success" ? (
+            <div
               className={cn(
-                "h-12 rounded-none border text-base shadow-none",
-                isDark
-                  ? "border-white/10 bg-[#07131d] text-white placeholder:text-white/35"
-                  : "border-[#0d1b28]/12 bg-white text-[#0d1b28] placeholder:text-[#0d1b28]/35",
-              )}
-            />
-
-            {honeypotName ? (
-              <div aria-hidden="true" className="absolute left-[-5000px]">
-                <input tabIndex={-1} type="text" name={honeypotName} defaultValue="" />
-              </div>
-            ) : null}
-
-            <Button
-              type="submit"
-              className={cn(
-                "h-12 w-full rounded-none text-sm uppercase tracking-[0.18em]",
-                isDark
-                  ? "bg-[#EE455F] text-white hover:bg-[#d63d54]"
-                  : "bg-[#0d1b28] text-white hover:bg-[#13283a]",
+                "flex min-h-[214px] flex-col justify-between border px-5 py-6 md:px-6",
+                isDark ? "border-white/10 bg-[#07131d]" : "border-[#0d1b28]/10 bg-white",
               )}
             >
-              {status === "submitting" ? "Submitting..." : ctaLabel}
-            </Button>
-          </form>
+              <div>
+                <div
+                  className={cn(
+                    "mb-4 inline-flex items-center gap-2 rounded-full px-3 py-2 text-[11px] uppercase tracking-[0.24em]",
+                    isDark ? "bg-white/5 text-white/65" : "bg-[#0d1b28]/5 text-[#0d1b28]/58",
+                  )}
+                >
+                  <div className={cn("h-2 w-2 rounded-full", isDark ? "bg-[#EE455F]" : "bg-[#45B9ED]")} />
+                  You&apos;re In
+                </div>
 
-          <p className={cn("mt-4 text-sm leading-relaxed", isDark ? "text-white/50" : "text-[#0d1b28]/52")}>
-            {status === "success"
-              ? "You’re on the list. Watch your inbox for early-access updates."
-              : status === "error"
-                ? "Mailchimp is not configured yet. Add `VITE_MAILCHIMP_FORM_ACTION` to turn this form on."
-                : footnote}
-          </p>
+                <h3 className="font-[var(--font-display)] text-[clamp(1.9rem,6vw,2.4rem)] font-semibold uppercase leading-[0.94] tracking-tight">
+                  Welcome To The First Wave.
+                </h3>
+                <p className={cn("mt-4 max-w-md text-sm leading-relaxed md:text-[15px]", isDark ? "text-white/62" : "text-[#0d1b28]/62")}>
+                  Early access, first looks, and the next HundredOut moves will hit your inbox before they go wide.
+                </p>
+              </div>
+
+              <p className={cn("mt-6 text-xs uppercase tracking-[0.2em]", isDark ? "text-white/38" : "text-[#0d1b28]/42")}>
+                Watch your inbox.
+              </p>
+            </div>
+          ) : (
+            <>
+              <form
+                action={MAILCHIMP_ACTION || undefined}
+                method="post"
+                target={iframeId}
+                noValidate
+                onSubmit={handleSubmit}
+                className="space-y-4"
+              >
+                <label htmlFor={emailId} className={cn("block text-xs uppercase tracking-[0.24em]", isDark ? "text-white/45" : "text-[#0d1b28]/45")}>
+                  Email Address
+                </label>
+                <Input
+                  id={emailId}
+                  name="EMAIL"
+                  type="email"
+                  inputMode="email"
+                  autoComplete="email"
+                  placeholder="you@clubhouse.com"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  required
+                  className={cn(
+                    "h-12 rounded-none border text-base shadow-none",
+                    isDark
+                      ? "border-white/10 bg-[#07131d] text-white placeholder:text-white/35"
+                      : "border-[#0d1b28]/12 bg-white text-[#0d1b28] placeholder:text-[#0d1b28]/35",
+                  )}
+                />
+
+                {honeypotName ? (
+                  <div aria-hidden="true" className="absolute left-[-5000px]">
+                    <input tabIndex={-1} type="text" name={honeypotName} defaultValue="" />
+                  </div>
+                ) : null}
+
+                <Button
+                  type="submit"
+                  className={cn(
+                    "h-12 w-full rounded-none text-sm uppercase tracking-[0.18em]",
+                    isDark
+                      ? "bg-[#EE455F] text-white hover:bg-[#d63d54]"
+                      : "bg-[#0d1b28] text-white hover:bg-[#13283a]",
+                  )}
+                >
+                  {status === "submitting" ? "Submitting..." : ctaLabel}
+                </Button>
+              </form>
+
+              <p className={cn("mt-4 text-sm leading-relaxed", isDark ? "text-white/50" : "text-[#0d1b28]/52")}>
+                {status === "error"
+                  ? "Mailchimp is not configured yet. Add `VITE_MAILCHIMP_FORM_ACTION` to turn this form on."
+                  : footnote}
+              </p>
+            </>
+          )}
         </div>
       </div>
     </section>
