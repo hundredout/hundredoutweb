@@ -252,115 +252,138 @@ export function PartnershipsPage() {
             </div>
 
             <div className="border border-[#0d1b28]/10 bg-white p-8 shadow-[0_24px_60px_rgba(13,27,40,0.08)] md:p-10">
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid gap-5 md:grid-cols-2">
-                  <div>
-                    <label className="mb-2 block text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45" htmlFor="partner-name">
-                      Name
-                    </label>
-                    <Input
-                      id="partner-name"
-                      value={name}
-                      onChange={(event) => setName(event.target.value)}
-                      placeholder="Your name"
-                      className="h-12 rounded-none border-[#0d1b28]/12 bg-white shadow-none"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="mb-2 block text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45" htmlFor="partner-email">
-                      Email
-                    </label>
-                    <Input
-                      id="partner-email"
-                      type="email"
-                      value={email}
-                      onChange={(event) => setEmail(event.target.value)}
-                      placeholder="you@brand.com"
-                      className="h-12 rounded-none border-[#0d1b28]/12 bg-white shadow-none"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="grid gap-5 md:grid-cols-2">
-                  <div>
-                    <label className="mb-2 block text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45" htmlFor="partner-company">
-                      Company / Brand
-                    </label>
-                    <Input
-                      id="partner-company"
-                      value={company}
-                      onChange={(event) => setCompany(event.target.value)}
-                      placeholder="Brand or company"
-                      className="h-12 rounded-none border-[#0d1b28]/12 bg-white shadow-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="mb-2 block text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45" htmlFor="partner-type">
-                      Inquiry Type
-                    </label>
-                    <select
-                      id="partner-type"
-                      value={inquiryType}
-                      onChange={(event) => setInquiryType(event.target.value as InquiryType)}
-                      className="h-12 w-full rounded-none border border-[#0d1b28]/12 bg-white px-3 text-sm outline-none transition-[color,box-shadow] focus-visible:border-[#0d1b28] focus-visible:ring-[3px] focus-visible:ring-[#0d1b28]/10"
+              {submitState === "success" ? (
+                <div className="relative overflow-hidden border border-[#0d1b28]/10 bg-[#0d1b28] p-8 text-white shadow-[0_24px_60px_rgba(13,27,40,0.12)] md:p-10">
+                  <div className="absolute -right-10 -top-8 h-36 w-36 rounded-full bg-[#EE455F] opacity-20 blur-3xl"></div>
+                  <div className="absolute -left-6 bottom-0 h-28 w-28 rounded-full bg-[#45B9ED] opacity-15 blur-3xl"></div>
+                  <div className="relative">
+                    <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/10">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                        <path d="M5 12.5L9.5 17L19 7.5" strokeLinecap="square" strokeLinejoin="miter" />
+                      </svg>
+                    </div>
+                    <div className="mb-3 text-xs uppercase tracking-[0.24em] text-white/45">Message Sent</div>
+                    <h3 className="font-[var(--font-display)] text-4xl font-semibold uppercase tracking-tight">
+                      Conversation started.
+                    </h3>
+                    <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/72">
+                      Your note is in. The HundredOut team will review it and route it through the right
+                      conversation.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitState("idle")}
+                      className="mt-8 inline-flex items-center justify-center border border-white/15 px-6 py-3 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-white/5"
                     >
-                      {inquiryTypes.map((type) => (
-                        <option key={type} value={type}>
-                          {type}
-                        </option>
-                      ))}
-                    </select>
+                      Send Another
+                    </button>
                   </div>
                 </div>
-
-                <div>
-                  <label className="mb-2 block text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45" htmlFor="partner-message">
-                    Message
-                  </label>
-                  <Textarea
-                    id="partner-message"
-                    value={message}
-                    onChange={(event) => setMessage(event.target.value)}
-                    placeholder="Tell us what you have in mind."
-                    className="min-h-[180px] rounded-none border-[#0d1b28]/12 bg-white shadow-none"
-                    required
-                  />
-                </div>
-
-                <div aria-hidden="true" className="absolute left-[-5000px] top-auto h-px w-px overflow-hidden">
-                  <label htmlFor="partner-website">Website</label>
-                  <input
-                    id="partner-website"
-                    type="text"
-                    tabIndex={-1}
-                    autoComplete="off"
-                    value={botField}
-                    onChange={(event) => setBotField(event.target.value)}
-                  />
-                </div>
-
-                {submitState === "success" ? (
-                  <div className="border border-[#2D5016]/20 bg-[#2D5016]/6 p-4 text-sm leading-relaxed text-[#2D5016]">
-                    Thanks. Your message has been sent to info@hundredout.com.
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div>
+                      <label className="mb-2 block text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45" htmlFor="partner-name">
+                        Name
+                      </label>
+                      <Input
+                        id="partner-name"
+                        value={name}
+                        onChange={(event) => setName(event.target.value)}
+                        placeholder="Your name"
+                        className="h-12 rounded-none border-[#0d1b28]/12 bg-white shadow-none"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45" htmlFor="partner-email">
+                        Email
+                      </label>
+                      <Input
+                        id="partner-email"
+                        type="email"
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                        placeholder="you@brand.com"
+                        className="h-12 rounded-none border-[#0d1b28]/12 bg-white shadow-none"
+                        required
+                      />
+                    </div>
                   </div>
-                ) : null}
 
-                {submitState === "error" ? (
-                  <div className="border border-[#EE455F]/20 bg-[#EE455F]/6 p-4 text-sm leading-relaxed text-[#9f2035]">
-                    Something went wrong sending the form. Please try again.
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div>
+                      <label className="mb-2 block text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45" htmlFor="partner-company">
+                        Company / Brand
+                      </label>
+                      <Input
+                        id="partner-company"
+                        value={company}
+                        onChange={(event) => setCompany(event.target.value)}
+                        placeholder="Brand or company"
+                        className="h-12 rounded-none border-[#0d1b28]/12 bg-white shadow-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45" htmlFor="partner-type">
+                        Inquiry Type
+                      </label>
+                      <select
+                        id="partner-type"
+                        value={inquiryType}
+                        onChange={(event) => setInquiryType(event.target.value as InquiryType)}
+                        className="h-12 w-full rounded-none border border-[#0d1b28]/12 bg-white px-3 text-sm outline-none transition-[color,box-shadow] focus-visible:border-[#0d1b28] focus-visible:ring-[3px] focus-visible:ring-[#0d1b28]/10"
+                      >
+                        {inquiryTypes.map((type) => (
+                          <option key={type} value={type}>
+                            {type}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
-                ) : null}
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="inline-flex w-full items-center justify-center bg-[#0d1b28] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#13283a]"
-                >
-                  {isSubmitting ? "Sending..." : "Start a Conversation"}
-                </button>
-              </form>
+                  <div>
+                    <label className="mb-2 block text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45" htmlFor="partner-message">
+                      Message
+                    </label>
+                    <Textarea
+                      id="partner-message"
+                      value={message}
+                      onChange={(event) => setMessage(event.target.value)}
+                      placeholder="Tell us what you have in mind."
+                      className="min-h-[180px] rounded-none border-[#0d1b28]/12 bg-white shadow-none"
+                      required
+                    />
+                  </div>
+
+                  <div aria-hidden="true" className="absolute left-[-5000px] top-auto h-px w-px overflow-hidden">
+                    <label htmlFor="partner-website">Website</label>
+                    <input
+                      id="partner-website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={botField}
+                      onChange={(event) => setBotField(event.target.value)}
+                    />
+                  </div>
+
+                  {submitState === "error" ? (
+                    <div className="border border-[#EE455F]/20 bg-[#EE455F]/6 p-4 text-sm leading-relaxed text-[#9f2035]">
+                      Something went wrong sending the form. Please try again.
+                    </div>
+                  ) : null}
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex w-full items-center justify-center bg-[#0d1b28] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#13283a]"
+                  >
+                    {isSubmitting ? "Sending..." : "Start a Conversation"}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
