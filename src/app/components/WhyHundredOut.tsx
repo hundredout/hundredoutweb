@@ -52,7 +52,7 @@ export function WhyHundredOut() {
             <span className="text-[#EE455F]">Play Your Way.</span>
           </h2>
           <p className="text-xl text-[#0d1b28]/60">
-            HundredOut is built to sound and feel more like real golfers and real rounds. Shape the app's personality to match your crew's energy.
+            HundredOut blends golf tech, entertainment, and lifestyle energy into something that feels bigger than a typical golf app. Shape the experience to match your crew.
           </p>
         </div>
 

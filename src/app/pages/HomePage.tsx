@@ -15,8 +15,8 @@ export function HomePage() {
           <EarlyAccessSignup
             theme="light"
             eyebrow="Founding List"
-            title="Get in early on what HundredOut becomes."
-            description="Join the list for first access to gear drops, Club news, launch signals, and the next big moves before they go wide."
+            title="Get in early on the world of HundredOut."
+            description="Join the list for first access to gear drops, Club news, launch signals, and the next moves as HundredOut grows beyond the app into a full golf brand."
           />
         </div>
       </div>

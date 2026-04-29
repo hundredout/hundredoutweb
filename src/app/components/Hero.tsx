@@ -33,7 +33,7 @@ export function Hero() {
 
             {/* Subheadline */}
             <p className="mb-10 max-w-2xl text-xl text-white/70 md:mb-12 md:text-2xl">
-              Side bets. Live pressure. Instant trash talk. The app for golf rounds you'll actually remember.
+              Side bets. Live pressure. Instant trash talk. Golf tech with more personality.
             </p>
 
             {/* CTAs */}

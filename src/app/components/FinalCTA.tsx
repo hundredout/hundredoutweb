@@ -20,7 +20,7 @@ export function FinalCTA() {
             Count
           </h2>
           <p className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto">
-            Download HundredOut. Invite your crew. Play for something. Make it memorable.
+            Download HundredOut. Join the brand early. Play for something. Make it memorable.
           </p>
         </div>
 
