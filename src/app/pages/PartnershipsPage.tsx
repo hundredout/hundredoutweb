@@ -181,12 +181,9 @@ export function PartnershipsPage() {
               <div className="absolute left-[10%] top-1/2 h-px w-[24%] -translate-y-1/2 bg-gradient-to-r from-white/5 to-white/30"></div>
               <div className="absolute right-[10%] top-1/2 h-px w-[24%] -translate-y-1/2 bg-gradient-to-l from-white/5 to-white/30"></div>
 
-              <div className="relative z-10 flex h-40 w-40 flex-col items-center justify-center rounded-full border border-white/12 bg-[#122232] text-center shadow-[0_24px_60px_rgba(0,0,0,0.3)]">
+              <div className="relative z-10 flex h-40 w-40 items-center justify-center rounded-full border border-white/12 bg-[#122232] text-center shadow-[0_24px_60px_rgba(0,0,0,0.3)]">
                 <div className="absolute inset-0 rounded-full bg-[#EE455F]/10 blur-2xl"></div>
-                <img src={circleMarkImg} alt="HundredOut circle mark" className="relative h-16 w-16 object-contain" />
-                <div className="relative mt-3 font-[var(--font-display)] text-xl font-semibold uppercase tracking-tight">
-                  HundredOut
-                </div>
+                <img src={circleMarkImg} alt="HundredOut circle mark" className="relative h-20 w-20 object-contain" />
               </div>
 
               {[
