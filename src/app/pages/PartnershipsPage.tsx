@@ -198,30 +198,56 @@ export function PartnershipsPage() {
               </p>
             </div>
 
-            <div className="relative mx-auto flex w-full max-w-[620px] items-center justify-center py-10">
-              <div className="absolute h-[420px] w-[420px] rounded-full border border-white/8"></div>
-              <div className="absolute h-[300px] w-[300px] rounded-full border border-white/8"></div>
-              <div className="absolute h-[200px] w-[200px] rounded-full border border-white/8"></div>
+            <div className="w-full">
+              <div className="relative mx-auto hidden w-full max-w-[620px] items-center justify-center py-10 md:flex">
+                <div className="absolute h-[420px] w-[420px] rounded-full border border-white/8"></div>
+                <div className="absolute h-[300px] w-[300px] rounded-full border border-white/8"></div>
+                <div className="absolute h-[200px] w-[200px] rounded-full border border-white/8"></div>
 
-              <div className="relative z-10 flex h-40 w-40 items-center justify-center rounded-full border border-white/12 bg-[#122232] text-center shadow-[0_24px_60px_rgba(0,0,0,0.3)]">
-                <div className="absolute inset-0 rounded-full bg-[#EE455F]/10 blur-2xl"></div>
-                <img src={circleMarkImg} alt="HundredOut circle mark" className="relative h-20 w-20 object-contain" />
+                <div className="relative z-10 flex h-40 w-40 items-center justify-center rounded-full border border-white/12 bg-[#122232] text-center shadow-[0_24px_60px_rgba(0,0,0,0.3)]">
+                  <div className="absolute inset-0 rounded-full bg-[#EE455F]/10 blur-2xl"></div>
+                  <img src={circleMarkImg} alt="HundredOut circle mark" className="relative h-20 w-20 object-contain" />
+                </div>
+
+                {[
+                  { label: "Creators", position: "left-[50%] top-0 -translate-x-1/2" },
+                  { label: "Emerging Brands", position: "left-0 top-1/2 -translate-y-1/2" },
+                  { label: "Events", position: "bottom-0 left-[20%]" },
+                  { label: "Strategic Partners", position: "bottom-0 right-[20%]" },
+                  { label: "Investment Interest", position: "right-0 top-1/2 -translate-y-1/2" },
+                ].map((node) => (
+                  <div
+                    key={node.label}
+                    className={`absolute ${node.position} rounded-full border border-white/10 bg-white/5 px-5 py-3 text-center text-sm uppercase tracking-[0.18em] text-white/80 backdrop-blur-sm`}
+                  >
+                    {node.label}
+                  </div>
+                ))}
               </div>
 
-              {[
-                { label: "Creators", position: "left-[50%] top-0 -translate-x-1/2" },
-                { label: "Emerging Brands", position: "left-0 top-1/2 -translate-y-1/2" },
-                { label: "Events", position: "bottom-0 left-[20%]" },
-                { label: "Strategic Partners", position: "bottom-0 right-[20%]" },
-                { label: "Investment Interest", position: "right-0 top-1/2 -translate-y-1/2" },
-              ].map((node) => (
-                <div
-                  key={node.label}
-                  className={`absolute ${node.position} rounded-full border border-white/10 bg-white/5 px-5 py-3 text-center text-sm uppercase tracking-[0.18em] text-white/80 backdrop-blur-sm`}
-                >
-                  {node.label}
+              <div className="mx-auto max-w-[360px] md:hidden">
+                <div className="relative mx-auto flex h-32 w-32 items-center justify-center rounded-full border border-white/12 bg-[#122232] text-center shadow-[0_24px_60px_rgba(0,0,0,0.3)]">
+                  <div className="absolute inset-0 rounded-full bg-[#EE455F]/10 blur-2xl"></div>
+                  <img src={circleMarkImg} alt="HundredOut circle mark" className="relative h-16 w-16 object-contain" />
                 </div>
-              ))}
+
+                <div className="mt-8 grid grid-cols-2 gap-3">
+                  {["Creators", "Emerging Brands", "Events", "Strategic Partners"].map((label) => (
+                    <div
+                      key={label}
+                      className="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-center text-[11px] uppercase tracking-[0.16em] text-white/80 backdrop-blur-sm"
+                    >
+                      {label}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-3">
+                  <div className="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-center text-[11px] uppercase tracking-[0.16em] text-white/80 backdrop-blur-sm">
+                    Investment Interest
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
