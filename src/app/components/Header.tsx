@@ -8,6 +8,7 @@ export function Header() {
     { label: "App", to: "/app" },
     { label: "Gear", to: "/gear" },
     { label: "Club", to: "/club" },
+    { label: "Partnerships", to: "/partnerships" },
     { label: "About", to: "/about" },
   ];
 

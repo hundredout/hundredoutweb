@@ -6,6 +6,7 @@ import { HomePage } from "./pages/HomePage";
 import { AppPage } from "./pages/AppPage";
 import { GearPage } from "./pages/GearPage";
 import { ClubPage } from "./pages/ClubPage";
+import { PartnershipsPage } from "./pages/PartnershipsPage";
 import { AboutPage } from "./pages/AboutPage";
 import { ContentPage } from "./pages/ContentPage";
 import { CampaignsPage } from "./pages/CampaignsPage";
@@ -31,6 +32,7 @@ function AppShell() {
         <Route path="/app" element={<AppPage />} />
         <Route path="/gear" element={<GearPage />} />
         <Route path="/club" element={<ClubPage />} />
+        <Route path="/partnerships" element={<PartnershipsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/download" element={<DownloadPage />} />
         <Route path="/content" element={<ContentPage />} />
