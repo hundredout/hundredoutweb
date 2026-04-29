@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import appPageBgImg from "../../imports/appPageBG.jpg";
+import iosBadge from "../../imports/STORE_BADGES/IOS_Badge.svg";
+import googlePlayBadge from "../../imports/STORE_BADGES/GooglePlay_Badge.svg";
 import languagePreferenceImg from "../../imports/SCREENSHOTS/LanguagePreference_screenshot.png";
 import gpsImg from "../../imports/SCREENSHOTS/GPS_FMB_screenshot.png";
 import mapViewImg from "../../imports/SCREENSHOTS/mapviewScreenshot_LR.jpg";
@@ -250,22 +252,24 @@ export function AppPage() {
                 way more fun than a plain scorecard.
               </p>
 
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-10 flex flex-wrap items-center gap-4">
                 <a
                   href={appStoreUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center bg-[#EE455F] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#d63d54]"
+                  aria-label="Download HundredOut on the App Store"
+                  className="inline-flex transition-transform hover:scale-[1.02]"
                 >
-                  Download on the App Store
+                  <img src={iosBadge} alt="Download on the App Store" className="h-[48px] w-auto" />
                 </a>
                 <a
                   href={playStoreUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center border border-white/20 px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-white/5"
+                  aria-label="Get HundredOut on Google Play"
+                  className="inline-flex transition-transform hover:scale-[1.02]"
                 >
-                  Get it on Google Play
+                  <img src={googlePlayBadge} alt="Get it on Google Play" className="h-[48px] w-auto" />
                 </a>
               </div>
             </div>
@@ -348,14 +352,12 @@ export function AppPage() {
               >
                 Explore Club Membership
               </Link>
-              <a
-                href={appStoreUrl}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                to="/download"
                 className="inline-flex items-center justify-center border border-white/15 px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-white/5"
               >
-                Subscribe in the App
-              </a>
+                Go to the Download Page
+              </Link>
             </div>
             </div>
 
@@ -388,22 +390,24 @@ export function AppPage() {
             Scoring, GPS, and crew features are free. Club membership is optional, but the hat's worth it.
           </p>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href={appStoreUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center bg-[#EE455F] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#d63d54]"
+              aria-label="Download HundredOut on the App Store"
+              className="inline-flex transition-transform hover:scale-[1.02]"
             >
-              Download on the App Store
+              <img src={iosBadge} alt="Download on the App Store" className="h-[52px] w-auto" />
             </a>
             <a
               href={playStoreUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center border border-[#0d1b28]/15 px-8 py-4 text-sm uppercase tracking-[0.22em] text-[#0d1b28] transition-colors hover:bg-[#0d1b28]/5"
+              aria-label="Get HundredOut on Google Play"
+              className="inline-flex transition-transform hover:scale-[1.02]"
             >
-              Get it on Google Play
+              <img src={googlePlayBadge} alt="Get it on Google Play" className="h-[52px] w-auto" />
             </a>
           </div>
         </div>
