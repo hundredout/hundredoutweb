@@ -1,4 +1,4 @@
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useState } from "react";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import circleMarkImg from "../../imports/HundredOut_circleMark_Final.png";
@@ -16,6 +16,8 @@ const inquiryTypes: InquiryType[] = [
   "Strategic Inquiry",
 ];
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkoywrga";
+
 const focusAreas = [
   {
     title: "Creators & Influencers",
@@ -31,32 +33,58 @@ const focusAreas = [
   },
 ];
 
-const partnershipEmail = ["partners", "hundredout.com"].join("@");
-
 export function PartnershipsPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [inquiryType, setInquiryType] = useState<InquiryType>("Brand Collaboration");
   const [message, setMessage] = useState("");
+  const [botField, setBotField] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitState, setSubmitState] = useState<"idle" | "success" | "error">("idle");
 
-  const mailtoHref = useMemo(() => {
-    const subject = `${inquiryType} Inquiry${company ? ` - ${company}` : ""}`;
-    const body = [
-      `Name: ${name || ""}`,
-      `Email: ${email || ""}`,
-      `Company / Brand: ${company || ""}`,
-      `Inquiry Type: ${inquiryType}`,
-      "",
-      message || "",
-    ].join("\n");
-
-    return `mailto:${partnershipEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }, [company, email, inquiryType, message, name]);
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    window.location.href = mailtoHref;
+
+    if (botField) return;
+
+    setIsSubmitting(true);
+    setSubmitState("idle");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          inquiryType,
+          message,
+          _subject: `${inquiryType} Inquiry${company ? ` - ${company}` : ""}`,
+          source: "HundredOut Partnerships Page",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      setName("");
+      setEmail("");
+      setCompany("");
+      setInquiryType("Brand Collaboration");
+      setMessage("");
+      setBotField("");
+      setSubmitState("success");
+    } catch {
+      setSubmitState("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -219,7 +247,7 @@ export function PartnershipsPage() {
                 golf personalities, and new brands entering the space with something real to say.
               </p>
               <p className="mt-6 max-w-2xl text-sm uppercase tracking-[0.18em] text-[#0d1b28]/42">
-                The form opens a prefilled email draft so you can send the details straight through.
+                Send the details straight through here and we will route it to the right conversation.
               </p>
             </div>
 
@@ -301,11 +329,36 @@ export function PartnershipsPage() {
                   />
                 </div>
 
+                <div aria-hidden="true" className="absolute left-[-5000px] top-auto h-px w-px overflow-hidden">
+                  <label htmlFor="partner-website">Website</label>
+                  <input
+                    id="partner-website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={botField}
+                    onChange={(event) => setBotField(event.target.value)}
+                  />
+                </div>
+
+                {submitState === "success" ? (
+                  <div className="border border-[#2D5016]/20 bg-[#2D5016]/6 p-4 text-sm leading-relaxed text-[#2D5016]">
+                    Thanks. Your message has been sent to info@hundredout.com.
+                  </div>
+                ) : null}
+
+                {submitState === "error" ? (
+                  <div className="border border-[#EE455F]/20 bg-[#EE455F]/6 p-4 text-sm leading-relaxed text-[#9f2035]">
+                    Something went wrong sending the form. Please try again.
+                  </div>
+                ) : null}
+
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="inline-flex w-full items-center justify-center bg-[#0d1b28] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#13283a]"
                 >
-                  Start a Conversation
+                  {isSubmitting ? "Sending..." : "Start a Conversation"}
                 </button>
               </form>
             </div>
