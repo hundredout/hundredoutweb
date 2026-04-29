@@ -221,9 +221,9 @@ export function AppPage() {
       <section className="relative overflow-hidden bg-[#0d1b28] py-24 text-white lg:min-h-[860px] lg:py-32">
         <div className="absolute inset-0">
           <img src={appPageBgImg} alt="" className="h-full w-full object-cover opacity-75" />
-          <div className="absolute inset-0 bg-[#0d1b28]/38"></div>
-          <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-[#07131d] via-[#07131d]/72 to-[#07131d]/12"></div>
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#07131d] to-transparent"></div>
+          <div className="absolute inset-0 bg-[#0d1b28]/54 lg:bg-[#0d1b28]/38"></div>
+          <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-[#07131d] via-[#07131d]/92 via-55% to-[#07131d]/52 lg:from-[#07131d] lg:via-[#07131d]/72 lg:to-[#07131d]/12"></div>
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#07131d]/92 to-transparent lg:h-1/3 lg:from-[#07131d]"></div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:64px_64px]"></div>
         </div>
 
