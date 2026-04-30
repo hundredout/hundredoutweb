@@ -15,7 +15,7 @@ const dropProducts = [
     type: "Headwear",
     note: "Structured front, clean 100 mark, everyday course-to-anywhere fit.",
     accent: "#EE455F",
-    status: "Development",
+    status: "In Development",
     image: headwearImg,
   },
   {
@@ -23,7 +23,7 @@ const dropProducts = [
     type: "Performance",
     note: "Built for rounds, range sessions, and everything after the card is signed.",
     accent: "#EE455F",
-    status: "Development",
+    status: "In Development",
     image: poloProductConceptsImg,
   },
   {
@@ -31,7 +31,7 @@ const dropProducts = [
     type: "Layering",
     note: "A lightweight performance layer built for cool starts, range sessions, and easy movement throughout the round.",
     accent: "#EE455F",
-    status: "Development",
+    status: "In Development",
     image: keepIt100HoodieImg,
   },
   {
