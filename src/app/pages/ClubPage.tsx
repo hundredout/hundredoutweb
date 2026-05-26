@@ -63,7 +63,7 @@ const benefits = [
 export function ClubPage() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative overflow-hidden bg-[#0d1b28] pt-32 pb-24 text-white lg:pt-36 lg:pb-28">
+      <section className="relative overflow-hidden bg-[#0d1b28] pt-28 pb-20 text-white lg:pt-36 lg:pb-24">
         <div className="absolute inset-0">
           <div className="absolute left-[8%] top-10 h-[420px] w-[420px] rounded-full bg-[#45B9ED] opacity-10 blur-[140px]"></div>
           <div className="absolute bottom-0 right-[8%] h-[500px] w-[500px] rounded-full bg-[#EE455F] opacity-14 blur-[150px]"></div>
@@ -71,24 +71,25 @@ export function ClubPage() {
         </div>
 
         <div className="relative mx-auto max-w-[1600px] px-6 lg:px-12">
-          <div className="grid items-center gap-14 lg:grid-cols-[1.02fr_0.98fr]">
-            <div className="max-w-5xl">
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-white/75 backdrop-blur-sm">
+          <div className="grid items-center gap-10 md:grid-cols-[0.95fr_0.75fr] lg:grid-cols-[1fr_0.82fr] lg:gap-14">
+            <div className="max-w-4xl">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-white/75 backdrop-blur-sm">
                 <div className="h-2 w-2 rounded-full bg-[#EE455F]"></div>
                 HundredOut Club
               </div>
-              <h1 className="font-[var(--font-display)] text-[clamp(3.3rem,10vw,8.2rem)] font-black uppercase leading-[0.86] tracking-tight">
-                For the Ones
-                <br />
-                Who Keep It
+              <div className="mb-5 text-sm uppercase tracking-[0.32em] text-[#45B9ED]">
+                Golf is better with the right crew
+              </div>
+              <h1 className="font-[var(--font-display)] text-[clamp(4.5rem,11vw,9rem)] font-black uppercase leading-[0.82] tracking-tight">
+                Keep It
                 <br />
                 <span className="text-[#EE455F]">100</span>
               </h1>
-              <p className="mt-8 max-w-3xl text-xl leading-relaxed text-white/72 md:text-2xl">
+              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl lg:text-2xl">
                 Core Crew is the inner circle of HundredOut. Good people, good times, good energy, and the gear to rep it.
                 Built for the crew that brings the vibe on the course and carries it everywhere else.
               </p>
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
                   to="/download"
                   className="inline-flex justify-center bg-[#EE455F] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-all hover:scale-105 hover:bg-[#d63d54] active:scale-95"
@@ -106,23 +107,19 @@ export function ClubPage() {
 
             <div className="relative">
               <div className="absolute -right-8 -top-10 h-56 w-56 rounded-full bg-[#EE455F]/20 blur-3xl"></div>
-              <div className="relative grid gap-4 sm:grid-cols-[0.82fr_1fr]">
-                <div className="grid gap-4 sm:pt-16">
-                  <div className="overflow-hidden border-[10px] border-white bg-white shadow-[0_35px_90px_rgba(0,0,0,0.28)]">
-                    <img src={headwearImg} alt="Core Crew hat concept" className="aspect-[4/5] h-full w-full object-cover" />
-                  </div>
-                  <div className="border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                    <div className="text-xs uppercase tracking-[0.28em] text-white/45">Limited Member Access</div>
-                    <div className="mt-3 font-[var(--font-display)] text-3xl font-semibold uppercase leading-none tracking-tight">
-                      Good people.
-                      <br />
-                      Full 100.
-                    </div>
+              <div className="relative overflow-hidden border-[10px] border-white bg-white shadow-[0_45px_120px_rgba(0,0,0,0.35)] md:border-[12px]">
+                <img src={heroGearImg} alt="HundredOut Core Crew gear" className="aspect-[4/5] h-full w-full object-cover" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0d1b28] to-transparent p-6 text-white">
+                  <div className="text-xs uppercase tracking-[0.28em] text-white/55">Core Crew Kit</div>
+                  <div className="mt-2 font-[var(--font-display)] text-3xl font-semibold uppercase leading-none tracking-tight lg:text-4xl">
+                    Good people.
+                    <br />
+                    Full 100.
                   </div>
                 </div>
-                <div className="overflow-hidden border-[12px] border-white bg-white shadow-[0_45px_120px_rgba(0,0,0,0.35)]">
-                  <img src={heroGearImg} alt="HundredOut Core Crew gear" className="aspect-[4/5] h-full w-full object-cover" />
-                </div>
+              </div>
+              <div className="absolute -bottom-7 -left-5 hidden w-32 border border-white/10 bg-[#07131d] p-3 shadow-[0_24px_60px_rgba(0,0,0,0.25)] md:block lg:w-40">
+                <img src={coreCrewBadgeImg} alt="Core Crew 2026 badge" className="h-auto w-full object-contain" />
               </div>
             </div>
           </div>
