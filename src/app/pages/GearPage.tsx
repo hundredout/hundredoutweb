@@ -6,7 +6,7 @@ import poloProductConceptsImg from "../../imports/GEAR/PoloProductConcepts.png";
 import circleMarkEssentialsImg from "../../imports/SCREENSHOTS/CircleMarkEssentials2_LR.jpg";
 import lifestyleShotImg from "../../imports/GEAR/LifeStyleShot.png";
 import heroTwoImg from "../../imports/GEAR/hero-2.png";
-import keepIt100HoodieImg from "../../imports/GEAR/keepit100_hoodie.png";
+import keepIt100HoodieImg from "../../imports/GEAR/keepit100_hoodie_UPDATE.jpg";
 import { EarlyAccessSignup } from "../components/EarlyAccessSignup";
 
 const dropProducts = [

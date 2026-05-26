@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import coreCrewBadgeImg from "../../imports/CC_2026_Badge@4x.png";
 import headwearImg from "../../imports/GEAR/100_headwear.jpg";
-import hoodieImg from "../../imports/GEAR/keepit100_hoodie.png";
+import hoodieImg from "../../imports/GEAR/keepit100_hoodie_UPDATE.jpg";
 import lifestyleImg from "../../imports/GEAR/LifeStyleShot.png";
 import poloImg from "../../imports/GEAR/PoloProductConcepts.png";
 import heroGearImg from "../../imports/mainCover_WEB_v2.jpg";
