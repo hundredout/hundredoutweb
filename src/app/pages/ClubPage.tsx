@@ -1,12 +1,7 @@
-import { Link } from "react-router-dom";
+import { EarlyAccessSignup } from "../components/EarlyAccessSignup";
 import coreCrewBadgeImg from "../../imports/CC_2026_Badge@4x.png";
-import headwearImg from "../../imports/GEAR/100_headwear.jpg";
-import hoodieImg from "../../imports/GEAR/keepit100_hoodie_UPDATE.jpg";
-import lifestyleImg from "../../imports/GEAR/LifeStyleShot.png";
-import poloImg from "../../imports/GEAR/PoloProductConcepts.png";
-import heroGearImg from "../../imports/mainCover_WEB_v2.jpg";
-import cartMomentImg from "../../imports/SCREENSHOTS/BEERS_LR.jpg";
-import braggingImg from "../../imports/SCREENSHOTS/BRAGGING_LR.jpg";
+import coreCrewBoxImg from "../../imports/GEAR/CoreCrew_2026_Box.jpg";
+import heroGearImg from "../../imports/mainCover_CLUB_v2.jpg";
 
 const meaningPillars = [
   {
@@ -23,40 +18,43 @@ const meaningPillars = [
   },
 ];
 
-const kitItems = [
+const tiers = [
   {
-    name: "Core Crew Hat 2026",
-    copy: "The dated member piece. A structured performance hat built to rep the crew from the first tee to the last laugh.",
-    image: headwearImg,
+    tag: "Start Here",
+    name: "Basic",
+    copy: "The free way in. Scoring, bet tracking, and playing with your crew in the app.",
+    highlight: false,
   },
   {
-    name: "Performance Hoodie",
-    copy: "A lightweight layer for early tee times, range sessions, travel days, and everyday wear.",
-    image: hoodieImg,
+    tag: "The Club",
+    name: "Club Member",
+    copy: "The next step in. Club perks, events, and early looks — without the annual Core Crew box.",
+    highlight: false,
   },
   {
-    name: "Golf Polo",
-    copy: "A modern course staple with HundredOut energy built in. Clean, comfortable, and ready for the round or whatever comes after.",
-    image: poloImg,
+    tag: "The Inner Circle",
+    name: "Core Crew",
+    copy: "The exclusive top tier. The annual member apparel box, the crew card, and the inside track on everything HundredOut. Strictly limited.",
+    highlight: true,
   },
 ];
 
 const benefits = [
   {
-    title: "Member-Only Products",
-    copy: "Limited Core Crew gear and annual member pieces.",
+    title: "First In Line",
+    copy: "Founding members get in before anyone else when the Club opens.",
+  },
+  {
+    title: "Founding Status",
+    copy: "Locked-in founding member recognition you can't get later.",
   },
   {
     title: "Early Access Drops",
-    copy: "First look at select HundredOut releases.",
-  },
-  {
-    title: "Special Experiences",
-    copy: "More ways to connect with the brand, the crew, and the moments around the game.",
+    copy: "First look at Core Crew gear and select HundredOut releases.",
   },
   {
     title: "More Over Time",
-    copy: "Core Crew grows as HundredOut grows.",
+    copy: "The Club grows as HundredOut grows. Founders get the first word.",
   },
 ];
 
@@ -74,43 +72,44 @@ export function ClubPage() {
           <div className="grid items-center gap-10 md:grid-cols-[0.95fr_0.75fr] lg:grid-cols-[1fr_0.82fr] lg:gap-14">
             <div className="max-w-4xl">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-white/75 backdrop-blur-sm">
-                <div className="h-2 w-2 rounded-full bg-[#EE455F]"></div>
-                HundredOut Club
+                <div className="h-2 w-2 animate-pulse rounded-full bg-[#EE455F]"></div>
+                Coming 2026 · Founding members forming
               </div>
               <div className="mb-5 text-sm uppercase tracking-[0.32em] text-[#45B9ED]">
-                Golf is better with the right crew
+                Good people · Good times · Full 100
               </div>
               <h1 className="font-[var(--font-display)] text-[clamp(4.5rem,11vw,9rem)] font-black uppercase leading-[0.82] tracking-tight">
-                Keep It
+                The Club
                 <br />
-                <span className="text-[#EE455F]">100</span>
+                Is <span className="text-[#EE455F]">Coming</span>
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl lg:text-2xl">
-                Core Crew is the inner circle of HundredOut. Good people, good times, good energy, and the gear to rep it.
-                Built for the crew that brings the vibe on the course and carries it everywhere else.
+                The HundredOut Club is a membership built on good people, good times, and full 100 energy — and it comes
+                in tiers. At the top sits Core Crew: a limited inner circle with exclusive apparel shipped every year.
+                It&apos;s not open yet. Get on the list now and you&apos;re a founding member, first in when it opens.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Link
-                  to="/download"
+                <a
+                  href="#join"
                   className="inline-flex justify-center bg-[#EE455F] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-all hover:scale-105 hover:bg-[#d63d54] active:scale-95"
                 >
-                  Join the Club
-                </Link>
-                <Link
-                  to="/download"
+                  Get On The List
+                </a>
+                <a
+                  href="#tiers"
                   className="inline-flex justify-center border-2 border-white/20 px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-all hover:border-white/40 hover:bg-white/5"
                 >
-                  Become Core Crew
-                </Link>
+                  See The Tiers
+                </a>
               </div>
             </div>
 
             <div className="relative">
               <div className="absolute -right-8 -top-10 h-56 w-56 rounded-full bg-[#EE455F]/20 blur-3xl"></div>
               <div className="relative overflow-hidden border-[10px] border-white bg-white shadow-[0_45px_120px_rgba(0,0,0,0.35)] md:border-[12px]">
-                <img src={heroGearImg} alt="HundredOut Core Crew gear" className="aspect-[4/5] h-full w-full object-cover" />
+                <img src={heroGearImg} alt="HundredOut Club members having fun on the course" className="aspect-[4/5] h-full w-full object-cover" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0d1b28] to-transparent p-6 text-white">
-                  <div className="text-xs uppercase tracking-[0.28em] text-white/55">Core Crew Kit</div>
+                  <div className="text-xs uppercase tracking-[0.28em] text-white/55">HundredOut Club</div>
                   <div className="mt-2 font-[var(--font-display)] text-3xl font-semibold uppercase leading-none tracking-tight lg:text-4xl">
                     Good people.
                     <br />
@@ -118,7 +117,7 @@ export function ClubPage() {
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-7 -left-5 hidden w-32 border border-white/10 bg-[#07131d] p-3 shadow-[0_24px_60px_rgba(0,0,0,0.25)] md:block lg:w-40">
+              <div className="absolute -bottom-7 -right-5 hidden w-32 border border-white/10 bg-[#07131d] p-3 shadow-[0_24px_60px_rgba(0,0,0,0.25)] md:block lg:w-40">
                 <img src={coreCrewBadgeImg} alt="Core Crew 2026 badge" className="h-auto w-full object-contain" />
               </div>
             </div>
@@ -131,7 +130,7 @@ export function ClubPage() {
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
               <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]/65">
-                What Core Crew Means
+                What The Club&apos;s About
               </div>
               <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5.4rem)] font-semibold uppercase leading-[0.92] tracking-tight text-[#0d1b28]">
                 More Than
@@ -140,7 +139,7 @@ export function ClubPage() {
               </h2>
             </div>
             <p className="max-w-3xl text-xl leading-relaxed text-[#0d1b28]/68">
-              Core Crew is for the golfers who bring the energy. The ones who show up for the round, the laughs,
+              The HundredOut Club is for the golfers who bring the energy. The ones who show up for the round, the laughs,
               the banter, the cart rides, the side bets, the good shots, the bad shots, and the stories after. It&apos;s
               about living life full 100 and playing golf the same way.
             </p>
@@ -160,6 +159,55 @@ export function ClubPage() {
         </div>
       </section>
 
+      <section id="tiers" className="scroll-mt-24 bg-[#f6f8fb] py-24">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
+          <div className="mb-14 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]/65">
+                Three Ways In
+              </div>
+              <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5.4rem)] font-semibold uppercase leading-[0.92] tracking-tight text-[#0d1b28]">
+                How The
+                <br />
+                <span className="text-[#EE455F]">Club Works</span>
+              </h2>
+            </div>
+            <p className="max-w-3xl text-xl leading-relaxed text-[#0d1b28]/68">
+              The Club has levels. Start free in the app, step up to Club Member, or go all the way to Core Crew — the
+              limited, apparel-shipping inner circle at the top of the ladder.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3 md:items-stretch">
+            {tiers.map((tier) => (
+              <article
+                key={tier.name}
+                className={
+                  tier.highlight
+                    ? "relative flex flex-col border border-[#EE455F]/30 bg-[#0d1b28] p-8 text-white shadow-[0_30px_80px_rgba(13,27,40,0.18)] md:-mt-4"
+                    : "flex flex-col border border-[#0d1b28]/10 bg-white p-8 text-[#0d1b28]"
+                }
+              >
+                {tier.highlight ? (
+                  <div className="absolute right-6 top-6 bg-[#EE455F] px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white">
+                    Top Tier
+                  </div>
+                ) : null}
+                <div className={tier.highlight ? "text-xs uppercase tracking-[0.24em] text-[#45B9ED]" : "text-xs uppercase tracking-[0.24em] text-[#0d1b28]/45"}>
+                  {tier.tag}
+                </div>
+                <h3 className="mt-3 font-[var(--font-display)] text-4xl font-semibold uppercase tracking-tight">
+                  {tier.name}
+                </h3>
+                <p className={tier.highlight ? "mt-4 text-base leading-relaxed text-white/70" : "mt-4 text-base leading-relaxed text-[#0d1b28]/62"}>
+                  {tier.copy}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden bg-[#0d1b28] py-24 text-white">
         <div className="absolute inset-0">
           <div className="absolute right-[12%] top-24 h-96 w-96 rounded-full bg-[#45B9ED] opacity-10 blur-[140px]"></div>
@@ -169,85 +217,55 @@ export function ClubPage() {
         <div className="relative mx-auto max-w-[1600px] px-6 lg:px-12">
           <div className="mb-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <div>
-              <div className="mb-5 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-wider text-white/75">
-                Core Crew Kit
+              <div className="mb-5 inline-block rounded-full border border-[#EE455F]/40 bg-[#EE455F]/10 px-4 py-1.5 text-xs uppercase tracking-wider text-white/80">
+                Top Tier · Core Crew
               </div>
               <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5.4rem)] font-semibold uppercase leading-[0.92] tracking-tight">
-                Your Core
+                The Core Crew
                 <br />
-                <span className="text-[#45B9ED]">Crew Kit</span>
+                <span className="text-[#45B9ED]">2026 Box</span>
               </h2>
             </div>
             <p className="max-w-3xl text-xl leading-relaxed text-white/70">
-              Member-only gear built for the course, the cart, the trip, and wherever the good times carry over.
+              Core Crew sits at the top of the Club, and this is the reason why. Every membership ships a box of
+              exclusive, dated apparel once a year — gear you can&apos;t buy any other way. The 2026 edition is taking
+              shape now. Founding members get the first one.
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            {kitItems.map((item) => (
-              <article key={item.name} className="group overflow-hidden border border-white/10 bg-white/5">
-                <div className="relative aspect-[4/5] overflow-hidden bg-white/5">
-                  <img src={item.image} alt={item.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  <div className="absolute left-5 top-5 bg-[#EE455F] px-3 py-1 text-xs uppercase tracking-[0.24em] text-white">
-                    Member Piece
-                  </div>
-                </div>
-                <div className="p-7">
-                  <h3 className="font-[var(--font-display)] text-3xl font-semibold uppercase tracking-tight">{item.name}</h3>
-                  <p className="mt-4 text-base leading-relaxed text-white/68">{item.copy}</p>
-                </div>
-              </article>
-            ))}
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="relative overflow-hidden border-[10px] border-white bg-white shadow-[0_45px_120px_rgba(0,0,0,0.45)] md:border-[12px]">
+              <img src={coreCrewBoxImg} alt="The Core Crew 2026 member box — hats, hoodie, crew card, pins, and stickers" className="h-full w-full object-cover" />
+            </div>
+            <div>
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.24em] text-white/70">
+                <div className="h-2 w-2 rounded-full bg-[#EE455F]"></div>
+                What ships in the box
+              </div>
+              <h3 className="font-[var(--font-display)] text-[clamp(2rem,4vw,3.25rem)] font-semibold uppercase leading-[0.95] tracking-tight">
+                Members-only.
+                <br />
+                <span className="text-[#EE455F]">Once a year.</span>
+              </h3>
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">
+                The dated Core Crew hats, the performance hoodie, your numbered crew card, pins, stickers — packed and
+                shipped to every member. A new box, new gear, every season you&apos;re in.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-white py-24">
         <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
-          <div className="grid gap-4 md:grid-cols-[1.1fr_0.75fr_1fr]">
-            <div className="relative min-h-[420px] overflow-hidden bg-[#0d1b28] md:min-h-[560px]">
-              <img src={lifestyleImg} alt="HundredOut lifestyle moment" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b28]/70 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <div className="text-xs uppercase tracking-[0.3em] text-white/60">These are the</div>
-                <div className="mt-2 font-[var(--font-display)] text-5xl font-semibold uppercase leading-none tracking-tight">
-                  100 moments.
-                </div>
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div className="min-h-[220px] overflow-hidden bg-[#f6f8fb]">
-                <img src={cartMomentImg} alt="HundredOut cart moment" className="h-full w-full object-cover" />
-              </div>
-              <div className="min-h-[220px] overflow-hidden bg-[#f6f8fb]">
-                <img src={headwearImg} alt="Light blue HundredOut hat" className="h-full w-full object-cover" />
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div className="min-h-[300px] overflow-hidden bg-[#f6f8fb]">
-                <img src={braggingImg} alt="HundredOut round story" className="h-full w-full object-cover" />
-              </div>
-              <div className="border border-[#0d1b28]/10 bg-[#0d1b28] p-8 text-white">
-                <p className="text-xl leading-relaxed text-white/75">
-                  The birdie you didn&apos;t see coming. The cart ride that turned into a story. The round where nobody
-                  played great, but everyone had a blast. That&apos;s the HundredOut Club.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#f6f8fb] py-24">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
           <div className="mb-14 max-w-4xl">
             <div className="mb-5 inline-block rounded-full bg-[#0d1b28]/5 px-4 py-1.5 text-xs uppercase tracking-wider text-[#0d1b28]/65">
-              Core Crew Access
+              Why Get On The List Now
             </div>
             <h2 className="font-[var(--font-display)] text-[clamp(2.5rem,6vw,5.4rem)] font-semibold uppercase leading-[0.92] tracking-tight text-[#0d1b28]">
-              What Comes With
+              What Founding
               <br />
-              <span className="text-[#EE455F]">Core Crew</span>
+              <span className="text-[#EE455F]">Members Get</span>
             </h2>
           </div>
 
@@ -277,25 +295,25 @@ export function ClubPage() {
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-white/70">
               <div className="h-2 w-2 rounded-full bg-[#EE455F]"></div>
-              Limited member access
+              Founding members forming
             </div>
             <h2 className="font-[var(--font-display)] text-[clamp(3rem,8vw,7rem)] font-black uppercase leading-[0.86] tracking-tight">
-              Built for
+              Be A
               <br />
-              the Core
+              Founding
               <br />
-              <span className="text-[#EE455F]">Crew</span>
+              <span className="text-[#EE455F]">Member</span>
             </h2>
             <p className="mt-8 max-w-3xl text-xl leading-relaxed text-white/72">
-              Exclusive products first. More access over time. A premium way to rep the good people, good times,
-              and full 100 way of playing.
+              The Club isn&apos;t open yet — and that&apos;s the point. Get your name down now and you&apos;re a founding
+              member: first in line, first access, and the first to know the moment it goes live.
             </p>
-            <Link
-              to="/download"
+            <a
+              href="#join"
               className="mt-10 inline-flex bg-[#EE455F] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-all hover:scale-105 hover:bg-[#d63d54] active:scale-95"
             >
-              Join the Club
-            </Link>
+              Get On The List
+            </a>
           </div>
 
           <div className="border border-white/10 bg-white/5 p-8">
@@ -303,6 +321,19 @@ export function ClubPage() {
               <img src={coreCrewBadgeImg} alt="Core Crew 2026 founding badge" className="h-full w-full object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.35)]" />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="join" className="scroll-mt-24 bg-[#f6f8fb] py-24">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
+          <EarlyAccessSignup
+            eyebrow="Founding Members List"
+            title="Get on the list. Be a founding member."
+            description="The HundredOut Club is coming. Add your email and you're first in line when it opens — early access, founding member status, and the first word on Core Crew gear before anyone else."
+            ctaLabel="Claim My Spot"
+            footnote="No spam. Just the inside track on the Club, founding access, and what lands next."
+            theme="dark"
+          />
         </div>
       </section>
     </div>
