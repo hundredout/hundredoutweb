@@ -333,7 +333,7 @@ export function AppPage() {
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div className="max-w-4xl">
             <div className="mb-5 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-wider text-white/75">
-              Join the HundredOut Club
+              The HundredOut Club Is Coming
             </div>
             <h2 className="font-[var(--font-display)] font-semibold text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
               Gear. Perks.
@@ -341,16 +341,16 @@ export function AppPage() {
               <span className="text-[#EE455F]">Identity.</span>
             </h2>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/70">
-              Club membership is optional, but it is where gear, early access, ad-free experience, and
-              supporter identity start to stack up. Subscribe inside the app, then head to the Club page
-              for the full membership breakdown.
+              The app is free. The Club is what comes next — a membership where gear, early access, an
+              ad-free experience, and supporter identity stack up on top of it. It&apos;s not open yet. Head to
+              the Club page to get on the list as a founding member.
             </p>
             <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap">
               <Link
                 to="/club"
                 className="inline-flex items-center justify-center bg-[#EE455F] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-[#d63d54]"
               >
-                Explore Club Membership
+                Get On The Club List
               </Link>
               <Link
                 to="/download"
@@ -363,9 +363,9 @@ export function AppPage() {
 
             <div className="grid gap-4">
               {[
-                "Optional membership. Core scoring, GPS, and crew play stay free.",
-                "Physical gear, early access, and supporter identity all live under Club.",
-                "Pricing, tiers, and the full founding-member angle now live on the Club page.",
+                "The core app stays free — scoring, GPS, and crew play.",
+                "Gear, early access, and supporter identity will live under the Club.",
+                "See the tiers and the founding-member angle on the Club page.",
               ].map((item) => (
                 <div key={item} className="border border-white/10 bg-white/5 p-6 text-base leading-relaxed text-white/75 backdrop-blur-sm">
                   {item}
@@ -387,7 +387,7 @@ export function AppPage() {
             <span className="text-[#EE455F]">to start.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-[#0d1b28]/68">
-            Scoring, GPS, and crew features are free. Club membership is optional, but the hat's worth it.
+            Scoring, GPS, and crew features are free. The Club — and the gear that comes with it — is on the way.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

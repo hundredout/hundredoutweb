@@ -1,3 +1,24 @@
+import { Link } from "react-router-dom";
+
+const exploreLinks = [
+  { label: "App", to: "/app" },
+  { label: "Gear", to: "/gear" },
+  { label: "Club", to: "/club" },
+  { label: "Download", to: "/download" },
+];
+
+const companyLinks = [
+  { label: "About", to: "/about" },
+  { label: "Partnerships", to: "/partnerships" },
+];
+
+const socialLinks = [
+  { label: "Instagram", href: "https://www.instagram.com/hundredout" },
+  { label: "YouTube", href: "https://www.youtube.com/@hundredout" },
+  { label: "TikTok", href: "https://www.tiktok.com/@hundredout" },
+  { label: "Facebook", href: "https://www.facebook.com/hundredout" },
+  { label: "X", href: "https://twitter.com/hundredout" },
+];
 
 export function Footer() {
   return (
@@ -18,7 +39,10 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/hundredout"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="HundredOut on Instagram"
                 className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#EE455F] hover:text-[#EE455F] transition-colors"
               >
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -28,7 +52,8 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="mailto:info@hundredout.com"
+                aria-label="Email HundredOut"
                 className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#EE455F] hover:text-[#EE455F] transition-colors"
               >
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -37,7 +62,10 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@hundredout"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="HundredOut on YouTube"
                 className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#EE455F] hover:text-[#EE455F] transition-colors"
               >
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -48,22 +76,15 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Product Column */}
+          {/* Explore Column */}
           <div>
-            <h4 className="font-[var(--font-display)] font-semibold text-lg uppercase tracking-tight mb-4">Product</h4>
+            <h4 className="font-[var(--font-display)] font-semibold text-lg uppercase tracking-tight mb-4">Explore</h4>
             <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">App Features</a>
-              </li>
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Pricing</a>
-              </li>
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Tournaments</a>
-              </li>
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Download</a>
-              </li>
+              {exploreLinks.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className="text-white/60 hover:text-white text-sm transition-colors">{link.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -71,37 +92,33 @@ export function Footer() {
           <div>
             <h4 className="font-[var(--font-display)] font-semibold text-lg uppercase tracking-tight mb-4">Company</h4>
             <ul className="space-y-3">
+              {companyLinks.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className="text-white/60 hover:text-white text-sm transition-colors">{link.label}</Link>
+                </li>
+              ))}
               <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">About</a>
-              </li>
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Blog</a>
-              </li>
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Careers</a>
-              </li>
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Press</a>
+                <a href="mailto:info@hundredout.com" className="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
               </li>
             </ul>
           </div>
 
-          {/* Support Column */}
+          {/* Follow Column */}
           <div>
-            <h4 className="font-[var(--font-display)] font-semibold text-lg uppercase tracking-tight mb-4">Support</h4>
+            <h4 className="font-[var(--font-display)] font-semibold text-lg uppercase tracking-tight mb-4">Follow</h4>
             <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Help Center</a>
-              </li>
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
-              </li>
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Privacy</a>
-              </li>
-              <li>
-                <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">Terms</a>
-              </li>
+              {socialLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-white/60 hover:text-white text-sm transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -111,10 +128,24 @@ export function Footer() {
           <p className="text-white/40 text-sm">
             © 2026 HundredOut. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-white/40 hover:text-white text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-white/40 hover:text-white text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-white/40 hover:text-white text-sm transition-colors">Cookie Policy</a>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <a
+              href="/legal/HundredOut-Privacy-Policy.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white/40 hover:text-white text-sm transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="/legal/HundredOut-Terms-of-Use.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white/40 hover:text-white text-sm transition-colors"
+            >
+              Terms of Use
+            </a>
+            <a href="mailto:info@hundredout.com" className="text-white/40 hover:text-white text-sm transition-colors">info@hundredout.com</a>
           </div>
         </div>
       </div>
