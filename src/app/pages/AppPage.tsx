@@ -14,6 +14,8 @@ import crewsImg from "../../imports/SCREENSHOTS/Crews_screenshot.png";
 import hapsImg from "../../imports/SCREENSHOTS/HAPS_screenshot.PNG";
 import hunnidsImg from "../../imports/SCREENSHOTS/HUNNIDS_screenshot.png";
 import trophyRoomImg from "../../imports/SCREENSHOTS/trophyRoom_screenshot_LR.jpg";
+import stashesImg from "../../imports/SCREENSHOTS/Stashes_screenshot.png";
+import findsRoomImg from "../../imports/SCREENSHOTS/FindsRoom_screenshot.png";
 
 const appStoreUrl = "https://apps.apple.com/us/app/hundredout-golf-games-and-gps/id6478035673";
 const playStoreUrl = "https://play.google.com/store/apps/details?hl=en_US&id=com.hundredout";
@@ -37,20 +39,20 @@ const features = [
     accent: "#2D5016",
   },
   {
+    label: "Your golf crew, in one place.",
+    title: "Crews & Haps Feed",
+    copy: "Build your crew, share rounds to the feed, react to shots, and see who's out playing right now. The Haps feed is where your golf life lives: fired-away posts, round recaps, hole-in-ones, the whole thing.",
+    screen: "Put Haps feed screen here with social posts, reactions, and active crew energy.",
+    images: [crewsImg, hapsImg],
+    accent: "#45B9ED",
+  },
+  {
     label: "Always more on the line.",
     title: "Side Action & Challenges",
     copy: "Side Juice lets you create live side bets between any two players. Challenges let the whole crew get weird with it. Next three-putt buys drinks. Next double does 20 push-ups. First bad hole gets hit with the punishment. Make it funny, competitive, or straight-up ruthless.",
     detail: "Stroke handicap, auto-press, custom terms, active tracking, and challenges that can stack all round.",
     screen: "Put Side Juice and challenge screens here.",
     images: [sideJuiceImg, challengesImg],
-    accent: "#45B9ED",
-  },
-  {
-    label: "Your golf crew, in one place.",
-    title: "Crews & Haps Feed",
-    copy: "Build your crew, share rounds to the feed, react to shots, and see who's out playing right now. The Haps feed is where your golf life lives: fired-away posts, round recaps, hole-in-ones, the whole thing.",
-    screen: "Put Haps feed screen here with social posts, reactions, and active crew energy.",
-    images: [crewsImg, hapsImg],
     accent: "#2D5016",
   },
   {
@@ -61,6 +63,15 @@ const features = [
     screen: "Put rewards / HUNNIDs / trophies screen here with balance, trophy art, and unlock state.",
     images: [hunnidsImg, trophyRoomImg],
     accent: "#EE455F",
+  },
+  {
+    label: "Hidden loot, every round.",
+    title: "Stashes & The Finds Room",
+    copy: "Stashes are loot boxes buried in your round — hidden on random holes, tied to a score: Eagle, Birdie, Par, even Bogey. Post the right score on the right hole and you've cracked one open. When the round's done, bust open your haul: HUNNIDs and collectible Finds, with the occasional Stash tucked inside your challenges.",
+    detail: "Your Finds live in the Finds Room — 79 famous holes, Oakmont to Pinehurst. Make a score on one and the stamp is yours.",
+    screen: "Put Stashes and Finds Room screens here.",
+    images: [stashesImg, findsRoomImg],
+    accent: "#2D5016",
   },
   {
     label: "Know the shot.",
