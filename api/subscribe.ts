@@ -24,6 +24,7 @@ export async function POST(request: Request) {
 
   // Honeypot: real visitors never see or fill this field. Pretend it worked.
   if (typeof payload.website === "string" && payload.website.trim() !== "") {
+    console.warn("subscribe: honeypot tripped");
     return json({ ok: true });
   }
 
@@ -65,5 +66,7 @@ export async function POST(request: Request) {
     return json({ error: "Signup is temporarily unavailable." }, 502);
   }
 
+  const member = await response.json().catch(() => ({}));
+  console.log("subscribe: mailchimp ok", response.status, member.status, member.list_id);
   return json({ ok: true });
 }
