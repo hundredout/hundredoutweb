@@ -11,9 +11,12 @@
 
   ## Mailchimp signup setup
 
-  Add a `.env.local` file with:
+  Signups post to `/api/subscribe` (`api/subscribe.ts`), which is protected by Vercel BotID and adds the address to Mailchimp as `pending` (double opt-in).
 
-  `VITE_MAILCHIMP_FORM_ACTION="https://YOUR_DC.list-manage.com/subscribe/post?u=YOUR_U_VALUE&id=YOUR_ID_VALUE&f_id=YOUR_FORM_ID"`
+  Set these in Vercel (and `.env.local` for local testing with `vercel dev`):
 
-  Use the Mailchimp embedded form action URL for the audience you want these early-access forms to feed into.
-  
+  - `MAILCHIMP_API_KEY`
+  - `MAILCHIMP_AUDIENCE_ID`
+  - `MAILCHIMP_SERVER_PREFIX` (the suffix of the API key, e.g. `us21`)
+
+  Enable BotID for the project in the Vercel dashboard (Firewall > Bot Management > BotID).

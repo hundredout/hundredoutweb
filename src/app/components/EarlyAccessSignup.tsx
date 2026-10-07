@@ -1,4 +1,4 @@
-import { FormEvent, useId, useRef, useState } from "react";
+import { FormEvent, useId, useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { cn } from "./ui/utils";
@@ -15,25 +15,6 @@ type EarlyAccessSignupProps = {
 
 type SignupStatus = "idle" | "submitting" | "success" | "error";
 
-const MAILCHIMP_ACTION = import.meta.env.VITE_MAILCHIMP_FORM_ACTION?.trim() ?? "";
-
-function getMailchimpHoneypotName(action: string) {
-  if (!action) return "";
-
-  try {
-    const url = new URL(action);
-    const u = url.searchParams.get("u");
-    const id = url.searchParams.get("id");
-
-    if (!u || !id) return "";
-    return `b_${u}_${id}`;
-  } catch {
-    return "";
-  }
-}
-
-const honeypotName = getMailchimpHoneypotName(MAILCHIMP_ACTION);
-
 export function EarlyAccessSignup({
   eyebrow,
   title,
@@ -44,31 +25,40 @@ export function EarlyAccessSignup({
   className,
 }: EarlyAccessSignupProps) {
   const emailId = useId();
-  const iframeId = useId();
-  const hasSubmittedRef = useRef(false);
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<SignupStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const isDark = theme === "dark";
-  const isConfigured = Boolean(MAILCHIMP_ACTION);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    if (!isConfigured) {
-      event.preventDefault();
-      setStatus("error");
-      return;
-    }
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (status === "submitting") return;
 
-    hasSubmittedRef.current = true;
     setStatus("submitting");
-  };
+    setErrorMessage("");
 
-  const handleIframeLoad = () => {
-    if (!hasSubmittedRef.current) return;
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, website }),
+      });
 
-    hasSubmittedRef.current = false;
-    setEmail("");
-    setStatus("success");
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}));
+        setErrorMessage(body.error ?? "Something went wrong. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      setEmail("");
+      setStatus("success");
+    } catch {
+      setErrorMessage("Something went wrong. Please try again.");
+      setStatus("error");
+    }
   };
 
   return (
@@ -94,13 +84,6 @@ export function EarlyAccessSignup({
           "pointer-events-none absolute right-0 top-0 h-56 w-56 rounded-full blur-3xl",
           isDark ? "bg-[#EE455F]/20" : "bg-[#45B9ED]/18",
         )}
-      />
-
-      <iframe
-        title="Mailchimp signup"
-        name={iframeId}
-        onLoad={handleIframeLoad}
-        className="hidden"
       />
 
       <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
@@ -146,7 +129,7 @@ export function EarlyAccessSignup({
                   Welcome To The First Wave.
                 </h3>
                 <p className={cn("mt-4 max-w-md text-sm leading-relaxed md:text-[15px]", isDark ? "text-white/62" : "text-[#0d1b28]/62")}>
-                  Early access, first looks, and the next HundredOut moves will hit your inbox before they go wide.
+                  Check your inbox for a confirmation email and click the link to lock in your spot. Early access, first looks, and the next HundredOut moves will follow.
                 </p>
               </div>
 
@@ -157,9 +140,6 @@ export function EarlyAccessSignup({
           ) : (
             <>
               <form
-                action={MAILCHIMP_ACTION || undefined}
-                method="post"
-                target={iframeId}
                 noValidate
                 onSubmit={handleSubmit}
                 className="space-y-4"
@@ -185,11 +165,16 @@ export function EarlyAccessSignup({
                   )}
                 />
 
-                {honeypotName ? (
-                  <div aria-hidden="true" className="absolute left-[-5000px]">
-                    <input tabIndex={-1} type="text" name={honeypotName} defaultValue="" />
-                  </div>
-                ) : null}
+                <div aria-hidden="true" className="absolute left-[-5000px]">
+                  <input
+                    tabIndex={-1}
+                    type="text"
+                    name="website"
+                    autoComplete="off"
+                    value={website}
+                    onChange={(event) => setWebsite(event.target.value)}
+                  />
+                </div>
 
                 <Button
                   type="submit"
@@ -205,9 +190,7 @@ export function EarlyAccessSignup({
               </form>
 
               <p className={cn("mt-4 text-sm leading-relaxed", isDark ? "text-white/50" : "text-[#0d1b28]/52")}>
-                {status === "error"
-                  ? "Mailchimp is not configured yet. Add `VITE_MAILCHIMP_FORM_ACTION` to turn this form on."
-                  : footnote}
+                {status === "error" ? errorMessage : footnote}
               </p>
             </>
           )}
