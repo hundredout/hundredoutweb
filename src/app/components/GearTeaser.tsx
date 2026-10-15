@@ -12,9 +12,11 @@ export function GearTeaser() {
       </div>
 
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative grid lg:grid-cols-2 gap-12 items-center">
+          {/* Soft red glow behind the video */}
+          <div className="pointer-events-none absolute right-0 top-1/2 hidden h-[420px] w-[620px] -translate-y-1/2 rounded-full bg-[#EE455F] opacity-15 blur-[120px] lg:block"></div>
           {/* Left: Content */}
-          <div>
+          <div className="relative">
             <h2 className="font-[var(--font-display)] font-semibold text-4xl md:text-5xl uppercase tracking-tight mb-4">
               Gear Is Here
             </h2>
@@ -30,7 +32,13 @@ export function GearTeaser() {
           </div>
 
           {/* Right: Video (still image fallback for reduced motion) */}
-          <div className="relative aspect-video bg-white/5 border border-white/10 overflow-hidden">
+          <div
+            className="relative aspect-video overflow-hidden"
+            style={{
+              WebkitMaskImage: "radial-gradient(ellipse 72% 72% at 50% 50%, #000 55%, transparent 100%)",
+              maskImage: "radial-gradient(ellipse 72% 72% at 50% 50%, #000 55%, transparent 100%)",
+            }}
+          >
             <video
               className="w-full h-full object-cover motion-reduce:hidden"
               src={gearVideo}
