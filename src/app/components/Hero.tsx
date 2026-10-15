@@ -24,7 +24,7 @@ export function Hero() {
 
             {/* Main Headline */}
             <h1 className="mb-8 font-[var(--font-display)] font-black text-[clamp(3rem,10vw,8.8rem)] leading-[0.9] tracking-tight uppercase">
-              Keep It
+              I'm In...
               <br />
               <span className="text-[#EE455F]">100</span>
             </h1>

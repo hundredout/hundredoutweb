@@ -35,7 +35,7 @@ export function GearTeaser() {
           <div className="relative">
             {/* Offset red outline behind the frame */}
             <div className="pointer-events-none absolute inset-0 translate-x-3 translate-y-3 border border-[#EE455F]/50"></div>
-            <div className="relative aspect-video overflow-hidden border-2 border-[#EE455F] bg-[#0d1b28]">
+            <div className="relative aspect-video overflow-hidden border-4 border-[#EE455F] bg-[#0d1b28]">
             <video
               className="w-full h-full object-cover motion-reduce:hidden"
               src={gearVideo}
