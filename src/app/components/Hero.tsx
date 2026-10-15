@@ -23,7 +23,7 @@ export function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="mb-8 font-[var(--font-display)] font-black text-[clamp(3rem,10vw,8.8rem)] leading-[0.9] tracking-tight uppercase">
+            <h1 className="mb-8 font-[var(--font-display)] font-black text-[clamp(3rem,22vw,5.5rem)] sm:text-[clamp(5.5rem,10vw,8.8rem)] leading-[0.9] tracking-tight uppercase">
               I'm In...
               <br />
               <span className="text-[#EE455F]">100</span>
