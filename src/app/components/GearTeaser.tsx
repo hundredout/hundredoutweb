@@ -32,13 +32,10 @@ export function GearTeaser() {
           </div>
 
           {/* Right: Video (still image fallback for reduced motion) */}
-          <div
-            className="relative aspect-video overflow-hidden"
-            style={{
-              WebkitMaskImage: "radial-gradient(ellipse 72% 72% at 50% 50%, #000 55%, transparent 100%)",
-              maskImage: "radial-gradient(ellipse 72% 72% at 50% 50%, #000 55%, transparent 100%)",
-            }}
-          >
+          <div className="relative">
+            {/* Offset red outline behind the frame */}
+            <div className="pointer-events-none absolute inset-0 translate-x-3 translate-y-3 border border-[#EE455F]/50"></div>
+            <div className="relative aspect-video overflow-hidden border-2 border-[#EE455F] bg-[#0d1b28]">
             <video
               className="w-full h-full object-cover motion-reduce:hidden"
               src={gearVideo}
@@ -50,6 +47,7 @@ export function GearTeaser() {
               aria-label="HundredOut Core Crew hats in camo, navy and grey"
             />
             <img src={gearImg} alt="HundredOut Gear" className="hidden motion-reduce:block w-full h-full object-cover" />
+            </div>
           </div>
         </div>
       </div>
