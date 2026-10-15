@@ -6,7 +6,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = [
     { label: "App", to: "/app" },
-    { label: "Gear", to: "/gear" },
+    { label: "Gear", to: "https://gear.hundredout.com" },
     { label: "Club", to: "/club" },
     { label: "Partnerships", to: "/partnerships" },
     { label: "About", to: "/about" },

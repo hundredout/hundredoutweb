@@ -23,5 +23,22 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/gear",
+      "destination": "https://gear.hundredout.com",
+      "permanent": false
+    },
+    {
+      "source": "/gear/:path*",
+      "destination": "https://gear.hundredout.com",
+      "permanent": false
+    },
+    {
+      "source": "/shop",
+      "destination": "https://gear.hundredout.com",
+      "permanent": false
+    }
   ]
 }

@@ -20,8 +20,8 @@ export function GearTeaser() {
             <p className="text-lg text-white/60 mb-6 leading-relaxed">
               The first HundredOut pieces are in development now. Hats, polos, and performance layers built to feel sharp, ownable, and worth the wait.
             </p>
-            <Link to="/gear" className="group inline-flex items-center gap-2 text-sm uppercase tracking-wide text-white/80 hover:text-[#EE455F] transition-colors">
-              See The Gear Direction
+            <Link to="https://gear.hundredout.com" className="group inline-flex items-center gap-2 text-sm uppercase tracking-wide text-white/80 hover:text-[#EE455F] transition-colors">
+              Shop HundredOut Gear
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:translate-x-1 transition-transform">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="miter"/>
               </svg>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const exploreLinks = [
   { label: "App", to: "/app" },
-  { label: "Gear", to: "/gear" },
+  { label: "Gear", to: "https://gear.hundredout.com" },
   { label: "Club", to: "/club" },
   { label: "Download", to: "/download" },
 ];
