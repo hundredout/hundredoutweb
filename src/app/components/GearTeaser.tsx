@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import hoodieImg from "../../imports/ho-wip-hoodie.webp";
-import poloImg from "../../imports/ho-wip-polo.webp";
+import gearImg from "../../imports/mainCover_WEB_v2.jpg";
+import gearVideo from "../../imports/ho-hero-1080.mp4";
 
 export function GearTeaser() {
   return (
@@ -29,14 +29,19 @@ export function GearTeaser() {
             </Link>
           </div>
 
-          {/* Right: Images */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative aspect-[4/5] bg-white/5 border border-white/10 overflow-hidden">
-              <img src={hoodieImg} alt="HundredOut hoodie" className="w-full h-full object-cover" />
-            </div>
-            <div className="relative aspect-[4/5] bg-white/5 border border-white/10 overflow-hidden">
-              <img src={poloImg} alt="HundredOut polo" className="w-full h-full object-cover" />
-            </div>
+          {/* Right: Video (still image fallback for reduced motion) */}
+          <div className="relative aspect-video bg-white/5 border border-white/10 overflow-hidden">
+            <video
+              className="w-full h-full object-cover motion-reduce:hidden"
+              src={gearVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-label="HundredOut Core Crew hats in camo, navy and grey"
+            />
+            <img src={gearImg} alt="HundredOut Gear" className="hidden motion-reduce:block w-full h-full object-cover" />
           </div>
         </div>
       </div>

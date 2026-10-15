@@ -1,24 +1,12 @@
 import { Link } from "react-router-dom";
 import languagePreferenceImg from "../../imports/SCREENSHOTS/LanguagePreference_screenshot.png";
 import scriptLogoImg from "../../imports/HundredOut_LOGO_red_white.png";
-import heroVideo from "../../imports/ho-hero-1080.mp4";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0d1b28] pt-20 text-white">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <video
-          className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
-          src={heroVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-        />
-        <div className="absolute inset-0 bg-[#0d1b28]/75"></div>
         <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-[#EE455F] rounded-full blur-[150px] opacity-10"></div>
         <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#45B9ED] rounded-full blur-[150px] opacity-8"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
