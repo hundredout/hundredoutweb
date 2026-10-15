@@ -16,6 +16,15 @@ export function Hero() {
       <div className="relative mx-auto max-w-[1600px] px-6 py-16 lg:px-12 lg:py-20">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.62fr]">
           <div className="relative max-w-5xl">
+            {/* Wordmark (mobile only; desktop shows it above the phone mockup) */}
+            <div className="mb-8 flex justify-center lg:hidden">
+              <img
+                src={scriptLogoImg}
+                alt="HundredOut script logo"
+                className="h-auto w-[260px] max-w-full drop-shadow-[0_22px_50px_rgba(0,0,0,0.25)]"
+              />
+            </div>
+
             {/* Overline */}
             <div className="mb-8 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
               <div className="w-2 h-2 bg-[#EE455F] rounded-full animate-pulse"></div>
@@ -50,17 +59,9 @@ export function Hero() {
                 Get the App
               </Link>
 
-              <Link to="/app" className="text-sm text-white/40 transition-colors hover:text-white/70 sm:ml-4">
+              <Link to="/app" className="hidden text-sm text-white/40 transition-colors hover:text-white/70 sm:ml-4 sm:block">
                 See how the app works
               </Link>
-            </div>
-
-            <div className="mt-8 flex justify-center lg:hidden">
-              <img
-                src={scriptLogoImg}
-                alt="HundredOut script logo"
-                className="h-auto w-[260px] max-w-full drop-shadow-[0_22px_50px_rgba(0,0,0,0.25)]"
-              />
             </div>
 
             {/* Moments */}
