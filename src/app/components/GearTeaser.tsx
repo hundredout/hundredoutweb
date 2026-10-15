@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import gearImg from "../../imports/mainCover_WEB_v2.jpg";
+import hoodieImg from "../../imports/ho-wip-hoodie.webp";
+import poloImg from "../../imports/ho-wip-polo.webp";
 
 export function GearTeaser() {
   return (
@@ -28,9 +29,14 @@ export function GearTeaser() {
             </Link>
           </div>
 
-          {/* Right: Image */}
-          <div className="relative aspect-[4/3] bg-white/5 border border-white/10 overflow-hidden">
-            <img src={gearImg} alt="HundredOut Gear" className="w-full h-full object-cover" />
+          {/* Right: Images */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative aspect-[4/5] bg-white/5 border border-white/10 overflow-hidden">
+              <img src={hoodieImg} alt="HundredOut hoodie" className="w-full h-full object-cover" />
+            </div>
+            <div className="relative aspect-[4/5] bg-white/5 border border-white/10 overflow-hidden">
+              <img src={poloImg} alt="HundredOut polo" className="w-full h-full object-cover" />
+            </div>
           </div>
         </div>
       </div>
