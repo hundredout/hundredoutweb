@@ -19,41 +19,39 @@ export function Hero() {
             {/* Overline */}
             <div className="mb-8 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
               <div className="w-2 h-2 bg-[#EE455F] rounded-full animate-pulse"></div>
-              <span className="text-sm uppercase tracking-wider">Your Crew • Your Game • Your Chaos</span>
+              <span className="text-sm uppercase tracking-wider">Golf Lifestyle • Golf Tech</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="mb-8 font-[var(--font-display)] font-black text-[clamp(3rem,10vw,8.8rem)] leading-[0.9] tracking-tight uppercase">
-              Golf with
+              Keep It
               <br />
-              <span className="text-[#EE455F]">More Action</span>
-              <br />
-              More Banter
+              <span className="text-[#EE455F]">100</span>
             </h1>
 
             {/* Subheadline */}
             <p className="mb-10 max-w-2xl text-xl text-white/70 md:mb-12 md:text-2xl">
-              Side bets. Live pressure. Instant trash talk. Golf tech with more personality.
+              HundredOut is a golf brand built for the crew — hats and gear you'll actually wear, and an app that makes every round count.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link to="/download" className="group relative inline-flex justify-center overflow-hidden bg-[#EE455F] px-8 py-4 text-white transition-all hover:scale-105 active:scale-95 sm:inline-flex">
+              <Link to="https://gear.hundredout.com" className="group relative inline-flex justify-center overflow-hidden bg-[#EE455F] px-8 py-4 text-white transition-all hover:scale-105 active:scale-95 sm:inline-flex">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#d63d54] to-[#EE455F] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
                 <span className="relative flex items-center justify-center gap-2 text-center uppercase tracking-wide">
-                  Download Free
+                  Shop Gear
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="group-hover:translate-x-1 transition-transform">
                     <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
               </Link>
 
-              <Link to="/app" className="inline-flex justify-center border-2 border-white/20 px-8 py-4 text-center uppercase tracking-wide text-white transition-all hover:border-white/40 hover:bg-white/5">
-                See How It Works
+              <Link to="/download" className="inline-flex justify-center border-2 border-white/20 px-8 py-4 text-center uppercase tracking-wide text-white transition-all hover:border-white/40 hover:bg-white/5">
+                Get the App
               </Link>
 
-              <Link to="/download" className="text-sm text-white/40 transition-colors hover:text-white/70 sm:ml-4">
-                iOS & Android
+              <Link to="/app" className="text-sm text-white/40 transition-colors hover:text-white/70 sm:ml-4">
+                See how the app works
               </Link>
             </div>
 

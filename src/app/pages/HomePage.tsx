@@ -10,20 +10,20 @@ export function HomePage() {
   return (
     <>
       <Hero />
+      <GearTeaser />
+      <HowItWorks />
+      <WhyHundredOut />
+      <SideActionSection />
       <div className="bg-white px-6 py-20 lg:px-12">
         <div className="mx-auto max-w-[1600px]">
           <EarlyAccessSignup
             theme="light"
             eyebrow="Founding List"
             title="Get in early on the world of HundredOut."
-            description="Join the list for first access to gear drops, Club news, launch signals, and the next moves as HundredOut grows beyond the app into a full golf brand."
+            description="Join the list for first access to new gear drops, restocks, Club news and what's next from HundredOut."
           />
         </div>
       </div>
-      <HowItWorks />
-      <WhyHundredOut />
-      <SideActionSection />
-      <GearTeaser />
       <FinalCTA />
     </>
   );
