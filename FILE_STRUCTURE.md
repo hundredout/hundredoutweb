@@ -41,7 +41,7 @@
 │   │
 │   └── styles/
 │       ├── theme.css                       # Brand colors, design tokens
-│       ├── fonts.css                       # Proxima Nova font imports
+│       ├── fonts.css                       # Figtree font imports (@fontsource)
 │       ├── tailwind.css                    # Tailwind imports
 │       └── index.css                       # Global styles
 │
@@ -71,5 +71,5 @@
 
 ## Typography
 
-- Font: Proxima Nova
+- Font: Figtree
 - Weights: Black (900), Semi-bold (600), Regular (400)
